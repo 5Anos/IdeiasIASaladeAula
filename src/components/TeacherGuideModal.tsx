@@ -69,15 +69,15 @@ export const TeacherGuideModal: React.FC<TeacherGuideModalProps> = ({
             </div>
           </div>
 
-          {/* Card 3: Engenharia de Prompts */}
+          {/* Card 3: Metodologia e Passo a Passo */}
           <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-100 flex items-start gap-3">
             <BookCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
             <div>
               <h3 className="font-bold text-emerald-900 font-heading">
-                3. Refinamento e Enriquecimento do Prompt
+                3. Metodologia em 4 Passos e Experimentação com a Turma
               </h3>
               <p className="text-slate-600 mt-1">
-                Cada atividade inclui o <em>"Prompt inicial do aluno"</em> e o <em>"Prompt enriquecido com a turma"</em>. Mostre aos alunos como detalhes de estilo, adjetivos, contexto e vocabulário científico transformam uma resposta vaga numa criação com qualidade pedagógica.
+                Cada atividade está estruturada num passo a passo pedagógico (Exploração & Contexto, Experimentação com IA, Análise Crítica e Criação & Partilha). Guie os alunos a formular pedidos precisos e contextualizados nas ferramentas sugeridas, comparando resultados e desenvolvendo um produto final significativo.
               </p>
             </div>
           </div>

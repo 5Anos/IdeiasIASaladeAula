@@ -28,7 +28,7 @@ interface ActivitySheetProps {
 export const ActivitySheet: React.FC<ActivitySheetProps> = ({
   activity,
   onCopyPrompt: _onCopyPrompt,
-  onNavigateHome,
+  onNavigateHome: _onNavigateHome,
   onTogglePresentation: _onTogglePresentation
 }) => {
   // Helper for step icons to match template
@@ -63,84 +63,41 @@ export const ActivitySheet: React.FC<ActivitySheetProps> = ({
   };
 
   return (
-    <div className="activity-sheet w-full max-w-6xl mx-auto bg-white rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-200/90 overflow-hidden my-4 sm:my-8 transition-all">
-        {/* Top Sheet Header Bar */}
-        <div className="bg-[#f0f6ff]/80 border-b border-blue-100/80 px-4 sm:px-8 py-3.5 flex items-center justify-between">
-          <button
-            onClick={onNavigateHome}
-            className="flex items-center gap-2.5 text-[#1e3a8a] font-bold text-sm sm:text-base hover:opacity-80 transition-opacity"
-          >
-            <div className="w-8 h-8 rounded-lg bg-[#2563eb] text-white flex items-center justify-center shadow-xs">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+    <div className="activity-sheet w-full max-w-6xl mx-auto bg-white rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-200/90 overflow-hidden my-3 sm:my-5 transition-all">
+        {/* Compact Activity Title Banner */}
+        <div className="relative overflow-hidden bg-gradient-to-r from-[#d9ebff] via-[#e5f0fe] to-[#fbf5e8] px-5 sm:px-8 py-3.5 sm:py-4 border-b border-blue-100/90">
+          {/* Subtle light glow */}
+          <div className="absolute top-0 right-1/4 w-36 h-12 bg-white/40 rounded-full blur-md pointer-events-none" />
+
+          <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+            {/* Title, Badge and Emoji */}
+            <div className="flex items-center gap-3 min-w-0">
+              <span className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-tr from-amber-400 to-amber-200 flex items-center justify-center shadow-xs text-xl sm:text-2xl border border-white shrink-0">
+                {activity.themeEmoji || '🎨'}
+              </span>
+
+              <div className="min-w-0">
+                <div className="flex items-center gap-2">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold tracking-wider uppercase bg-blue-100/90 text-blue-800 border border-blue-200/80">
+                    Atividade {activity.id} de 20
+                  </span>
+                </div>
+                <h1 className="text-lg sm:text-xl md:text-2xl font-extrabold text-[#0f2d59] font-heading tracking-tight leading-snug mt-0.5">
+                  {activity.id}. {activity.title}
+                </h1>
+              </div>
+            </div>
+
+            {/* Subtle decorative yellow wave accent */}
+            <div className="hidden sm:block shrink-0 opacity-80 self-center">
+              <svg width="120" height="10" viewBox="0 0 120 10" fill="none">
+                <path
+                  d="M2 7C25 2 55 9 118 4"
+                  stroke="#F59E0B"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                />
               </svg>
-            </div>
-            <span className="font-heading tracking-wide">Atividades com IA</span>
-          </button>
-        </div>
-
-        {/* Hero Title Banner with Graphic Style matching attached artwork */}
-        <div className="relative overflow-hidden bg-gradient-to-r from-[#d9ebff] via-[#e5f0fe] to-[#fbf5e8] px-6 sm:px-10 py-6 sm:py-8 border-b border-blue-100">
-          {/* Subtle clouds/bubbles in background */}
-          <div className="absolute top-2 left-1/3 w-32 h-16 bg-white/40 rounded-full blur-md pointer-events-none" />
-          <div className="absolute -bottom-6 right-1/3 w-40 h-20 bg-amber-100/40 rounded-full blur-lg pointer-events-none" />
-
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Title and Icon */}
-            <div className="max-w-2xl text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-                <span className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-400 to-amber-200 flex items-center justify-center shadow-md text-2xl border-2 border-white">
-                  {activity.themeEmoji || '🎨'}
-                </span>
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-blue-100/90 text-blue-800 border border-blue-200">
-                  Atividade {activity.id} de 20
-                </span>
-              </div>
-
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0f2d59] font-heading tracking-tight leading-snug">
-                {activity.id}. {activity.title}
-              </h1>
-
-              {/* Decorative yellow wave arc underneath */}
-              <div className="mt-2.5 flex justify-center md:justify-start">
-                <svg width="200" height="14" viewBox="0 0 200 14" fill="none">
-                  <path
-                    d="M3 10C35 3 70 14 105 7C140 0 175 11 197 6"
-                    stroke="#F59E0B"
-                    strokeWidth="5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-            </div>
-
-            {/* Cheerful Friendly Mascot Banner / Characters */}
-            <div className="shrink-0 flex items-center gap-3">
-              {/* Friendly AI Robot Mascot */}
-              <div className="relative flex items-center gap-3 bg-white/80 backdrop-blur-xs px-4 py-2.5 rounded-2xl border border-white/90 shadow-md">
-                {/* Child thinking illustration icon */}
-                <div className="w-12 h-12 rounded-full bg-amber-100 border-2 border-amber-300 flex items-center justify-center text-2xl shadow-2xs">
-                  👧
-                </div>
-
-                {/* Thought bubble with pencil */}
-                <div className="text-[11px] font-bold text-slate-700 bg-white px-2 py-1 rounded-full border border-slate-200 shadow-2xs flex items-center gap-1">
-                  <span>💭</span>
-                  <span>Ideia</span>
-                </div>
-
-                {/* Friendly Smiling Robot with IA badge */}
-                <div className="relative flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-b from-sky-400 to-blue-600 text-white flex flex-col items-center justify-center shadow-md border-2 border-white">
-                    <span className="text-base leading-none">🤖</span>
-                    <span className="text-[9px] font-extrabold bg-white text-blue-700 px-1 rounded-sm mt-0.5 tracking-tighter">
-                      IA
-                    </span>
-                  </div>
-                  {/* Robot antenna pulse */}
-                  <span className="absolute -top-1 right-1 w-2.5 h-2.5 bg-emerald-400 border border-white rounded-full animate-ping" />
-                </div>
-              </div>
             </div>
           </div>
         </div>
