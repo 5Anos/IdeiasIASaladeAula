@@ -1,5 +1,16 @@
 import React from 'react';
-import { X, ShieldCheck, Sparkles, BookCheck, Users, HelpCircle } from 'lucide-react';
+import {
+  X,
+  ShieldAlert,
+  Scale,
+  Sparkles,
+  Clock,
+  Users,
+  Compass,
+  FileCheck2,
+  CheckCircle2,
+  LaptopMinimal
+} from 'lucide-react';
 
 interface TeacherGuideModalProps {
   isOpen: boolean;
@@ -17,89 +28,168 @@ export const TeacherGuideModal: React.FC<TeacherGuideModalProps> = ({
       role="dialog"
       aria-modal="true"
       aria-labelledby="teacher-guide-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs animate-in fade-in"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-900/60 backdrop-blur-xs animate-in fade-in"
     >
-      <div className="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative max-h-[90vh] overflow-y-auto">
-        <button
-          onClick={onClose}
-          aria-label="Fechar guia do professor"
-          className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors"
-        >
-          <X className="w-5 h-5" />
-        </button>
-
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl">
-            🎓
-          </div>
-          <div>
-            <h2 id="teacher-guide-title" className="text-xl sm:text-2xl font-bold font-heading text-slate-900">
-              Guia Pedagógico para o Professor
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-500">
-              Boas práticas e orientações para usar IA com segurança e sentido crítico em sala de aula
-            </p>
-          </div>
-        </div>
-
-        <div className="space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed pt-2">
-          {/* Card 1: Proteção de Dados */}
-          <div className="p-4 rounded-2xl bg-blue-50/70 border border-blue-100 flex items-start gap-3">
-            <ShieldCheck className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+      <div className="bg-white rounded-3xl max-w-3xl w-full p-5 sm:p-7 shadow-2xl border border-slate-200 relative max-h-[92vh] flex flex-col overflow-hidden">
+        {/* Header */}
+        <div className="flex items-start justify-between gap-4 pb-4 border-b border-slate-100 shrink-0">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl shadow-2xs shrink-0">
+              🎓
+            </div>
             <div>
-              <h3 className="font-bold text-blue-900 font-heading">
-                1. Proteção de Dados e Idades Mínimas
-              </h3>
-              <p className="text-slate-600 mt-1">
-                No 1.º e 2.º Ciclos, a interação com ferramentas deve ser <strong>mediada pelo professor</strong> (projetada no ecrã ou através de plataformas seguras como MagicSchool, Mizou ou Duck.ai), garantindo que os alunos nunca fornecem dados pessoais, moradas ou fotos reais.
+              <h2 id="teacher-guide-title" className="text-xl sm:text-2xl font-bold font-heading text-slate-900 leading-tight">
+                Guia Pedagógico para o Professor
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
+                Princípios curriculares, enquadramento ético-legal e orientações didáticas para a sala de aula
               </p>
             </div>
           </div>
 
-          {/* Card 2: Espírito Crítico */}
-          <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-100 flex items-start gap-3">
-            <Sparkles className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-            <div>
-              <h3 className="font-bold text-amber-900 font-heading">
-                2. IA como Ponto de Partida, não de Chegada
-              </h3>
-              <p className="text-slate-600 mt-1">
-                A IA atua como assistente de imaginação, parceira de brainstorming ou simulação. A verdadeira aprendizagem acontece na <strong>comparação crítica</strong>: o que a IA fez bem, onde falhou e como o raciocínio humano enriquece o resultado.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 3: Metodologia e Passo a Passo */}
-          <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-100 flex items-start gap-3">
-            <BookCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
-            <div>
-              <h3 className="font-bold text-emerald-900 font-heading">
-                3. Metodologia em 4 Passos e Experimentação com a Turma
-              </h3>
-              <p className="text-slate-600 mt-1">
-                Cada atividade está estruturada num passo a passo pedagógico (Exploração & Contexto, Experimentação com IA, Análise Crítica e Criação & Partilha). Guie os alunos a formular pedidos precisos e contextualizados nas ferramentas sugeridas, comparando resultados e desenvolvendo um produto final significativo.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 4: Coautoria e Transparência */}
-          <div className="p-4 rounded-2xl bg-purple-50/70 border border-purple-100 flex items-start gap-3">
-            <Users className="w-5 h-5 text-purple-600 shrink-0 mt-0.5" />
-            <div>
-              <h3 className="font-bold text-purple-900 font-heading">
-                4. Cultura de Coautoria Ética ("Eu vs. IA")
-              </h3>
-              <p className="text-slate-600 mt-1">
-                Incentive os alunos a identificar claramente o que foi gerado pela IA e qual foi o seu próprio contributo reflexivo, manual, analítico ou criativo.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-6 pt-4 border-t border-slate-100 flex justify-end">
           <button
             onClick={onClose}
-            className="px-5 py-2.5 rounded-xl bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition-colors shadow-2xs"
+            aria-label="Fechar guia do professor"
+            className="p-2 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors shrink-0"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Scrollable Content */}
+        <div className="overflow-y-auto pr-1 py-4 space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed">
+          {/* Card 1: Proteção de Dados e Idades Mínimas */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#f0f6ff] border border-blue-200/80 shadow-2xs">
+            <div className="flex items-center gap-2.5 text-blue-900 font-bold font-heading text-sm sm:text-base mb-2">
+              <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shrink-0">
+                <ShieldAlert className="w-4 h-4" />
+              </div>
+              <h3>1. Proteção de Dados de Menores e Conformidade Institucional</h3>
+            </div>
+            <p className="text-slate-700">
+              A legislação europeia e nacional (RGPD e orientações da CNPD) exige cuidados estritos com dados de menores. <strong>Nenhuma ferramenta externa (incluindo MagicSchool, Mizou ou Duck.ai) dispensa a consulta prévia dos respetivos Termos de Utilização, políticas de privacidade, idades mínimas e regulamentos do Agrupamento de Escolas.</strong>
+            </p>
+            <ul className="mt-2.5 space-y-1.5 text-xs text-slate-600">
+              <li className="flex items-start gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0 mt-0.5" />
+                <span><strong>Mediação docente como salvaguarda:</strong> Nos 1.º e 2.º Ciclos, a utilização deve ser exclusivamente mediada pelo professor através de projeção central, evitando criação de contas por menores.</span>
+              </li>
+              <li className="flex items-start gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0 mt-0.5" />
+                <span><strong>Regra de ouro de privacidade:</strong> Nunca introduzir nomes reais, moradas, fotografias identificáveis de alunos, dados de saúde ou referências familiares em prompts ou ficheiros de entrada.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Card 2: Critérios de Escolha e Validação de Ferramentas */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#f5fbf7] border border-emerald-200/80 shadow-2xs">
+            <div className="flex items-center gap-2.5 text-emerald-950 font-bold font-heading text-sm sm:text-base mb-2">
+              <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center shrink-0">
+                <Compass className="w-4 h-4" />
+              </div>
+              <h3>2. Critérios de Escolha e Teste Prévio de Ferramentas</h3>
+            </div>
+            <p className="text-slate-700">
+              A volatilidade das ferramentas digitais exige verificação prévia pelo docente antes de cada aula. Privilegie soluções com:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2.5 text-xs text-slate-600">
+              <div className="bg-white/80 p-2.5 rounded-xl border border-emerald-100">
+                <strong>Gratuitidade real e transparente:</strong> Evite plataformas que solicitem cartões de crédito ou imponham bloqueios imediatos de créditos a meio da aula.
+              </div>
+              <div className="bg-white/80 p-2.5 rounded-xl border border-emerald-100">
+                <strong>Ambiente seguro sem anúncios:</strong> Certifique-se de que a interface não apresenta publicidade agressiva ou conteúdos desadequados a contexto escolar.
+              </div>
+              <div className="bg-white/80 p-2.5 rounded-xl border border-emerald-100">
+                <strong>Ausência de barreiras de rede:</strong> Teste na rede da escola (muitas redes educativas bloqueiam domínios de IA ou portas específicas).
+              </div>
+              <div className="bg-white/80 p-2.5 rounded-xl border border-emerald-100">
+                <strong>Alinhamento curricular:</strong> A ferramenta deve servir a aprendizagem disciplinar e não transformar-se num mero entretenimento tecnológico.
+              </div>
+            </div>
+          </div>
+
+          {/* Card 3: Flexibilidade Didática e Gestão Pedagógica */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#fffaf2] border border-amber-200/80 shadow-2xs">
+            <div className="flex items-center gap-2.5 text-amber-950 font-bold font-heading text-sm sm:text-base mb-2">
+              <div className="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center shrink-0">
+                <Clock className="w-4 h-4" />
+              </div>
+              <h3>3. Gestão Flexível do Tempo e Metodologia Adaptável</h3>
+            </div>
+            <p className="text-slate-700">
+              A proposta estruturada em 4 etapas apresentada nas fichas é uma <strong>sugestão organizativa e não um dogma inflexível</strong>. O professor tem plena autonomia para adaptar a cadência ao ritmo da sua turma:
+            </p>
+            <ul className="mt-2.5 space-y-1.5 text-xs text-slate-600">
+              <li className="flex items-start gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" />
+                <span><strong>Versão Essencial vs. Extensão:</strong> Cada ficha discrimina o percurso mínimo indispensável (que garante os objetivos essenciais) e extensões opcionais multimédia para turmas com mais tempo ou recursos.</span>
+              </li>
+              <li className="flex items-start gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" />
+                <span><strong>Avaliação Formativa e Critérios Observáveis:</strong> Privilegie o feedback contínuo sobre o processo (formulação de hipóteses, deteção de erros da IA, justificação de opções) em vez de avaliar apenas o produto final.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Card 4: Inclusão, Diferenciação e Alternativas Sem Dispositivos */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#faf5ff] border border-purple-200/80 shadow-2xs">
+            <div className="flex items-center gap-2.5 text-purple-950 font-bold font-heading text-sm sm:text-base mb-2">
+              <div className="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center shrink-0">
+                <Users className="w-4 h-4" />
+              </div>
+              <h3>4. Inclusão, Diferenciação Pedagógica e Modo Desconectado</h3>
+            </div>
+            <p className="text-slate-700">
+              A tecnologia deve nivelar oportunidades sem gerar dependência ou exclusão:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2.5 text-xs text-slate-600">
+              <div className="bg-white/80 p-2.5 rounded-xl border border-purple-100 flex items-start gap-2">
+                <LaptopMinimal className="w-4 h-4 text-purple-600 shrink-0 mt-0.5" />
+                <div>
+                  <strong>Apoio a necessidades específicas:</strong> A IA pode auxiliar alunos com dificuldades na escrita através de leitura oral e estruturas de suporte, sem substituir o esforço cognitivo do aluno.
+                </div>
+              </div>
+              <div className="bg-white/80 p-2.5 rounded-xl border border-purple-100 flex items-start gap-2">
+                <FileCheck2 className="w-4 h-4 text-purple-600 shrink-0 mt-0.5" />
+                <div>
+                  <strong>Garantia de alternativa offline:</strong> Todas as 20 atividades incluem uma modalidade sem dispositivos (computação desplugada, papéis de encenação ou materiais manipuláveis físicos).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 5: Integridade Académica, Autoria e Direitos de Autor */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-[#f4f7fb] border border-slate-200 shadow-2xs">
+            <div className="flex items-center gap-2.5 text-slate-900 font-bold font-heading text-sm sm:text-base mb-2">
+              <div className="w-8 h-8 rounded-lg bg-slate-700 text-white flex items-center justify-center shrink-0">
+                <Scale className="w-4 h-4" />
+              </div>
+              <h3>5. Integridade Académica, Transparência de Autoria e Direitos de Imagem</h3>
+            </div>
+            <p className="text-slate-700">
+              Promova desde cedo uma cultura explícita de honestidade intelectual e citação:
+            </p>
+            <ul className="mt-2.5 space-y-1.5 text-xs text-slate-600">
+              <li className="flex items-start gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-slate-700 shrink-0 mt-0.5" />
+                <span><strong>Princípio da Coautoria Transparente:</strong> Os trabalhos devem indicar explicitamente: «Texto/ideia original de [Aluno], rascunho de contra-argumento apoiado por [Ferramenta de IA], versão final e revisão por [Aluno]».</span>
+              </li>
+              <li className="flex items-start gap-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-slate-700 shrink-0 mt-0.5" />
+                <span><strong>Direitos de autor e propriedade intelectual:</strong> Alertar os alunos para os cuidados ao carregar textos com copyright em chatbots e para as incertezas jurídicas associadas a imagens e músicas geradas automaticamente.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="pt-3 border-t border-slate-100 flex items-center justify-between shrink-0">
+          <span className="text-[11px] text-slate-400">
+            Enquadrado no Perfil dos Alunos à Saída da Escolaridade Obrigatória
+          </span>
+          <button
+            onClick={onClose}
+            className="px-5 py-2 rounded-xl bg-blue-600 text-white font-semibold text-xs sm:text-sm hover:bg-blue-700 transition-colors shadow-2xs"
           >
             Compreendi, Voltar às Atividades
           </button>

@@ -85,3 +85,28 @@ test('formatPromptForCopy generates formatted text with activity info', () => {
   assert.ok(text.includes('Português'));
   assert.ok(text.includes('Passo a Passo:'));
 });
+
+test('Activity 12 has unified mathematical equation 3x + 15 = 60 and solution x = 15', () => {
+  const act12 = ACTIVITIES.find(a => a.id === 12);
+  assert.ok(act12, 'Activity 12 exists');
+  assert.ok(act12.steps[0].description.includes('3x + 15 = 60'), 'Step 1 has 3x + 15 = 60');
+  assert.ok(act12.steps[2].description.includes('x = 15'), 'Step 3 has solution x = 15');
+  assert.ok(act12.promptExample.enriched.includes('3x + 15 = 60'), 'Enriched prompt has 3x + 15 = 60');
+  assert.ok(act12.finalProduct.includes('3x + 15 = 60'), 'Final product has 3x + 15 = 60');
+  assert.ok(act12.finalProduct.includes('x = 15'), 'Final product has x = 15');
+  assert.ok(!act12.promptExample.enriched.includes('4x + 12 = 60'), 'Outdated equation 4x + 12 = 60 eliminated');
+});
+
+test('every activity contains enriched pedagogical metadata, step durations and offline alternative', () => {
+  for (const act of ACTIVITIES) {
+    assert.ok(act.teacherPreparation && act.teacherPreparation.length > 10, `Activity ${act.id} has teacherPreparation`);
+    assert.ok(act.evaluationCriteria && act.evaluationCriteria.length >= 2, `Activity ${act.id} has evaluationCriteria`);
+    assert.ok(act.differentiation && act.differentiation.length >= 2, `Activity ${act.id} has differentiation`);
+    assert.ok(act.essentialVsExtension && act.essentialVsExtension.essential.length > 5, `Activity ${act.id} has essentialVsExtension`);
+    assert.ok(act.offlineAlternative && act.offlineAlternative.length > 10, `Activity ${act.id} has offlineAlternative`);
+    assert.ok(act.aiPedagogicalRole && act.aiPedagogicalRole.length > 10, `Activity ${act.id} has aiPedagogicalRole`);
+    for (const step of act.steps) {
+      assert.ok(step.duration && step.duration.includes('min'), `Activity ${act.id} step ${step.number} has duration`);
+    }
+  }
+});
