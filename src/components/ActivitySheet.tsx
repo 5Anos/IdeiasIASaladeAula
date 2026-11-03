@@ -16,7 +16,6 @@ import {
   MonitorPlay,
   Sliders,
   Pencil,
-  Copy,
   Sparkles,
   ClipboardCheck,
   Compass,
@@ -34,7 +33,7 @@ interface ActivitySheetProps {
 
 export const ActivitySheet: React.FC<ActivitySheetProps> = ({
   activity,
-  onCopyPrompt,
+  onCopyPrompt: _onCopyPrompt,
   onNavigateHome: _onNavigateHome,
   onTogglePresentation: _onTogglePresentation
 }) => {
@@ -66,15 +65,6 @@ export const ActivitySheet: React.FC<ActivitySheetProps> = ({
             <Pencil className="w-5 h-5 stroke-[1.75]" />
           </div>
         );
-    }
-  };
-
-  const handleCopy = (text: string, label: string) => {
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(text);
-      if (onCopyPrompt) {
-        onCopyPrompt(text, `Prompt copiado: ${label}`);
-      }
     }
   };
 
@@ -307,63 +297,6 @@ export const ActivitySheet: React.FC<ActivitySheetProps> = ({
                 </div>
               );
             })}
-          </div>
-        </div>
-
-        {/* Section: Exemplos de Prompts com a Turma */}
-        <div className="bg-[#f8fafc] border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-2xs space-y-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-indigo-700">
-              <div className="w-7 h-7 rounded-lg bg-indigo-100 flex items-center justify-center">
-                <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
-              </div>
-              <h2 className="text-sm sm:text-base font-bold font-heading text-slate-900">
-                Engenharia Pedagógica de Prompts (Exemplo Prático)
-              </h2>
-            </div>
-            <span className="text-[11px] text-slate-500 font-medium">
-              Evolução da formulação
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-            {/* Prompt Inicial */}
-            <div className="bg-white border border-slate-200 rounded-xl p-3.5 flex flex-col justify-between shadow-2xs">
-              <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block mb-1">
-                  {activity.promptExample.initialLabel || 'Prompt Inicial:'}
-                </span>
-                <p className="text-xs sm:text-sm text-slate-800 italic font-mono bg-slate-50 p-2.5 rounded-lg border border-slate-100">
-                  "{activity.promptExample.studentInitial}"
-                </p>
-              </div>
-              <button
-                onClick={() => handleCopy(activity.promptExample.studentInitial, 'Prompt Inicial')}
-                className="mt-2.5 self-start inline-flex items-center gap-1.5 text-xs text-slate-600 hover:text-blue-700 bg-slate-100 hover:bg-blue-50 px-2.5 py-1 rounded-lg transition-colors cursor-pointer"
-              >
-                <Copy className="w-3 h-3" />
-                <span>Copiar texto</span>
-              </button>
-            </div>
-
-            {/* Prompt Enriquecido */}
-            <div className="bg-blue-50/60 border border-blue-200/80 rounded-xl p-3.5 flex flex-col justify-between shadow-2xs">
-              <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-blue-900 block mb-1">
-                  {activity.promptExample.enrichedLabel || 'Prompt Enriquecido com a Turma:'}
-                </span>
-                <p className="text-xs sm:text-sm text-blue-950 font-mono bg-white/90 p-2.5 rounded-lg border border-blue-100 leading-relaxed">
-                  "{activity.promptExample.enriched}"
-                </p>
-              </div>
-              <button
-                onClick={() => handleCopy(activity.promptExample.enriched, 'Prompt Enriquecido')}
-                className="mt-2.5 self-start inline-flex items-center gap-1.5 text-xs text-blue-700 hover:text-blue-900 bg-blue-100 hover:bg-blue-200/70 px-2.5 py-1 rounded-lg transition-colors cursor-pointer font-medium"
-              >
-                <Copy className="w-3 h-3" />
-                <span>Copiar prompt enriquecido</span>
-              </button>
-            </div>
           </div>
         </div>
 

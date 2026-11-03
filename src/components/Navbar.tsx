@@ -75,7 +75,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   </span>
                 </h1>
                 <p className="text-xs sm:text-[13px] text-slate-600 font-normal leading-relaxed max-w-xl">
-                  Atividades estruturadas com objetivos curriculares, passo a passo, engenharia de prompts e ferramentas recomendadas com hiperligações diretas.
+                  Atividades estruturadas com objetivos curriculares, passo a passo pedagógico e ferramentas recomendadas com hiperligações diretas.
                 </p>
               </div>
             </div>
