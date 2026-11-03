@@ -18,7 +18,7 @@ test('every activity has required fields, 4 steps, and tools', () => {
     assert.ok(act.modality.length > 0, `Activity ${act.id} has modality`);
     assert.ok(act.briefDescription.length > 0, `Activity ${act.id} has briefDescription`);
     assert.ok(act.learningObjectives.length >= 2, `Activity ${act.id} has learningObjectives`);
-    assert.equal(act.steps.length, 4, `Activity ${act.id} has exactly 4 steps`);
+    assert.ok(act.steps.length >= 4 && act.steps.length <= 6, `Activity ${act.id} has between 4 and 6 steps (found ${act.steps.length})`);
     assert.ok(act.promptExample.studentInitial.length > 0, `Activity ${act.id} has promptExample`);
     assert.ok(act.promptExample.enriched.length > 0, `Activity ${act.id} has promptExample enriched`);
     assert.ok(act.finalProduct.length > 0, `Activity ${act.id} has finalProduct`);
@@ -92,8 +92,7 @@ test('Activity 12 has unified mathematical equation 3x + 15 = 60 and solution x 
   assert.ok(act12.steps[0].description.includes('3x + 15 = 60'), 'Step 1 has 3x + 15 = 60');
   assert.ok(act12.steps[2].description.includes('x = 15'), 'Step 3 has solution x = 15');
   assert.ok(act12.promptExample.enriched.includes('3x + 15 = 60'), 'Enriched prompt has 3x + 15 = 60');
-  assert.ok(act12.finalProduct.includes('3x + 15 = 60'), 'Final product has 3x + 15 = 60');
-  assert.ok(act12.finalProduct.includes('x = 15'), 'Final product has x = 15');
+  assert.ok(act12.finalProduct.includes('O Desafio das Equações da Turma'), 'Final product has updated title');
   assert.ok(!act12.promptExample.enriched.includes('4x + 12 = 60'), 'Outdated equation 4x + 12 = 60 eliminated');
 });
 

@@ -21,7 +21,8 @@ import {
   Compass,
   Users,
   Layers,
-  WifiOff
+  WifiOff,
+  Copy
 } from 'lucide-react';
 
 interface ActivitySheetProps {
@@ -33,7 +34,7 @@ interface ActivitySheetProps {
 
 export const ActivitySheet: React.FC<ActivitySheetProps> = ({
   activity,
-  onCopyPrompt: _onCopyPrompt,
+  onCopyPrompt,
   onNavigateHome: _onNavigateHome,
   onTogglePresentation: _onTogglePresentation
 }) => {
@@ -59,10 +60,22 @@ export const ActivitySheet: React.FC<ActivitySheetProps> = ({
           </div>
         );
       case 4:
-      default:
         return (
           <div className="w-11 h-11 mx-auto my-2 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 shadow-2xs">
             <Pencil className="w-5 h-5 stroke-[1.75]" />
+          </div>
+        );
+      case 5:
+        return (
+          <div className="w-11 h-11 mx-auto my-2 rounded-xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600 shadow-2xs">
+            <Sparkles className="w-5 h-5 stroke-[1.75]" />
+          </div>
+        );
+      case 6:
+      default:
+        return (
+          <div className="w-11 h-11 mx-auto my-2 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 shadow-2xs">
+            <ClipboardCheck className="w-5 h-5 stroke-[1.75]" />
           </div>
         );
     }
@@ -226,8 +239,16 @@ export const ActivitySheet: React.FC<ActivitySheetProps> = ({
             </span>
           </div>
 
-          {/* 4 Steps Horizontal Flow */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-3 relative">
+          {/* Dynamic Steps Horizontal Flow */}
+          <div
+            className={`grid ${
+              activity.steps.length === 6
+                ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6'
+                : activity.steps.length === 5
+                ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-5'
+                : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-4'
+            } gap-3 relative`}
+          >
             {activity.steps.map((step, idx) => {
               const colors = [
                 {
@@ -249,6 +270,16 @@ export const ActivitySheet: React.FC<ActivitySheetProps> = ({
                   badgeBg: 'bg-emerald-600',
                   border: 'border-emerald-200/80',
                   cardBg: 'bg-[#f2faf5]'
+                },
+                {
+                  badgeBg: 'bg-rose-500',
+                  border: 'border-rose-200/80',
+                  cardBg: 'bg-[#fff5f5]'
+                },
+                {
+                  badgeBg: 'bg-indigo-600',
+                  border: 'border-indigo-200/80',
+                  cardBg: 'bg-[#f5f5ff]'
                 }
               ];
               const c = colors[idx % colors.length];
@@ -366,6 +397,84 @@ export const ActivitySheet: React.FC<ActivitySheetProps> = ({
             </div>
           </div>
         </div>
+
+        {/* Section: Engenharia Pedagógica de Prompts (Exemplo Prático) */}
+        {activity.promptExample && (
+          <div className="bg-[#f8faff] border border-blue-200/80 rounded-2xl p-4 sm:p-5 shadow-2xs space-y-3.5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-blue-100 pb-2.5">
+              <div className="flex items-center gap-2 text-blue-800">
+                <div className="w-8 h-8 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0 shadow-2xs">
+                  <Sparkles className="w-4 h-4 text-blue-700" />
+                </div>
+                <div>
+                  <h2 className="text-sm sm:text-base font-bold font-heading text-slate-900">
+                    Engenharia Pedagógica de Prompts (Exemplo Prático)
+                  </h2>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+              {/* Prompt inicial do aluno */}
+              <div className="bg-white border border-amber-200/90 rounded-xl p-3.5 shadow-2xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-amber-800 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200/80">
+                      {activity.promptExample.initialLabel || 'Prompt inicial do aluno:'}
+                    </span>
+                    {onCopyPrompt && (
+                      <button
+                        onClick={() =>
+                          onCopyPrompt(
+                            activity.promptExample.studentInitial,
+                            'Prompt do aluno copiado!'
+                          )
+                        }
+                        className="text-[11px] text-slate-500 hover:text-blue-700 flex items-center gap-1 px-2 py-0.5 rounded-md hover:bg-blue-50 transition-colors cursor-pointer"
+                        title="Copiar prompt inicial"
+                      >
+                        <Copy className="w-3 h-3" />
+                        <span>Copiar</span>
+                      </button>
+                    )}
+                  </div>
+                  <p className="text-xs sm:text-[13px] text-slate-700 italic bg-amber-50/50 p-2.5 rounded-lg border border-amber-100 font-mono">
+                    "{activity.promptExample.studentInitial}"
+                  </p>
+                </div>
+              </div>
+
+              {/* Prompt enriquecido com a turma */}
+              <div className="bg-white border border-blue-200/90 rounded-xl p-3.5 shadow-2xs flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-blue-800 bg-blue-50 px-2 py-0.5 rounded-md border border-blue-200/80">
+                      {activity.promptExample.enrichedLabel || 'Prompt enriquecido com a turma:'}
+                    </span>
+                    {onCopyPrompt && (
+                      <button
+                        onClick={() =>
+                          onCopyPrompt(
+                            activity.promptExample.enriched,
+                            'Prompt enriquecido copiado!'
+                          )
+                        }
+                        className="text-[11px] text-blue-700 hover:text-blue-900 font-medium flex items-center gap-1 px-2 py-0.5 rounded-md hover:bg-blue-50 transition-colors cursor-pointer"
+                        title="Copiar prompt enriquecido"
+                      >
+                        <Copy className="w-3 h-3" />
+                        <span>Copiar</span>
+                      </button>
+                    )}
+                  </div>
+                  <p className="text-xs sm:text-[13px] text-slate-800 bg-blue-50/50 p-2.5 rounded-lg border border-blue-100 font-mono leading-relaxed">
+                    "{activity.promptExample.enriched}"
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Section: Produto Final e Ferramentas Recomendadas */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">

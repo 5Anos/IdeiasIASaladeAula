@@ -1,0 +1,748 @@
+# EXECUÇÃO DE CORREÇÕES PEDAGÓGICAS — SUBSTITUIÇÃO DIRETA DOS TEXTOS
+
+Trabalha diretamente no projeto existente, nos conteúdos das 20 atividades.
+
+**ATENÇÃO: ESTE É UM PEDIDO DE EXECUÇÃO, NÃO DE ANÁLISE.**
+
+Não voltes a analisar as atividades. Não apresentes sugestões. Não reformules as instruções deste pedido. Substitui diretamente os campos indicados pelos textos finais fornecidos abaixo.
+
+## REGRAS OBRIGATÓRIAS
+
+1. Mantém as 20 atividades, os respetivos IDs, títulos, disciplinas, anos de escolaridade, ferramentas e restantes características que não sejam explicitamente referidas neste pedido.
+2. Não elimines atividades, etapas, páginas ou funcionalidades.
+3. Não alteres, apagues, ocultes ou modifiques a Engenharia Pedagógica, incluindo os seus conteúdos e funcionalidades.
+4. Não alteres o design, a navegação, a arquitetura ou qualquer outra funcionalidade da plataforma.
+5. Altera apenas os campos especificados neste pedido.
+6. Substitui integralmente as etapas antigas pelas novas etapas aqui fornecidas.
+7. Copia os textos das descrições exatamente como estão escritos. Não os resumas, não os encurtes e não os substituas por versões tuas.
+8. Mantém o Português de Portugal.
+9. Atualiza a duração total de cada atividade para corresponder aos tempos indicados.
+10. Não acrescentes tarefas, etapas ou recursos que não estejam previstos nos textos seguintes.
+
+---
+
+# ALTERAÇÕES A EXECUTAR
+
+## ATIVIDADE 1 — A IA Desenha o que Eu Imagino
+
+**Campo `duration`:**
+
+Substituir por:
+
+`2 aulas (90 minutos)`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Imaginação e vocabulário descritivo | 15 min**
+
+`Cada aluno imagina uma personagem ou um objeto insólito, por exemplo, um peixe com rodas ou um lápis voador. De seguida, descreve oralmente ou por escrito o que imaginou, identificando características como a cor, o tamanho, a forma e outros pormenores. O professor apoia a utilização de adjetivos adequados e regista no quadro algumas das descrições apresentadas.`
+
+**Etapa 2 — Construção do pedido e geração da imagem | 20 min**
+
+`Em grande grupo, os alunos selecionam uma das ideias apresentadas e ajudam a construir uma descrição mais completa. O professor introduz o pedido na ferramenta de geração de imagens e projeta o resultado. Os alunos observam a relação entre as palavras utilizadas e a imagem produzida, identificando a influência das instruções no resultado.`
+
+**Etapa 3 — Comparação entre a intenção e o resultado | 20 min**
+
+`A turma compara a imagem gerada com a descrição inicial. Identifica os elementos que correspondem ao que foi pedido, os pormenores que estão em falta e as características que foram interpretadas de forma diferente. Com a orientação do professor, os alunos sugerem uma alteração à descrição e observam se o resultado se aproxima mais da ideia inicial.`
+
+**Etapa 4 — Criação do desenho individual | 25 min**
+
+`Cada aluno realiza manualmente, numa folha de papel, a sua própria representação da personagem ou do objeto imaginado. O desenho deve refletir as escolhas criativas do aluno, não sendo necessário reproduzir a imagem gerada pela IA. O professor incentiva a expressão individual e a utilização dos elementos descritivos trabalhados.`
+
+**Etapa 5 — Partilha e reflexão | 10 min**
+
+`Alguns alunos apresentam os seus desenhos e explicam as diferenças entre a sua representação, a imagem gerada pela IA e a ideia que tinham inicialmente. A turma identifica o papel das palavras na comunicação de uma ideia e reconhece que a decisão criativa e a representação final pertencem ao autor.`
+
+## ATIVIDADE 2 — A IA Adivinha o Animal
+
+**Campo `duration`:**
+
+Substituir por:
+
+`2 aulas (90 minutos)`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Escolha do animal e preparação das pistas | 15 min**
+
+`Em pares, os alunos escolhem um animal estudado em Estudo do Meio. Consultam o manual escolar ou os materiais disponibilizados pelo professor para confirmar as suas características. Registam três pistas, começando por uma característica mais geral e avançando para características mais específicas, sem revelar diretamente o nome do animal.`
+
+**Etapa 2 — Construção e organização das pistas | 20 min**
+
+`Os alunos organizam as pistas de acordo com a seguinte sequência: habitat ou grupo a que pertence; revestimento, alimentação ou forma de locomoção; característica distintiva que permita identificar o animal. Revêm as frases para garantir que são claras, cientificamente corretas e adequadas ao nível de escolaridade.`
+
+**Etapa 3 — Desafio com a IA | 15 min**
+
+`Com a mediação do professor, cada par apresenta as pistas ao chatbot, uma de cada vez. Os alunos observam as respostas dadas e registam em que momento o sistema identifica o animal. Não devem alterar as pistas apenas para obter uma resposta correta: o objetivo é verificar se a informação fornecida permite chegar à solução.`
+
+**Etapa 4 — Verificação das respostas | 20 min**
+
+`Os alunos comparam as respostas da IA com a informação do manual escolar. Quando o chatbot apresenta uma resposta incorreta ou uma característica duvidosa, identificam a afirmação e verificam-na nas fontes disponibilizadas. Distinguem uma pista pouco clara de uma resposta incorreta do sistema.`
+
+**Etapa 5 — Produção dos cartões e partilha | 20 min**
+
+`Cada par prepara um cartão com as três pistas revistas, a resposta correta e uma ilustração do animal. Os cartões são reunidos num baralho coletivo para utilização num jogo de adivinhas entre colegas. Antes de integrar o baralho, os pares confirmam que todas as pistas estão cientificamente corretas.`
+
+## ATIVIDADE 3 — Criar Sons de um Mundo Imaginário
+
+**Campo `duration`:**
+
+Substituir por:
+
+`2 aulas (90 minutos)`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Imaginação do ambiente sonoro | 15 min**
+
+`Em pequenos grupos, os alunos imaginam um lugar que não existe na realidade, como uma floresta encantada, uma cidade submarina ou um planeta distante. Identificam os sons que poderiam existir nesse espaço, registando pelo menos três exemplos e descrevendo as suas características.`
+
+**Etapa 2 — Preparação da descrição e geração do áudio | 20 min**
+
+`Cada grupo organiza as suas ideias numa descrição que indique o ambiente pretendido, os sons principais e a atmosfera que deseja transmitir. O professor revê o pedido e introdu-lo na ferramenta de geração de áudio. A faixa produzida é reproduzida para o grupo ou para a turma, através do equipamento de som disponível.`
+
+**Etapa 3 — Audição atenta e interpretação | 25 min**
+
+`Os alunos escutam a faixa e identificam os sons que conseguem reconhecer. Registam se os sons correspondem ao ambiente imaginado, se existem elementos inesperados e que sensações ou emoções a composição transmite. O professor orienta a identificação de características como o timbre, a intensidade e a duração dos sons.`
+
+**Etapa 4 — Representação visual do mundo sonoro | 20 min**
+
+`Cada grupo desenha o ambiente imaginado, representando os elementos que associa aos sons escutados. Acrescenta uma legenda com a identificação dos principais sons e explica a relação entre a representação visual e a paisagem sonora criada.`
+
+**Etapa 5 — Partilha e síntese | 10 min**
+
+`Os grupos apresentam os seus desenhos e descrevem os sons que escolheram para representar o ambiente. A turma identifica as diferenças entre as imagens mentais de cada grupo e as interpretações sugeridas pelo áudio.`
+
+## ATIVIDADE 4 — O Arquiteto das Formas Geométricas
+
+**Campo `duration`:**
+
+Substituir por:
+
+`2 aulas (90 minutos)`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Construção de estruturas geométricas | 15 min**
+
+`Em pequenos grupos, os alunos exploram sólidos geométricos de madeira, plástico ou outros materiais manipuláveis. Cada grupo constrói uma pequena estrutura, selecionando os sólidos que pretende utilizar e identificando as suas características.`
+
+**Etapa 2 — Descrição matemática da construção | 20 min**
+
+`Os alunos descrevem oralmente ou por escrito a estrutura construída, indicando os sólidos utilizados, as respetivas quantidades, as cores e a posição de cada elemento. O professor apoia a utilização correta do vocabulário geométrico e espacial.`
+
+**Etapa 3 — Geração da representação com IA | 20 min**
+
+`A turma escolhe uma das construções realizadas e transforma a descrição num pedido para um gerador de imagens. O professor introduz o pedido e projeta o resultado. Os alunos comparam a representação produzida com o modelo físico e identificam as diferenças existentes.`
+
+**Etapa 4 — Verificação e representação corrigida | 25 min**
+
+`Os alunos verificam a quantidade e a identificação dos sólidos representados na imagem. Utilizam os materiais manipuláveis para confirmar as características geométricas e identificam eventuais erros de representação. De seguida, desenham no caderno a estrutura que pretendiam construir, identificando os sólidos utilizados.`
+
+**Etapa 5 — Partilha e sistematização | 10 min**
+
+`Cada grupo apresenta a sua construção e identifica os sólidos geométricos utilizados. A turma sistematiza as diferenças entre figuras planas e sólidos geométricos e reflete sobre a importância de utilizar instruções matemáticas claras.`
+
+## ATIVIDADE 5 — A Fábula Interativa: «E se fosse eu?»
+
+**Campo `duration`:**
+
+Substituir por:
+
+`2 aulas (90 minutos)`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Leitura da fábula e identificação do conflito | 15 min**
+
+`A turma lê a fábula selecionada e identifica as personagens, a situação inicial, o problema e o desenlace. O professor orienta a discussão sobre as decisões das personagens e apresenta o desafio de imaginar um final alternativo em que a cooperação tenha um papel importante.`
+
+**Etapa 2 — Criação de um final alternativo | 20 min**
+
+`Em pares, os alunos apresentam ideias para um novo desenlace. Com a mediação do professor, solicitam à IA duas propostas diferentes para o final da história, mantendo as personagens e o conflito central da fábula original.`
+
+**Etapa 3 — Comparação das propostas | 15 min**
+
+`Os pares leem as duas propostas e comparam-nas com a história original. Identificam qual das propostas apresenta maior coerência com as personagens, melhor desenvolve a cooperação e oferece um desenlace adequado. A IA é utilizada como fonte de ideias, não como autora da versão final.`
+
+**Etapa 4 — Escrita e revisão do final escolhido | 25 min**
+
+`Cada par escreve o seu próprio final, selecionando e transformando as ideias que considera relevantes. Revê o texto, verificando a sequência dos acontecimentos, a pontuação dos diálogos e a correção linguística em Português de Portugal. No final, escreve uma moral adequada ao novo desenlace.`
+
+**Etapa 5 — Leitura expressiva e partilha | 15 min**
+
+`Os pares apresentam oralmente o final criado, distribuindo as falas pelas personagens. A turma identifica as diferenças entre a versão original e as versões alternativas e comenta a mensagem transmitida pela nova moral.`
+
+## ATIVIDADE 6 — Transformar Histórias em Arte com IA
+
+**Campo `duration`:**
+
+Substituir por:
+
+`2 aulas (90 minutos)`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Planificação da narrativa | 15 min**
+
+`Cada aluno ou grupo escolhe uma ideia para uma história e preenche uma planificação simples, identificando as personagens, o espaço, a situação inicial, o problema e o desenlace. A planificação deve permitir organizar a sequência dos acontecimentos antes de iniciar a escrita.`
+
+**Etapa 2 — Escrita da primeira versão | 20 min**
+
+`Os alunos escrevem a primeira versão da narrativa, respeitando a sequência dos acontecimentos e utilizando conectores temporais adequados. Como referência, o texto deverá ter entre 80 e 120 palavras, podendo o professor ajustar a extensão às características da turma e ao ano de escolaridade.`
+
+**Etapa 3 — Criação de uma ilustração | 15 min**
+
+`Os alunos selecionam uma cena importante da sua história e descrevem-na com clareza. O professor utiliza essa descrição para gerar uma ilustração. A imagem deve representar uma situação presente no texto e não acrescentar acontecimentos que não tenham sido escritos pelos alunos.`
+
+**Etapa 4 — Revisão do texto e legenda | 25 min**
+
+`Os alunos relêem a narrativa e verificam a coerência da história, a organização dos parágrafos, a pontuação e a utilização do vocabulário. De seguida, escrevem uma legenda para a ilustração e confirmam se a imagem corresponde à cena descrita no texto. A narrativa mantém-se da autoria dos alunos.`
+
+**Etapa 5 — Partilha das histórias | 15 min**
+
+`Os alunos apresentam as suas narrativas e respetivas ilustrações. Explicam a cena escolhida e a relação entre o texto e a imagem. Os trabalhos podem ser reunidos num livro coletivo da turma, em papel ou em formato digital, desde que o tempo disponível o permita.`
+
+## ATIVIDADE 7 — Explorando a História da Terra com Inteligência Artificial
+
+**Campo `duration`:**
+
+Substituir por:
+
+`2 aulas (90 minutos)`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Investigação do período geológico | 20 min**
+
+`Cada grupo recebe ou escolhe um período geológico. Consulta o manual escolar e as fontes científicas selecionadas pelo professor para identificar as características do clima, da vegetação, dos animais e dos ambientes existentes nesse período. Regista a informação essencial, indicando as fontes consultadas.`
+
+**Etapa 2 — Preparação da descrição científica | 15 min**
+
+`Com base na informação recolhida, cada grupo redige uma descrição para gerar uma representação visual do ambiente estudado. A descrição deve incluir apenas espécies e características compatíveis com o período geológico em causa. O professor ajuda a transformar a informação científica num pedido claro para a ferramenta de geração de imagens.`
+
+**Etapa 3 — Geração e observação da imagem | 20 min**
+
+`O professor ou os alunos, de acordo com as condições de utilização da ferramenta, geram a imagem pretendida. Os grupos observam o resultado e identificam os elementos que precisam de ser confirmados, distinguindo aquilo que parece correto daquilo que ainda não foi validado.`
+
+**Etapa 4 — Validação científica | 25 min**
+
+`Os grupos confrontam a imagem com o manual escolar e com as fontes científicas consultadas. Preenchem a ficha de validação, registando os elementos confirmados, os elementos que não conseguiram confirmar e as afirmações ou representações que identificaram como incorretas ou anacrónicas. Cada conclusão deve ser justificada com base na fonte consultada.`
+
+**Etapa 5 — Apresentação das conclusões | 10 min**
+
+`Cada grupo apresenta a imagem, identifica o período geológico estudado e explica dois elementos que foram validados ou corrigidos. A turma reflete sobre as limitações da IA na representação de informação científica.`
+
+## ATIVIDADE 8 — Estratégias Matemáticas com IA
+
+**Campo `duration`:**
+
+Manter:
+
+`1 aula (50 minutos)`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Resolução individual | 10 min**
+
+`Cada aluno resolve o desafio de cálculo mental proposto pelo professor e regista no caderno os passos do seu raciocínio. Não deve consultar a IA antes de concluir a sua própria resolução.`
+
+**Etapa 2 — Partilha das estratégias dos alunos | 15 min**
+
+`Dois ou três alunos apresentam estratégias diferentes para resolver o mesmo cálculo. Explicam cada passo e justificam as escolhas efetuadas. O professor regista no quadro as estratégias, destacando as operações e propriedades matemáticas utilizadas.`
+
+**Etapa 3 — Exploração de estratégias alternativas com IA | 15 min**
+
+`Com a mediação do professor, a turma solicita à IA duas estratégias diferentes das já apresentadas. Os alunos analisam os passos sugeridos e verificam se os cálculos estão corretos. As estratégias só são consideradas válidas depois de confirmadas matematicamente.`
+
+**Etapa 4 — Comparação e justificação | 10 min**
+
+`Os alunos comparam a sua estratégia com as alternativas apresentadas pela IA. Identificam semelhanças e diferenças e justificam qual consideram mais adequada para aquele cálculo, tendo em conta a clareza, a validade matemática e a facilidade de execução. Não existe a obrigação de escolher a estratégia mais rápida.`
+
+## ATIVIDADE 9 — Sólidos Geométricos e Simetria
+
+**Campo `duration`:**
+
+Substituir por:
+
+`2 aulas (90 minutos)`
+
+**Substituir os objetivos de aprendizagem por:**
+
+- `Identificar e contar faces, vértices e arestas em sólidos geométricos, reconhecendo as características dos poliedros estudados.`
+- `Verificar a Relação de Euler (F + V = A + 2) em poliedros convexos selecionados.`
+- `Identificar e representar eixos de simetria em figuras planas, recorrendo a materiais manipuláveis ou a ferramentas de geometria dinâmica.`
+- `Formular e resolver enigmas geométricos com vocabulário matemático correto.`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Exploração e identificação dos sólidos | 15 min**
+
+`Em pequenos grupos, os alunos observam e manipulam modelos físicos de sólidos geométricos. Identificam as faces, os vértices e as arestas e registam as respetivas quantidades numa tabela. O professor seleciona poliedros convexos adequados ao nível de escolaridade para a exploração da Relação de Euler.`
+
+**Etapa 2 — Verificação das propriedades geométricas | 20 min**
+
+`Os alunos verificam a relação entre o número de faces, vértices e arestas dos sólidos selecionados, aplicando a Relação de Euler (F + V = A + 2). As contagens são confirmadas através da manipulação dos modelos físicos. O professor esclarece que esta relação é explorada, nesta atividade, para os poliedros convexos selecionados.`
+
+**Etapa 3 — Criação de enigmas geométricos | 15 min**
+
+`Cada grupo escolhe um sólido e prepara um enigma com pistas sobre as suas características, sem revelar o nome. Com o apoio da IA, pode melhorar a clareza da formulação, mas deve verificar todas as propriedades matemáticas antes de concluir o enigma.`
+
+**Etapa 4 — Troca e resolução dos desafios | 25 min**
+
+`Os grupos trocam os enigmas e tentam identificar os sólidos descritos. Justificam as respostas através das características geométricas e comparam as soluções com os modelos físicos disponíveis. Quando necessário, utilizam o espelho ou o GeoGebra para identificar e confirmar eixos de simetria nas figuras planas selecionadas.`
+
+**Etapa 5 — Sistematização das aprendizagens | 10 min**
+
+`A turma revê as características dos sólidos estudados, a relação entre faces, vértices e arestas e os eixos de simetria identificados. Cada aluno regista uma conclusão sobre uma propriedade geométrica que conseguiu verificar.`
+
+**Etapa 6 — Transições e organização | 5 min**
+
+`Tempo de reserva para distribuir e recolher materiais, organizar os grupos e realizar as transições entre tarefas. Não corresponde a uma nova atividade de aprendizagem.`
+
+**Eliminar das etapas e dos textos de apoio qualquer referência a um questionário destinado a testar a IA através de cortes e rotações tridimensionais.** Não eliminar a exploração da simetria, que faz parte do título e dos objetivos da atividade.
+
+## ATIVIDADE 10 — Utilização Responsável da IA
+
+**Campo `duration`:**
+
+Manter:
+
+`2 aulas (90 minutos)`
+
+**Substituir o campo `briefDescription` por:**
+
+`Os alunos analisam situações de utilização da Inteligência Artificial em contexto escolar e quotidiano, identificando benefícios, riscos e responsabilidades. Através de casos práticos, materiais informativos e orientações institucionais da CNPD e da SeguraNet, discutem a proteção de dados pessoais, a privacidade, a fiabilidade da informação e a honestidade académica. No final, elaboram uma carta de princípios para uma utilização responsável da IA na escola.`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Análise de situações de utilização da IA | 15 min**
+
+`O professor apresenta situações concretas de utilização da IA, como pedir ajuda num trabalho escolar, introduzir dados pessoais numa ferramenta ou utilizar uma resposta gerada sem a verificar. Em pequenos grupos, os alunos identificam os benefícios e os possíveis riscos de cada situação.`
+
+**Etapa 2 — Consulta de fontes de informação | 20 min**
+
+`Os grupos consultam excertos de materiais informativos da SeguraNet e da Comissão Nacional de Proteção de Dados, previamente selecionados pelo professor. Identificam orientações relacionadas com a proteção de dados pessoais, a utilização de imagens, a privacidade e a segurança dos menores. Registam as recomendações relevantes e a respetiva fonte.`
+
+**Etapa 3 — Identificação de riscos e consequências | 20 min**
+
+`Cada grupo analisa as situações apresentadas inicialmente e identifica os riscos associados a cada comportamento. Discute as consequências da partilha de dados pessoais, da utilização de informação não verificada, da cópia de conteúdos gerados por IA e da dependência excessiva destas ferramentas.`
+
+**Etapa 4 — Elaboração de regras de utilização responsável | 20 min**
+
+`Cada grupo propõe regras claras para a utilização da IA em contexto escolar. As regras devem abranger a proteção da privacidade, a verificação da informação, a identificação do recurso à IA e o respeito pelo trabalho dos outros. As propostas devem ser fundamentadas nas orientações consultadas.`
+
+**Etapa 5 — Carta de compromisso da turma | 15 min**
+
+`A turma apresenta e discute as regras propostas pelos grupos. Em conjunto, seleciona as mais relevantes e redige a versão final da Carta de Compromisso Digital da Turma, que estabelece princípios de utilização responsável da Inteligência Artificial na escola.`
+
+**No campo `promptExample`, substituir o texto do pedido enriquecido por:**
+
+`Apresenta três situações fictícias de utilização da Inteligência Artificial por alunos do 5.º ano. Para cada situação, identifica um possível benefício, um risco e uma forma responsável de agir. Não afirmes que conheces ou controlas o tratamento dos dados pessoais dos utilizadores. Escreve em Português de Portugal, com linguagem adequada à idade dos alunos.`
+
+## ATIVIDADE 11 — A água está em tudo: ciclo da água
+
+**Campo `duration`:**
+
+Manter:
+
+`2 aulas (100 minutos)`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Representação do ciclo da água | 15 min**
+
+`Individualmente, os alunos representam no caderno o ciclo da água, identificando os principais processos: evaporação, condensação, precipitação, infiltração, escoamento e transpiração. O professor esclarece dúvidas sobre os estados físicos da água e os processos envolvidos.`
+
+**Etapa 2 — Formulação de perguntas científicas | 25 min**
+
+`Em pequenos grupos, os alunos selecionam dois aspetos do ciclo da água sobre os quais pretendem construir perguntas. Com o apoio da IA, podem obter propostas de formulação para perguntas de escolha múltipla. Cada grupo deve produzir apenas duas perguntas, evitando a criação de um número excessivo de questões.`
+
+**Etapa 3 — Validação e construção do desafio | 25 min**
+
+`Os alunos verificam cientificamente as duas perguntas, as opções de resposta e as respetivas justificações, consultando o manual escolar e os materiais fornecidos pelo professor. Corrigem eventuais erros, garantem que existe uma única resposta correta e passam as perguntas validadas para a ficha de desafio do grupo.`
+
+**Etapa 4 — Troca e resolução dos desafios | 25 min**
+
+`Os grupos trocam as fichas e respondem às perguntas dos colegas. Cada grupo deve justificar as respostas escolhidas e assinalar eventuais ambiguidades ou incorreções. No final, os autores das perguntas analisam o feedback recebido e esclarecem as dúvidas identificadas.`
+
+**Etapa 5 — Síntese das aprendizagens | 10 min**
+
+`A turma revê os principais processos do ciclo da água e as mudanças de estado físico envolvidas. O professor esclarece as dificuldades identificadas durante a resolução dos desafios e sistematiza os conceitos essenciais.`
+
+**No campo `essentialVsExtension.essential`, substituir por:**
+
+`Representação do ciclo da água, elaboração e validação de duas perguntas por grupo e troca das fichas de desafio entre pares.`
+
+## ATIVIDADE 12 — Equações em Ação
+
+**Campo `duration`:**
+
+Manter:
+
+`2 aulas (90 minutos)`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Compreensão da equação e definição do contexto | 15 min**
+
+`O professor apresenta a equação 3x + 15 = 60 e orienta a identificação dos seus elementos. Os alunos interpretam o significado da incógnita e discutem situações do quotidiano que possam ser representadas por esta expressão, identificando o valor fixo, o custo variável e o total.`
+
+**Etapa 2 — Construção do enunciado do problema | 20 min**
+
+`Em pequenos grupos, os alunos utilizam a IA para criar um enunciado contextualizado que corresponda à equação apresentada. O texto deve permitir identificar uma quantia fixa de 15 €, um custo de 3 € por cada unidade e um total de 60 €. A equação e a solução não devem aparecer no enunciado destinado aos colegas.`
+
+**Etapa 3 — Resolução e verificação matemática | 25 min**
+
+`Os alunos resolvem a equação no caderno, aplicando os princípios de equivalência: 3x + 15 = 60; 3x = 60 - 15; 3x = 45; x = 15. Verificam a solução por substituição na equação inicial e interpretam o resultado no contexto do problema. Confirmam também se a situação apresentada é coerente com o resultado obtido.`
+
+**Etapa 4 — Troca e resolução dos problemas | 20 min**
+
+`Os grupos trocam os enunciados, sem mostrar a equação nem a solução. Cada grupo identifica a incógnita, constrói a equação correspondente e resolve o problema. No final, comparam a resolução obtida com a solução preparada pelo grupo que criou o enunciado.`
+
+**Etapa 5 — Síntese individual | 10 min**
+
+`Cada aluno regista no caderno a equação trabalhada, os passos essenciais da resolução e o significado da solução no contexto do problema. O professor esclarece dificuldades relacionadas com a tradução entre linguagem natural e linguagem algébrica.`
+
+**No campo `promptExample.enriched`, substituir por:**
+
+`Cria o enunciado de uma situação-problema para alunos do 7.º ano que corresponda exatamente à equação 3x + 15 = 60. O contexto deve representar uma taxa fixa de inscrição de 15 euros e um custo adicional de 3 euros por cada jogo disputado, sendo o custo total de 60 euros. Não incluas a equação nem a solução no enunciado. Utiliza uma situação plausível e escreve em Português de Portugal.`
+
+**No campo `finalProduct`, substituir por:**
+
+`Ficha «O Desafio das Equações da Turma», contendo o enunciado criado pelo grupo, a equação correspondente, os passos da resolução e a interpretação da solução no contexto apresentado.`
+
+## ATIVIDADE 13 — Mudanças Climáticas e Ciclo da Água
+
+**Campo `duration`:**
+
+Manter:
+
+`2 aulas (100 minutos)`
+
+**Substituir o campo `briefDescription` por:**
+
+`Os alunos analisam dados reais de precipitação em Portugal, disponibilizados pelo professor a partir de uma estação meteorológica identificada e de uma fonte verificável. Organizam os valores numa tabela, constroem um gráfico e interpretam a variabilidade observada ao longo dos anos. Com apoio da IA, podem organizar informação proveniente de documentos oficiais, mas verificam os dados nas fontes originais. A partir da análise, propõem medidas concretas de utilização eficiente da água na escola, distinguindo as variações meteorológicas de conclusões sobre tendências climáticas.`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Leitura e análise dos dados | 15 min**
+
+`O professor disponibiliza uma tabela com os valores anuais de precipitação de uma estação meteorológica identificada, indicando a origem dos dados e o período analisado. Em pequenos grupos, os alunos observam os valores, identificam os anos com maior e menor precipitação e registam as primeiras observações.`
+
+**Etapa 2 — Construção do gráfico | 25 min**
+
+`Os grupos organizam os dados numa folha de cálculo ou em papel milimétrico e constroem um gráfico adequado à representação da precipitação anual. Identificam o título, os eixos, as unidades e a escala utilizada. Antes de prosseguir, confirmam se os valores representados correspondem aos dados fornecidos.`
+
+**Etapa 3 — Interpretação dos resultados | 25 min**
+
+`Os alunos analisam o gráfico, identificando anos com valores mais elevados ou mais reduzidos e observando as variações ao longo do período. Distinguem oscilações anuais de tendências de longo prazo. Não devem concluir que existe uma tendência de alteração climática apenas com base numa série curta ou numa única estação meteorológica. As conclusões devem limitar-se ao que os dados permitem afirmar.`
+
+**Etapa 4 — Propostas de utilização eficiente da água | 20 min**
+
+`Com base nos problemas de gestão da água discutidos na aula, cada grupo propõe duas medidas concretas para melhorar a utilização da água na escola. Para cada medida, explica o que deve ser feito, onde pode ser aplicada e que benefício se pretende alcançar. Não devem atribuir valores quantitativos à poupança sem dados que permitam calculá-la.`
+
+**Etapa 5 — Apresentação e síntese | 15 min**
+
+`Cada grupo apresenta o gráfico, uma conclusão fundamentada nos dados e as duas medidas propostas. A turma compara as conclusões e discute a importância de utilizar dados fiáveis antes de formular afirmações sobre precipitação, seca e alterações climáticas.`
+
+**No campo `essentialVsExtension.essential`, substituir por:**
+
+`Análise de uma tabela de precipitação anual, construção de um gráfico, interpretação dos dados e apresentação de duas propostas exequíveis de utilização eficiente da água na escola.`
+
+## ATIVIDADE 14 — Conversas Iluminadas
+
+**Campo `duration`:**
+
+Manter:
+
+`3 aulas (150 minutos)`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Investigação das figuras do Iluminismo | 30 min**
+
+`Cada grupo seleciona duas figuras do Iluminismo entre as personalidades indicadas pelo professor. Consulta o manual escolar e os excertos documentais disponibilizados para identificar as principais ideias de cada pensador. Regista as posições relativas à liberdade, à organização do poder, à sociedade ou à educação, de acordo com as figuras selecionadas.`
+
+**Etapa 2 — Construção do diálogo | 35 min**
+
+`Com base na investigação, os alunos elaboram um diálogo curto entre as duas figuras históricas. Podem recorrer à IA para obter sugestões de perguntas, argumentos ou organização das falas. O diálogo deve apresentar ideias historicamente fundamentadas, sem atribuir aos pensadores citações que não estejam documentadas. Os alunos são responsáveis pela seleção e redação da versão final.`
+
+**Etapa 3 — Revisão e validação histórica | 25 min**
+
+`Os grupos reveem o diálogo com o apoio do professor e confrontam as ideias apresentadas com as fontes consultadas. Corrigem eventuais erros históricos, conceitos inadequados e afirmações anacrónicas. Assinalam no guião as fontes utilizadas para fundamentar as ideias dos intervenientes.`
+
+**Etapa 4 — Preparação da apresentação | 20 min**
+
+`Os alunos distribuem as personagens e ensaiam a leitura dramatizada. Verificam a sequência das falas, a clareza da comunicação e a duração da apresentação. O professor ajuda a organizar a ordem das apresentações e a assegurar que todos os grupos dispõem de tempo adequado.`
+
+**Etapa 5 — Apresentação dos diálogos | 30 min**
+
+`Os grupos apresentam os seus diálogos à turma. Cada apresentação deve ter aproximadamente quatro minutos, ajustando-se o número de grupos ao tempo disponível. Os colegas identificam as ideias históricas centrais e registam uma diferença entre as posições dos dois pensadores.`
+
+**Etapa 6 — Síntese | 10 min**
+
+`A turma identifica as ideias do Iluminismo que surgiram nos diferentes diálogos e retoma os conceitos estudados. O professor esclarece eventuais imprecisões e relaciona as ideias apresentadas com o contexto histórico do século XVIII.`
+
+**No campo `essentialVsExtension.essential`, substituir por:**
+
+`Investigação documental de duas figuras do Iluminismo por grupo, elaboração de um diálogo curto, validação histórica com o professor e apresentação oral à turma.`
+
+## ATIVIDADE 15 — Arte, Criatividade e Tecnologia
+
+**Campo `duration`:**
+
+Manter:
+
+`2 aulas (100 minutos)`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Escolha do tema e planeamento do cartaz | 15 min**
+
+`Em pares, os alunos escolhem um tema de sensibilização social ou ambiental. Definem a mensagem principal que pretendem transmitir e fazem um esboço simples da composição do cartaz, identificando o elemento visual principal e o espaço destinado ao título ou slogan.`
+
+**Etapa 2 — Geração da imagem de apoio | 20 min**
+
+`Os alunos elaboram uma descrição da imagem que pretendem utilizar no cartaz. Com apoio do professor, utilizam uma ferramenta de geração de imagens para obter uma proposta visual. A imagem gerada deve servir de ponto de partida e pode ser modificada ou substituída pelos alunos.`
+
+**Etapa 3 — Composição e edição do cartaz | 35 min**
+
+`Os pares integram a imagem selecionada num editor gráfico e constroem o cartaz. Inserem o título ou slogan, organizam os elementos e ajustam o tamanho do texto, as cores e a posição dos componentes. Devem assegurar que a mensagem é legível e que existe uma relação clara entre a imagem e o tema escolhido.`
+
+**Etapa 4 — Análise e partilha | 20 min**
+
+`Cada par apresenta o cartaz e explica as opções tomadas. A turma observa se a mensagem é percetível, se o texto se lê facilmente e se a imagem contribui para a compreensão do tema. Os alunos identificam uma qualidade do trabalho e uma possível melhoria.`
+
+**Etapa 5 — Reflexão sobre o processo | 10 min**
+
+`Os alunos comparam a imagem inicialmente gerada com o cartaz final e explicam as alterações que realizaram. Identificam as decisões que foram tomadas por si e refletem sobre o papel da IA como ferramenta de apoio à criação visual.`
+
+**No campo `evaluationCriteria`, substituir a lista por:**
+
+- `Clareza e adequação da mensagem ao tema escolhido.`
+- `Legibilidade do texto e contraste suficiente entre os elementos.`
+- `Relação coerente entre a imagem e a mensagem do cartaz.`
+- `Capacidade de justificar as escolhas e alterações realizadas pelos alunos.`
+
+Não exigir a aplicação simultânea da regra dos terços, hierarquia visual, harmonia cromática e outros princípios de design como se todos fossem obrigatórios em qualquer cartaz.
+
+## ATIVIDADE 16 — Texto de Jornal: Artigo de Opinião
+
+**Campo `duration`:**
+
+Manter:
+
+`2 aulas (100 minutos)`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Escolha do tema e formulação da tese | 15 min**
+
+`Cada aluno escolhe um tema proposto pelo professor ou previamente acordado com a turma. Formula uma posição clara sobre o tema e regista dois argumentos que sustentem a sua opinião. Identifica também possíveis evidências ou exemplos que possam apoiar esses argumentos.`
+
+**Etapa 2 — Escrita da primeira versão | 35 min**
+
+`Cada aluno redige individualmente a primeira versão do artigo de opinião, organizando o texto em introdução, desenvolvimento argumentativo e conclusão. Como referência, o texto deverá ter entre 150 e 200 palavras, podendo o professor ajustar a extensão ao perfil da turma. A primeira versão deve ser escrita pelo aluno, sem recurso a ferramentas de geração automática de texto.`
+
+**Etapa 3 — Consulta da IA para obter feedback | 20 min**
+
+`O aluno seleciona um excerto do seu texto e solicita à IA comentários sobre a clareza da tese, a coerência dos argumentos, a existência de repetições e possíveis contra-argumentos. A instrução deve indicar expressamente que a ferramenta não pode reescrever o texto nem produzir uma versão alternativa. O objetivo é obter perguntas e observações que ajudem o aluno a rever o seu trabalho.`
+
+**Etapa 4 — Revisão e reescrita autónoma | 20 min**
+
+`Cada aluno analisa as observações recebidas e decide quais são pertinentes. Revê o seu artigo, melhora as passagens que considerar necessário e confirma a correção linguística, a organização das ideias e a utilização de conectores. A versão final deve manter a autoria e a voz do aluno.`
+
+**Etapa 5 — Registo das alterações | 10 min**
+
+`Cada aluno regista duas alterações que realizou e justifica por que razão as considerou importantes. Entrega a primeira versão, a versão final e a breve reflexão sobre o processo de revisão.`
+
+**No campo `promptExample.enriched`, substituir por:**
+
+`Lê o seguinte excerto do meu artigo de opinião, escrito em Português de Portugal. Não reescrevas o texto, não acrescentes frases e não produzas uma versão alternativa. Indica apenas: 1) se a minha opinião principal está clara; 2) se os argumentos apresentados são coerentes com essa opinião; 3) se existem repetições ou problemas de ligação entre frases; 4) que contra-argumento relevante poderia ser considerado. Apresenta comentários curtos, sem fazeres alterações ao texto original.`
+
+## ATIVIDADE 17 — Música Educativa com IA
+
+**Campo `duration`:**
+
+Manter:
+
+`2 aulas (100 minutos)`
+
+**Substituir o campo `briefDescription` por:**
+
+`Os alunos consolidam conteúdos de Português através da criação coletiva de uma canção educativa com apoio de ferramentas de Inteligência Artificial. Partem de conceitos e regras gramaticais previamente trabalhados, elaboram uma letra simples e verificam a correção dos conteúdos antes de gerar a música. Após a audição, realizam exercícios individuais de aplicação para confirmar se compreenderam e conseguem mobilizar os conhecimentos trabalhados.`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Seleção e revisão do conteúdo gramatical | 15 min**
+
+`O professor seleciona um conteúdo gramatical que a turma necessite de consolidar. Apresenta as regras e os exemplos fundamentais e constrói, com os alunos, uma lista de conceitos que devem estar presentes na letra da canção. A turma confirma a correção dos exemplos antes de iniciar a composição.`
+
+**Etapa 2 — Criação da letra | 25 min**
+
+`Em grande grupo ou em pequenos grupos, os alunos propõem versos e um refrão que ajudem a recordar o conteúdo gramatical. Podem recorrer à IA para obter sugestões de rimas ou de organização dos versos, mas todas as afirmações gramaticais devem ser verificadas. Não é obrigatório utilizar uma métrica poética específica.`
+
+**Etapa 3 — Validação científica e linguística da letra | 20 min**
+
+`A turma revê a letra, confirmando se as definições, os exemplos e as regras gramaticais estão corretos. Corrige eventuais erros, expressões ambíguas ou formulações que possam induzir em erro. Só depois desta revisão a letra é considerada pronta para a geração musical.`
+
+**Etapa 4 — Geração e audição da música | 20 min**
+
+`O professor ou os alunos, de acordo com as condições de utilização da ferramenta, introduzem a letra validada no gerador de música. A turma escuta a canção e verifica se as palavras são percetíveis e se a melodia permite acompanhar a letra. Caso necessário, podem ajustar a configuração ou repetir a geração uma vez.`
+
+**Etapa 5 — Aplicação individual das aprendizagens | 15 min**
+
+`Cada aluno resolve individualmente uma pequena ficha com exercícios relacionados com o conteúdo gramatical trabalhado. A ficha permite verificar se os conceitos foram compreendidos e se podem ser aplicados sem depender da canção ou da ferramenta de IA.`
+
+**Etapa 6 — Síntese | 5 min**
+
+`O professor retoma as aprendizagens essenciais e esclarece as dúvidas identificadas nas respostas dos alunos. A turma identifica de que forma a canção ajudou a recordar os conteúdos e reconhece que a música constitui um recurso de apoio, não substituindo o estudo e a aplicação individual.`
+
+Não exigir a composição em redondilha maior nem uma estrutura métrica específica, exceto se essa aprendizagem fizer explicitamente parte dos objetivos curriculares da turma.
+
+**No campo `evaluationCriteria`, substituir a lista por:**
+
+- `Correção dos conceitos e exemplos gramaticais utilizados na letra.`
+- `Participação na elaboração e revisão da letra coletiva.`
+- `Capacidade de aplicar individualmente as aprendizagens nos exercícios propostos.`
+
+## ATIVIDADE 18 — Debate com IA
+
+**Campo `duration`:**
+
+Manter:
+
+`3 aulas (150 minutos)`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Pesquisa e preparação de argumentos | 25 min**
+
+`O professor apresenta o tema do debate e define as duas posições a considerar. Os alunos organizam-se em duas equipas, consultam fontes de informação selecionadas ou validadas e registam argumentos e evidências que sustentem a posição atribuída. Com apoio da IA, podem testar a solidez dos argumentos e antecipar possíveis objeções.`
+
+**Etapa 2 — Construção de argumentos e contra-argumentos | 35 min**
+
+`Cada equipa seleciona os argumentos mais relevantes, identifica possíveis contra-argumentos e prepara respostas fundamentadas. Os alunos verificam os dados e as afirmações utilizadas, recorrendo às fontes consultadas e não apenas às respostas da IA. Organizam as ideias numa ficha de preparação.`
+
+**Etapa 3 — Organização das intervenções | 20 min**
+
+`As equipas distribuem as intervenções pelos participantes e preparam a abertura, a apresentação dos argumentos, as respostas aos argumentos da equipa contrária e a conclusão. Definem-se os tempos de intervenção e as regras de participação, com a orientação do professor.`
+
+**Etapa 4 — Realização do debate | 50 min**
+
+`O debate decorre presencialmente, sob a moderação do professor. Cada equipa apresenta os seus argumentos e responde às intervenções da equipa contrária, respeitando os tempos definidos e as regras de comunicação. Os participantes devem utilizar evidências, ouvir as posições diferentes e evitar ataques pessoais. A IA não é utilizada durante o debate.`
+
+**Etapa 5 — Avaliação e reflexão | 20 min**
+
+`O professor e os alunos analisam o debate com base em critérios de qualidade da argumentação, utilização de evidências, clareza das intervenções, capacidade de resposta e respeito pelo contraditório. Cada aluno regista uma aprendizagem e um aspeto que poderá melhorar numa próxima intervenção. A avaliação não depende da posição defendida, mas da qualidade da argumentação e da participação.`
+
+**No campo `evaluationCriteria`, substituir a lista por:**
+
+- `Clareza e coerência dos argumentos apresentados.`
+- `Utilização de evidências e fontes adequadas para sustentar as afirmações.`
+- `Capacidade de responder a argumentos contrários e de fundamentar as respostas.`
+- `Respeito pelas regras do debate, pelos tempos de intervenção e pelos interlocutores.`
+
+## ATIVIDADE 19 — Rádio Interativa de Turma com IA
+
+**Campo `duration`:**
+
+Manter:
+
+`3 aulas (150 minutos)`
+
+**Substituir o campo `briefDescription` por:**
+
+`Os alunos produzem um pequeno segmento de rádio escolar sobre um tema curricular. Selecionam fontes documentais credíveis, utilizam ferramentas de IA para apoiar a organização e a síntese da informação e verificam as afirmações através da consulta dos documentos originais. Escrevem um guião em Português de Portugal, ensaiam e gravam o programa com as suas próprias vozes. O produto final é um segmento áudio de curta duração, acompanhado do respetivo guião e da identificação das fontes utilizadas.`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Seleção do tema e das fontes | 25 min**
+
+`Cada grupo seleciona um tema curricular e reúne três a cinco fontes de informação adequadas, previamente disponibilizadas ou validadas pelo professor. Regista o título, a autoria ou entidade responsável e a origem de cada documento. As fontes devem permitir confirmar as informações essenciais a apresentar no programa.`
+
+**Etapa 2 — Leitura e validação da informação | 30 min**
+
+`Os alunos consultam os documentos e identificam as ideias principais. Podem recorrer ao NotebookLM ou a outra ferramenta de IA para apoiar a síntese, mas confrontam as respostas com os textos originais. Registam as informações confirmadas e corrigem omissões, erros ou expressões que não estejam adequadas ao Português de Portugal.`
+
+**Etapa 3 — Escrita do guião radiofónico | 35 min**
+
+`Cada grupo escreve um guião para um segmento de rádio com a duração aproximada de dois a três minutos. O guião inclui uma apresentação breve do tema, a exposição das informações essenciais e uma conclusão. Os alunos distribuem as falas pelos participantes e identificam as fontes utilizadas. O texto deve ser claro, rigoroso e adequado à comunicação oral.`
+
+**Etapa 4 — Ensaio e gravação | 35 min**
+
+`Os alunos ensaiam a leitura do guião, ajustando a dicção, a entoação e o ritmo. Depois de confirmarem que o texto está correto e que respeita a duração prevista, gravam o segmento utilizando o equipamento disponível. O professor apoia a organização da gravação e a resolução de dificuldades técnicas.`
+
+**Etapa 5 — Audição e avaliação | 15 min**
+
+`Os grupos escutam a gravação e verificam se a informação é compreensível, se a duração é adequada e se a comunicação oral é clara. Registam um aspeto conseguido e uma melhoria possível. Confirmam também se as fontes utilizadas estão devidamente identificadas no guião.`
+
+**Etapa 6 — Síntese | 10 min**
+
+`Os grupos apresentam o tema do segmento e explicam como verificaram a informação utilizada. O professor retoma a importância da validação das fontes e da revisão do guião antes da gravação.`
+
+**No campo `finalProduct`, substituir por:**
+
+`Segmento de rádio escolar com a duração aproximada de dois a três minutos, acompanhado do guião final e da identificação das fontes consultadas.`
+
+**No campo `essentialVsExtension.essential`, substituir por:**
+
+`Seleção e validação de fontes, redação do guião, gravação de um segmento áudio de dois a três minutos e identificação das fontes utilizadas.`
+
+A divulgação ou publicação pública do áudio não é obrigatória. Mantém-se apenas como possibilidade de extensão, sujeita às autorizações necessárias.
+
+## ATIVIDADE 20 — Entrevistas Simuladas (Carreiras e Profissões)
+
+**Campo `duration`:**
+
+Manter:
+
+`2 aulas (100 minutos)`
+
+**Substituir o campo `briefDescription` por:**
+
+`Os alunos exploram profissões e percursos de formação através de uma entrevista simulada com recurso à Inteligência Artificial. Em pares, selecionam uma profissão, consultam fontes de informação sobre as qualificações e as funções associadas e preparam perguntas relevantes. A IA assume uma personagem fictícia para responder às perguntas, permitindo aos alunos treinar a entrevista e organizar informação. As respostas são posteriormente confrontadas com fontes credíveis sobre a realidade profissional em Portugal. A atividade distingue explicitamente a simulação gerada por IA de um testemunho real de um profissional.`
+
+**Substituir integralmente o campo `steps` por:**
+
+**Etapa 1 — Escolha da profissão e pesquisa | 20 min**
+
+`Cada par escolhe uma profissão que pretende conhecer melhor. Consulta fontes de informação adequadas, como a DGES, a ANQEP ou páginas institucionais de entidades profissionais, para identificar as funções desempenhadas e os percursos de formação existentes em Portugal. Regista as informações principais e as fontes consultadas.`
+
+**Etapa 2 — Preparação das perguntas | 15 min**
+
+`Os alunos elaboram cinco perguntas para a entrevista. As perguntas devem abordar aspetos como as funções desempenhadas, a formação necessária, as competências importantes, os desafios da profissão e as possíveis mudanças futuras. O professor ajuda a garantir que as perguntas são claras e permitem obter respostas desenvolvidas.`
+
+**Etapa 3 — Entrevista simulada com IA | 25 min**
+
+`Os alunos apresentam as cinco perguntas ao chatbot, que assume uma personagem fictícia com a profissão selecionada. Fazem a entrevista uma pergunta de cada vez e registam as respostas. A simulação deve ser identificada como uma representação fictícia criada por IA, não correspondendo ao testemunho de uma pessoa real nem a uma experiência profissional verdadeira.`
+
+**Etapa 4 — Verificação da informação | 25 min**
+
+`Os alunos comparam as respostas da simulação com as informações recolhidas nas fontes consultadas. Confirmam os percursos de formação, as funções e as competências indicadas e assinalam as informações que não conseguem confirmar. Corrigem ou excluem afirmações incorretas ou não fundamentadas.`
+
+**Etapa 5 — Partilha e reflexão | 15 min**
+
+`Cada par apresenta a profissão estudada, as informações que conseguiu confirmar e uma limitação identificada na entrevista simulada. A turma reflete sobre a utilidade da IA para preparar perguntas e explorar cenários, reconhecendo que as suas respostas não substituem o contacto com profissionais reais nem a consulta de fontes oficiais.`
+
+**No campo `essentialVsExtension.essential`, substituir por:**
+
+`Escolha e pesquisa de uma profissão, preparação de cinco perguntas, realização de uma entrevista simulada, verificação das respostas e apresentação das conclusões.`
+
+---
+
+# VERIFICAÇÃO FINAL DA IMPLEMENTAÇÃO
+
+Depois de efetuares as substituições:
+
+1. Confirma que as 20 atividades continuam na plataforma e que nenhum ID ou título foi alterado.
+2. Confirma que cada atividade mantém os seus campos originais, exceto os campos expressamente substituídos neste pedido.
+3. Confirma que os tempos das etapas correspondem às durações totais indicadas.
+4. Na atividade 9, confirma que os cinco minutos de reserva estão incluídos na duração total de 90 minutos.
+5. Confirma que não foram introduzidas afirmações que apresentem respostas da IA como factos automaticamente validados.
+6. Confirma que o Português de Portugal foi preservado.
+7. **Confirma que a Engenharia Pedagógica permanece integralmente intacta.**
+8. Não alteres quaisquer outras páginas, componentes ou funcionalidades.
+
+**Executa agora as alterações no código. Não apresentes uma análise, não proponhas melhorias adicionais e não substituas os textos fornecidos por versões alternativas.**

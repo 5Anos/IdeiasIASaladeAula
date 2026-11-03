@@ -1,0 +1,582 @@
+# SEGUNDA INTERVENÇÃO — CORREÇÃO DOS CAMPOS PEDAGÓGICOS QUE FICARAM POR ALTERAR
+
+O prompt anterior já foi enviado e destinava-se à correção das etapas, dos tempos e de alguns campos específicos.
+
+**Este pedido é uma continuação do anterior. Não voltes a executar as alterações às etapas nem reescrevas os tempos.**
+
+Trabalha diretamente no ficheiro `src/data/activities.ts`, considerando o estado atual do projeto.
+
+## REGRAS DE EXECUÇÃO
+
+1. Altera exclusivamente os campos identificados neste pedido.
+2. Substitui os textos atuais pelos textos integrais fornecidos.
+3. Não resumas, não simplifiques nem inventes redações alternativas.
+4. Não alteres os campos `steps` ou `duration`.
+5. Não desfaças qualquer alteração realizada através do prompt anterior.
+6. Não alteres títulos, IDs, disciplinas, anos de escolaridade ou modalidades, exceto se expressamente indicado.
+7. Não alteres `toolKeys`, `tools.ts`, componentes, design, navegação ou funcionalidades.
+8. Preserva integralmente a Engenharia Pedagógica, incluindo todos os seus conteúdos e funcionalidades.
+9. Mantém o Português de Portugal.
+10. Garante que os objetivos, as descrições, os exemplos, os produtos finais e os critérios de avaliação são coerentes com as etapas que já foram substituídas.
+
+---
+
+# ATIVIDADE 1 — A IA Desenha o que Eu Imagino
+
+### Campo `briefDescription`
+
+Substituir integralmente por:
+
+«A turma imagina uma personagem ou um objeto e descreve-o oralmente, utilizando palavras relacionadas com a cor, a forma e o tamanho. Com a mediação do professor, observa uma imagem criada por uma ferramenta de Inteligência Artificial a partir dessa descrição. Os alunos comparam a imagem com a ideia inicial e realizam o seu próprio desenho. A atividade permite explorar a relação entre as palavras e a representação visual, reconhecendo que a imagem gerada pode não corresponder exatamente ao que foi imaginado.»
+
+### Campo `learningObjectives`
+
+Substituir integralmente a lista por:
+
+- `Descrever oralmente uma personagem ou um objeto, utilizando palavras relacionadas com a cor, a forma e o tamanho.`
+- `Identificar semelhanças e diferenças entre a ideia imaginada, a imagem gerada e o próprio desenho.`
+- `Reconhecer que uma ferramenta de IA cria uma imagem a partir da descrição fornecida e que o resultado pode não corresponder totalmente à ideia inicial.`
+
+### Campo `finalProduct`
+
+Substituir por:
+
+`Mural coletivo «O Nosso Olhar e o Olhar da IA», reunindo os desenhos manuais dos alunos e as respetivas descrições. A imagem gerada é utilizada como elemento de comparação e pode ser incluída no mural através de impressão, caso exista essa possibilidade.`
+
+### Campo `teacherPreparation`
+
+Substituir por:
+
+`Preparar o computador docente e o projetor; testar previamente a ferramenta de geração de imagens; verificar que a sua utilização pode ser feita pelo professor, sem exigir a criação de contas pelos alunos; preparar folhas A4, lápis de cor, lápis de cera e marcadores. Não introduzir nomes, fotografias ou outros dados pessoais das crianças na ferramenta.`
+
+### Campo `evaluationCriteria`
+
+Substituir integralmente por:
+
+- `Utilização de palavras adequadas para descrever pelo menos duas características da personagem ou do objeto.`
+- `Identificação de pelo menos uma semelhança e uma diferença entre a descrição e a imagem gerada.`
+- `Representação, no desenho individual, de elementos da ideia que o aluno pretendeu comunicar.`
+
+### Campo `differentiation`
+
+Substituir integralmente por:
+
+- `Apoio: Os alunos que apresentam dificuldades na expressão escrita podem ditar a descrição ao professor ou utilizar um conjunto de imagens e palavras de apoio.`
+- `Extensão: Os alunos que terminem antecipadamente podem experimentar reformular a descrição, alterando uma característica, e antecipar o que poderá mudar na imagem gerada.`
+
+### Campo `essentialVsExtension.extension`
+
+Substituir por:
+
+`Reformulação de uma segunda descrição, alterando uma característica da personagem ou do objeto, seguida de uma comparação entre o resultado obtido e a primeira imagem.`
+
+### Campo `aiPedagogicalRole`
+
+Substituir por:
+
+`A IA funciona como um recurso visual que permite comparar a descrição verbal dos alunos com uma representação gerada automaticamente. O resultado serve de estímulo à observação e à reflexão, não constituindo um modelo obrigatório a reproduzir.`
+
+---
+
+# ATIVIDADE 2 — A IA Adivinha o Animal
+
+### Campo `briefDescription`
+
+Substituir integralmente por:
+
+«Os alunos escolhem um animal e constroem três pistas que permitem identificá-lo progressivamente. Com a mediação do professor, apresentam as pistas a um chatbot e observam as respostas dadas. De seguida, confirmam as características do animal através do manual escolar, identificando eventuais erros ou informações que não correspondam à realidade. A atividade desenvolve a capacidade de observar, classificar, descrever e verificar informação.»
+
+### Campo `learningObjectives`
+
+Substituir integralmente por:
+
+- `Identificar e descrever características dos animais, como o revestimento, a alimentação, a forma de locomoção e o habitat.`
+- `Construir três pistas organizadas do geral para o particular, sem revelar diretamente o nome do animal.`
+- `Reconhecer que as respostas de um chatbot podem conter erros e confirmar a informação com apoio do professor e através do manual escolar.`
+
+### Campo `promptExample.enriched`
+
+Substituir por:
+
+`Pista 1: Sou um mamífero carnívoro que vive em regiões de savana. Pista 2: Tenho o corpo coberto de pelo amarelado com pintas pretas. Pista 3: Sou conhecido por ser o animal terrestre mais rápido em curtas distâncias. Que animal sou?`
+
+### Campo `teacherPreparation`
+
+Substituir por:
+
+`Selecionar previamente uma lista de animais adequados ao ano de escolaridade e confirmar as respetivas características através do manual escolar ou de fontes científicas fiáveis. Preparar cartões em cartolina, uma grelha simples de características dos animais e o equipamento necessário para apresentar o chatbot à turma. A utilização da ferramenta deve ser mediada pelo professor, sem exigir contas pessoais aos alunos.`
+
+### Campo `evaluationCriteria`
+
+Substituir integralmente por:
+
+- `Correção das características do animal utilizadas na elaboração das pistas.`
+- `Organização progressiva das três pistas, do geral para o particular.`
+- `Capacidade de confirmar as informações apresentadas pelo chatbot através do manual escolar, com apoio do professor quando necessário.`
+
+---
+
+# ATIVIDADE 3 — Criar Sons de um Mundo Imaginário
+
+### Campo `learningObjectives`
+
+Substituir integralmente por:
+
+- `Identificar e distinguir características dos sons, como a intensidade, o timbre e a duração.`
+- `Utilizar palavras e expressões adequadas para descrever uma paisagem sonora imaginária.`
+- `Relacionar os sons ouvidos com elementos visuais e com o ambiente que os alunos pretendem representar.`
+
+### Campo `promptExample.enriched`
+
+Substituir por:
+
+`Cria uma paisagem sonora ambiente de uma cidade submarina imaginária, com sons suaves de bolhas de água, ecos de baleias ao longe e movimentos de água. A composição deve transmitir uma atmosfera misteriosa e tranquila, sem letra, sem voz humana e sem ritmo de canção. O objetivo é criar um ambiente sonoro que os alunos possam ouvir e imaginar, não uma música com versos ou refrão.`
+
+### Campo `differentiation`
+
+Substituir integralmente por:
+
+- `Apoio: Disponibilização de um banco de palavras para descrever sons e sensações auditivas, como forte, fraco, agudo, grave, contínuo, abafado e suave.`
+- `Extensão: Experimentação de sons produzidos pelos próprios alunos, recorrendo à voz, à percussão corporal e a objetos do quotidiano, para comparar a paisagem sonora criada manualmente com a gerada pela IA.`
+
+---
+
+# ATIVIDADE 4 — O Arquiteto das Formas Geométricas
+
+**Importante:** as etapas já foram alteradas para a exploração e construção de estruturas com sólidos geométricos. Os restantes campos têm de acompanhar esse foco. Não recuperes a antiga atividade centrada na «Cidade do Futuro» nem acrescentes conteúdos sobre figuras planas que não estejam nas novas etapas.
+
+### Campo `briefDescription`
+
+Substituir integralmente por:
+
+«Os alunos exploram sólidos geométricos através da observação e manipulação de modelos físicos. Em pequenos grupos, constroem estruturas simples, identificam os sólidos utilizados e descrevem as suas características e posições. Com a mediação do professor, transformam uma das descrições num pedido para gerar uma imagem e comparam o resultado com a construção física, identificando semelhanças e diferenças. A atividade valoriza a manipulação, o vocabulário geométrico e a capacidade de verificar representações visuais.»
+
+### Campo `learningObjectives`
+
+Substituir integralmente por:
+
+- `Reconhecer e nomear sólidos geométricos, como o cubo, o paralelepípedo, a esfera, o cilindro, o cone e a pirâmide.`
+- `Descrever características observáveis dos sólidos geométricos, distinguindo superfícies planas e curvas e utilizando vocabulário adequado.`
+- `Utilizar expressões espaciais para descrever a posição dos sólidos numa construção.`
+- `Comparar uma construção física com uma imagem gerada por IA, identificando diferenças entre a descrição fornecida e o resultado obtido.`
+
+### Campo `promptExample.studentInitial`
+
+Substituir por:
+
+`Constrói uma estrutura com sólidos geométricos.`
+
+### Campo `promptExample.enriched`
+
+Substituir por:
+
+`Representa uma pequena construção feita exclusivamente com sólidos geométricos: um cubo azul como base, uma pirâmide amarela colocada sobre o cubo e dois cilindros verdes ao lado da estrutura. Apresenta os sólidos de forma simples, com as suas formas bem visíveis e distinguíveis. Não acrescentes outros sólidos nem incluas palavras ou legendas na imagem.`
+
+### Campo `finalProduct`
+
+Substituir por:
+
+`Painel coletivo «As Nossas Construções com Sólidos Geométricos», reunindo os desenhos das estruturas construídas pelos alunos, a identificação dos sólidos utilizados e o registo das diferenças observadas entre a construção física e a imagem gerada.`
+
+### Campo `teacherPreparation`
+
+Substituir por:
+
+`Reunir modelos físicos de sólidos geométricos adequados ao nível de escolaridade, nomeadamente cubos, paralelepípedos, esferas, cilindros, cones e pirâmides. Preparar o computador docente, o projetor e a ferramenta de geração de imagens, testando previamente o seu funcionamento. Disponibilizar folhas e materiais de desenho para o registo das construções.`
+
+### Campo `evaluationCriteria`
+
+Substituir integralmente por:
+
+- `Identificação e nomeação correta dos sólidos geométricos utilizados na construção.`
+- `Utilização adequada de vocabulário geométrico e espacial na descrição da estrutura.`
+- `Identificação de pelo menos uma diferença entre a construção física e a imagem gerada.`
+
+### Campo `differentiation`
+
+Substituir integralmente por:
+
+- `Apoio: Disponibilização de modelos físicos e cartões com imagens e nomes dos sólidos geométricos para facilitar a identificação e descrição.`
+- `Extensão: Construção de uma segunda estrutura com sólidos diferentes, acompanhada de uma descrição da posição relativa dos elementos, utilizando expressões como acima, abaixo, ao lado e entre.`
+
+### Campo `essentialVsExtension.essential`
+
+Substituir por:
+
+`Manipulação dos sólidos geométricos, construção de uma estrutura simples, descrição dos sólidos utilizados, observação da imagem gerada e comparação com a construção física.`
+
+### Campo `essentialVsExtension.extension`
+
+Substituir por:
+
+`Construção de uma segunda estrutura utilizando outros sólidos geométricos e elaboração de uma descrição espacial mais pormenorizada.`
+
+### Campo `offlineAlternative`
+
+Substituir por:
+
+`Construção de estruturas com sólidos de madeira, plástico ou embalagens do quotidiano, seguida de desenho e identificação dos sólidos utilizados, sem recurso a ferramentas digitais.`
+
+### Campo `aiPedagogicalRole`
+
+Substituir por:
+
+`A IA fornece uma representação visual baseada na descrição dos alunos. A comparação com os modelos físicos permite observar que uma imagem gerada pode apresentar diferenças e que a validação das características geométricas deve ser feita através da manipulação e do conhecimento matemático.`
+
+---
+
+# ATIVIDADE 5 — A Fábula Interativa: «E se fosse eu?»
+
+### Campo `promptExample.enriched`
+
+Substituir por:
+
+`Com base na fábula «A Lebre e a Tartaruga», apresenta duas possibilidades curtas para um final alternativo, a partir do momento em que as duas personagens encontram uma dificuldade que não conseguem ultrapassar individualmente. Nas duas propostas, a Lebre e a Tartaruga devem cooperar para resolver o problema. Utiliza Português de Portugal e linguagem adequada a alunos do 3.º ou 4.º ano. Não reescrevas a história completa. Apresenta finais diferentes que permitam aos alunos escolher, discutir e escrever a sua própria versão.`
+
+### Campo `finalProduct`
+
+Substituir por:
+
+`Texto final de um desfecho alternativo da fábula, revisto pelos alunos e apresentado através de uma leitura dramatizada com distribuição das falas pelas personagens.`
+
+### Segundo elemento do campo `differentiation`
+
+Substituir por:
+
+`Extensão: Os alunos que terminem antecipadamente podem experimentar duas formas diferentes de interpretar uma das falas, alterando a entoação para transmitir emoções distintas.`
+
+### Campo `essentialVsExtension.extension`
+
+Substituir por:
+
+`Apresentação dramatizada do final alternativo com recurso a um narrador e à interpretação das personagens por diferentes alunos.`
+
+---
+
+# ATIVIDADE 6 — Transformar Histórias em Arte com IA
+
+### Campo `briefDescription`
+
+Substituir integralmente por:
+
+«Os alunos escrevem uma narrativa curta, organizando os acontecimentos em situação inicial, problema e desenlace. Depois de reverem o texto, selecionam uma cena importante e elaboram uma descrição para gerar uma ilustração com apoio do professor. Comparam a imagem obtida com o conteúdo da narrativa e explicam de que forma a imagem representa a cena escolhida. O texto mantém-se da autoria dos alunos e a imagem funciona como complemento visual da história.»
+
+### Campo `learningObjectives`
+
+Substituir integralmente por:
+
+- `Escrever uma narrativa curta, organizando os acontecimentos numa situação inicial, num problema e num desenlace.`
+- `Utilizar conectores temporais adequados para assegurar a sequência e a coerência dos acontecimentos.`
+- `Descrever uma cena da narrativa com pormenores relevantes para orientar a criação de uma ilustração.`
+- `Relacionar a ilustração gerada com o texto escrito, identificando semelhanças e diferenças.`
+
+### Campo `finalProduct`
+
+Substituir por:
+
+`Narrativa curta, com aproximadamente 80 a 120 palavras, acompanhada de uma ilustração de uma cena escolhida pelos alunos e de uma breve legenda. Os trabalhos revistos podem ser posteriormente reunidos num livro coletivo da turma.`
+
+---
+
+# ATIVIDADE 7 — Explorando a História da Terra com Inteligência Artificial
+
+### Campo `promptExample.enriched`
+
+Substituir por:
+
+`Cria uma ilustração paleoartística de uma paisagem do período Carbónico, tendo em conta as seguintes características científicas: ambiente pantanoso, presença de fetos arborescentes e cavalinhas de grande porte e condições ambientais próprias do período. A representação pode incluir um inseto voador de grandes dimensões, como a Meganeura, desde que essa informação esteja confirmada nas fontes fornecidas pelo professor. Não incluas plantas com flor, relva, mamíferos, aves, dinossauros ou elementos atuais. Não acrescentes organismos ou características ambientais que não estejam sustentados pelas informações disponibilizadas. Não incluas texto ou legendas na imagem.`
+
+### Campo `teacherPreparation`
+
+Substituir por:
+
+`Preparar uma seleção de períodos geológicos adequados à atividade e disponibilizar, para cada período, informação científica validada sobre a fauna, a flora e as condições ambientais. Preparar a ficha de validação científica com campos para o período estudado, as fontes consultadas, os elementos confirmados e os elementos incorretos ou não confirmados. Testar previamente a ferramenta de geração de imagens e assegurar que a sua utilização é mediada pelo professor ou realizada em ambiente adequado à idade dos alunos.`
+
+---
+
+# ATIVIDADE 9 — Sólidos Geométricos e Simetria
+
+### Campo `promptExample.enriched`
+
+Substituir por:
+
+`Cria um enigma matemático para alunos do 6.º ano sobre um poliedro convexo que tem duas bases hexagonais e seis faces laterais retangulares. O sólido tem 8 faces, 12 vértices e 18 arestas. Apresenta pistas sobre a forma das bases e das faces laterais, mas não reveles o nome do sólido nem a solução. Utiliza vocabulário matemático correto e Português de Portugal.`
+
+### Campo `evaluationCriteria`
+
+Substituir integralmente por:
+
+- `Identificação e contagem corretas das faces, dos vértices e das arestas dos sólidos analisados.`
+- `Aplicação correta da Relação de Euler nos poliedros convexos selecionados.`
+- `Identificação e justificação dos eixos de simetria nas figuras planas trabalhadas.`
+- `Clareza e correção matemática dos enigmas construídos pelos grupos.`
+
+### Segundo elemento do campo `differentiation`
+
+Substituir por:
+
+`Extensão: Exploração de outro poliedro convexo, com identificação do número de faces, vértices e arestas e verificação da Relação de Euler.`
+
+### Campo `aiPedagogicalRole`
+
+Substituir por:
+
+`A IA apoia a formulação de enigmas geométricos, mas as características dos sólidos, as contagens e as relações matemáticas têm de ser verificadas pelos alunos através de modelos físicos e do raciocínio matemático. As respostas da ferramenta não constituem prova da correção das propriedades geométricas.`
+
+**Não mantenhas a afirmação de que a Relação de Euler deixa de se aplicar simplesmente por um poliedro não ser convexo.**
+
+---
+
+# ATIVIDADE 10 — Utilização Responsável da IA
+
+### Campo `learningObjectives`
+
+Substituir integralmente por:
+
+- `Identificar dados pessoais e reconhecer os riscos associados à sua partilha em ferramentas digitais e de Inteligência Artificial.`
+- `Distinguir informações e recomendações provenientes de fontes institucionais de afirmações apresentadas por ferramentas de IA que não tenham sido verificadas.`
+- `Propor regras claras para uma utilização responsável, segura e ética da Inteligência Artificial em contexto escolar.`
+
+### Campo `finalProduct`
+
+Substituir por:
+
+`Carta de Princípios para a Utilização Responsável da IA na Escola, elaborada coletivamente, com regras claras sobre privacidade, proteção de dados pessoais, verificação da informação e honestidade académica. A carta destina-se à consulta e discussão no contexto da turma.`
+
+### Campo `essentialVsExtension.essential`
+
+Substituir por:
+
+`Análise de situações práticas de utilização da IA, consulta de orientações institucionais da CNPD e da SeguraNet, identificação de riscos e elaboração coletiva da Carta de Princípios.`
+
+---
+
+# ATIVIDADE 11 — A água está em tudo: ciclo da água
+
+### Campo `promptExample.enriched`
+
+Substituir por:
+
+`Cria exatamente duas perguntas de escolha múltipla para alunos do 5.º ano sobre o ciclo da água. As perguntas devem abordar a evaporação, a condensação, a precipitação e as mudanças de estado físico da água, de acordo com os conteúdos fornecidos pelo professor. Para cada pergunta, apresenta três opções de resposta, assinala a resposta correta e explica brevemente a razão. Utiliza Português de Portugal, linguagem adequada ao 5.º ano e informação cientificamente correta. Não acrescentes conteúdos que não tenham sido trabalhados na aula.`
+
+### Campo `essentialVsExtension.essential`
+
+Substituir por:
+
+`Representação do ciclo da água no caderno, formulação e validação de duas perguntas de escolha múltipla por grupo e troca das fichas de desafio entre grupos para resolução e correção.`
+
+---
+
+# ATIVIDADE 13 — Mudanças Climáticas e Ciclo da Água
+
+### Campo `learningObjectives`
+
+Substituir integralmente por:
+
+- `Ler e interpretar uma série de dados anuais de precipitação proveniente de uma estação meteorológica identificada.`
+- `Organizar os dados numa tabela e construir um gráfico com título, eixos, escala e unidades adequadas.`
+- `Identificar variações nos valores de precipitação e reconhecer que uma série limitada a uma estação não permite, por si só, demonstrar uma tendência climática nacional.`
+- `Apresentar duas medidas exequíveis de utilização eficiente da água na escola, fundamentando a sua pertinência.`
+
+### Campo `promptExample.studentInitial`
+
+Substituir por:
+
+`Ajuda-me a interpretar esta tabela com valores anuais de precipitação e a identificar os anos com maior e menor precipitação.`
+
+### Campo `promptExample.enriched`
+
+Substituir por:
+
+`Vou apresentar-te uma tabela com os valores anuais de precipitação de uma estação meteorológica identificada, incluindo a localização, o período de observação e a unidade de medida. Analisa exclusivamente os dados que te forneço. Identifica o valor máximo, o valor mínimo e as principais variações observadas. Não inventes, estimes ou completes valores em falta. Não acrescentes dados de outras fontes. Não concluas que existe uma tendência climática com base apenas nesta tabela. Distingue claramente aquilo que os dados permitem afirmar daquilo que não permitem concluir. Escreve em Português de Portugal e apresenta uma interpretação adequada a alunos do 8.º ano.`
+
+### Campo `finalProduct`
+
+Substituir por:
+
+`Gráfico da precipitação anual da estação meteorológica selecionada, acompanhado de uma breve interpretação escrita com duas conclusões fundamentadas nos dados e duas propostas concretas de utilização eficiente da água na escola. O trabalho deve identificar a estação, a localização, o período analisado, a unidade de medida e a fonte original dos dados.`
+
+### Campo `teacherPreparation`
+
+Substituir por:
+
+`Selecionar e descarregar previamente uma série de dados anuais de precipitação proveniente de uma fonte oficial, preferencialmente do IPMA. Identificar a estação meteorológica, a sua localização, o período analisado, a unidade de medida e a origem dos dados. Disponibilizar a mesma tabela a todos os grupos. Verificar que a série contém dados suficientes para a construção de um gráfico e explicar aos alunos os limites das conclusões que podem retirar de uma única série de precipitação.`
+
+### Campo `aiPedagogicalRole`
+
+Substituir por:
+
+`A IA funciona como apoio à organização e interpretação preliminar da tabela fornecida pelo professor. Não deve ser utilizada como fonte dos valores meteorológicos nem para inventar dados. A interpretação final, os cálculos e as conclusões devem ser verificados pelos alunos através da tabela original.`
+
+---
+
+# ATIVIDADE 14 — Conversas Iluminadas
+
+### Campo `promptExample.studentInitial`
+
+Substituir por:
+
+`Cria um diálogo didático fictício que compare algumas ideias de Montesquieu e Rousseau.`
+
+### Campo `promptExample.enriched`
+
+Substituir por:
+
+`Com base exclusivamente nos excertos documentais fornecidos pelo professor, ajuda-nos a construir um diálogo didático fictício entre Montesquieu e Rousseau, destinado a alunos do 8.º ano. O diálogo deve comparar as ideias documentadas dos dois pensadores sobre a liberdade, a organização do poder e a participação dos cidadãos. Apresenta quatro intervenções curtas de cada personagem, utilizando Português de Portugal e linguagem adequada ao nível de escolaridade. Não inventes citações nem atribuas frases fictícias como se fossem palavras efetivamente proferidas pelos autores. Não representes o diálogo como um encontro histórico real. Identifica-o como uma reconstrução ficcional com finalidade pedagógica.`
+
+### Campo `finalProduct`
+
+Substituir por:
+
+`Guião de diálogo didático ficcional entre duas figuras do Iluminismo, fundamentado em fontes históricas e validado pelo professor, acompanhado de uma apresentação dramatizada à turma. O guião deve identificar claramente que se trata de uma reconstrução pedagógica e não de uma conversa histórica real.`
+
+---
+
+# ATIVIDADE 15 — Arte, Criatividade e Tecnologia
+
+### Campo `briefDescription`
+
+Substituir integralmente por:
+
+«Os alunos concebem cartazes de sensibilização social ou ambiental, partindo da definição de uma mensagem clara e de um público-alvo. Utilizam uma ferramenta de Inteligência Artificial para gerar uma proposta visual e recorrem a um editor gráfico para selecionar, organizar e editar os elementos do cartaz. A revisão centra-se na legibilidade, no contraste e na relação entre a imagem e a mensagem, valorizando as decisões criativas dos alunos.»
+
+### Campo `learningObjectives`
+
+Substituir integralmente por:
+
+- `Definir uma mensagem de sensibilização clara e adequada ao tema e ao público-alvo do cartaz.`
+- `Selecionar e editar elementos visuais, garantindo a legibilidade do texto e um contraste adequado.`
+- `Articular a imagem e a mensagem escrita de forma coerente.`
+- `Justificar as opções tomadas na criação e edição do cartaz, distinguindo a proposta gerada pela IA das decisões finais dos alunos.`
+
+### Campo `finalProduct`
+
+Substituir por:
+
+`Cartaz digital de sensibilização social ou ambiental, acompanhado de uma breve apresentação das opções tomadas pelos alunos e da explicação da relação entre a imagem e a mensagem.`
+
+---
+
+# ATIVIDADE 16 — Texto de Jornal: Artigo de Opinião
+
+### Campo `essentialVsExtension.essential`
+
+Substituir por:
+
+`Redação autónoma da primeira versão do artigo de opinião, consulta do feedback da IA organizado em quatro pontos de revisão, seleção crítica das sugestões consideradas pertinentes, revisão do texto pelo aluno e entrega da versão final acompanhada da justificação das alterações realizadas.`
+
+---
+
+# ATIVIDADE 17 — Música Educativa com IA
+
+O prompt anterior retirou a exigência de redondilha maior. Os objetivos de aprendizagem e o exemplo de pedido à IA têm de deixar de exigir essa métrica.
+
+### Campo `learningObjectives`
+
+Substituir integralmente por:
+
+- `Consolidar conceitos e regras gramaticais previamente trabalhados nas aulas de Português.`
+- `Participar na criação de uma letra simples que ajude a recordar e compreender o conteúdo gramatical selecionado.`
+- `Verificar a correção dos conceitos e exemplos utilizados na letra.`
+- `Aplicar individualmente os conhecimentos gramaticais através da resolução de exercícios.`
+
+### Campo `promptExample.enriched`
+
+Substituir por:
+
+`Ajuda-nos a criar uma letra curta para uma canção educativa em Português de Portugal, destinada a alunos do 2.º Ciclo, sobre a diferença entre determinantes e pronomes demonstrativos (este, esse e aquele). Explica corretamente que o determinante acompanha um nome e que o pronome substitui um nome. Utiliza exemplos gramaticalmente corretos, vocabulário simples e um refrão fácil de memorizar. Podes sugerir rimas simples, mas não imponhas uma métrica poética específica nem a redondilha maior. Não introduzas regras ou conceitos gramaticais que não estejam relacionados com o tema indicado.`
+
+---
+
+# ATIVIDADE 18 — Debate com IA
+
+### Terceiro elemento do campo `learningObjectives`
+
+Substituir por:
+
+`Reconhecer que a IA pode apresentar argumentos incompletos, incorretos ou pouco fundamentados e que as suas respostas devem ser confrontadas com fontes de informação fidedignas.`
+
+---
+
+# ATIVIDADE 19 — Rádio Interativa de Turma com IA
+
+O produto final foi definido no prompt anterior com uma duração de dois a três minutos. Os restantes campos têm de passar a apresentar essa mesma duração e o mesmo tema no exemplo de utilização.
+
+### Campo `briefDescription`
+
+Substituir integralmente por:
+
+«Os alunos concebem um pequeno segmento de rádio escolar, com a duração aproximada de dois a três minutos, sobre um tema curricular. Selecionam documentos de referência e recorrem ao NotebookLM para apoiar a organização e síntese inicial da informação. Confrontam as respostas geradas com os documentos originais, corrigem eventuais imprecisões factuais e linguísticas, escrevem um guião e gravam o segmento com as suas próprias vozes. O trabalho final inclui a identificação das fontes consultadas e a validação da informação apresentada.»
+
+### Campo `promptExample.studentInitial`
+
+Substituir por:
+
+`Cria um resumo sobre o 25 de Abril de 1974 para um pequeno programa de rádio escolar.`
+
+### Campo `promptExample.enriched`
+
+Substituir por:
+
+`Com base exclusivamente nas quatro fontes documentais fornecidas sobre o 25 de Abril de 1974, ajuda-nos a organizar a informação para um segmento de rádio escolar com a duração aproximada de dois a três minutos. Identifica as ideias principais, organiza-as numa sequência clara e sugere uma introdução e uma conclusão curtas. Não acrescentes factos que não estejam presentes nas fontes. Não inventes datas, nomes, acontecimentos ou citações. Sempre que apresentares uma afirmação factual, indica em que documento pode ser confirmada. Utiliza Português de Portugal, linguagem adequada ao público escolar e um estilo claro e natural para comunicação oral.`
+
+### Campo `teacherPreparation`
+
+Substituir por:
+
+`Selecionar previamente quatro documentos credíveis e relacionados com o tema escolhido, garantindo que os conteúdos são adequados ao ano de escolaridade. No caso do exemplo sobre o 25 de Abril de 1974, disponibilizar fontes documentais que permitam confirmar os acontecimentos e as informações a apresentar. Testar o NotebookLM e os equipamentos de gravação, preparar auscultadores e assegurar que os alunos conseguem consultar os documentos originais durante a validação.`
+
+### Campo `evaluationCriteria`
+
+Substituir integralmente por:
+
+- `Fidelidade da informação apresentada relativamente aos documentos-fonte consultados.`
+- `Correção linguística segundo a norma do Português de Portugal e adequação do texto à comunicação oral.`
+- `Clareza da dicção, organização do guião e identificação das fontes utilizadas.`
+- `Adequação da duração do segmento áudio ao intervalo previsto de dois a três minutos.`
+
+---
+
+# ATIVIDADE 20 — Entrevistas Simuladas (Carreiras e Profissões)
+
+### Campo `promptExample.studentInitial`
+
+Substituir por:
+
+`Vamos realizar uma entrevista fictícia sobre a profissão de engenheiro de energias renováveis. Que perguntas podemos preparar?`
+
+### Campo `promptExample.enriched`
+
+Substituir por:
+
+`Vamos realizar uma entrevista simulada para explorar a profissão de engenheiro de energias renováveis em Portugal. Assume o papel de uma personagem profissional fictícia, criada exclusivamente para esta atividade escolar. Identifica claramente que és uma simulação gerada por IA e não uma pessoa real nem um profissional com experiência própria. Responde a uma pergunta de cada vez, utilizando informação geral e verificável sobre as funções, as competências necessárias, os percursos de formação e os desafios desta profissão. Não inventes experiências pessoais, locais de trabalho, histórias profissionais ou testemunhos reais. Não apresentes informações incertas como factos. Quando não tiveres informação suficiente para responder, indica essa limitação. Utiliza Português de Portugal e linguagem adequada a alunos do 3.º Ciclo ou do Ensino Secundário.`
+
+### Campo `finalProduct`
+
+Substituir por:
+
+`Ficha de Perfil Profissional, contendo a identificação da profissão, as cinco perguntas preparadas pelos alunos, uma síntese das respostas obtidas na entrevista simulada e a verificação das informações relevantes através de fontes credíveis. O trabalho termina com uma apresentação oral que identifica claramente a entrevista como uma simulação criada com IA, distinguindo as respostas fictícias dos factos confirmados.`
+
+### Campo `aiPedagogicalRole`
+
+Substituir por:
+
+`A IA funciona como uma personagem fictícia para a simulação de uma entrevista. Permite aos alunos treinar a formulação de perguntas e organizar a informação recolhida, mas não representa um profissional real nem constitui uma fonte de testemunhos ou de informação profissional verificada. As informações relevantes devem ser confirmadas através de fontes adequadas.`
+
+---
+
+# VERIFICAÇÃO FINAL DESTA SEGUNDA INTERVENÇÃO
+
+Depois de aplicar as substituições:
+
+1. Confirma que os textos indicados foram efetivamente substituídos nos respetivos campos.
+2. Confirma que os campos não indicados neste pedido permanecem inalterados.
+3. Confirma que as alterações do primeiro prompt continuam intactas.
+4. Não alteres as etapas nem as durações já corrigidas.
+5. Confirma que os exemplos de pedidos à IA correspondem às tarefas que os alunos efetivamente realizam.
+6. Confirma que os produtos finais são exequíveis e correspondem às tarefas definidas.
+7. Confirma que não existem contradições entre objetivos, descrição, etapas, diferenciação e avaliação.
+8. Não afirmes que as ferramentas são gratuitas, dispensam registo ou são adequadas a menores sem essa informação estar efetivamente confirmada. Mantém a mediação docente e a proteção dos dados pessoais dos alunos.
+9. Não elimines, alteres ou ocultes qualquer parte da Engenharia Pedagógica.
+
+**Executa as substituições diretamente no código. Não apresentes uma nova análise pedagógica, não reescrevas as etapas e não proponhas novas alterações fora das que estão especificadas neste pedido.**
