@@ -7,7 +7,7 @@ import { ActivitySheet } from './components/ActivitySheet';
 import { TeacherGuideModal } from './components/TeacherGuideModal';
 import { PresentationModal } from './components/PresentationModal';
 import { Toast } from './components/Toast';
-import { Sparkles, ArrowLeft, ArrowRight, Printer, Share2, HelpCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Filter, X } from 'lucide-react';
 
 export default function App() {
   const [selectedId, setSelectedId] = useState<number>(1);
@@ -22,7 +22,7 @@ export default function App() {
   // Extract unique subjects for filter dropdown
   const subjects = useMemo(() => getUniqueSubjects(ACTIVITIES), []);
 
-  // Filter activities
+  // Filter activities based on all criteria
   const filteredActivities = useMemo(() => {
     return filterActivities(ACTIVITIES, {
       searchQuery,
@@ -32,33 +32,59 @@ export default function App() {
     });
   }, [searchQuery, selectedCycle, selectedSubject, selectedTool]);
 
-  const filteredIds = useMemo(() => {
-    return new Set(filteredActivities.map((a) => a.id));
-  }, [filteredActivities]);
+  const isFiltered =
+    searchQuery.trim() !== '' ||
+    selectedCycle !== 'all' ||
+    selectedSubject !== 'all' ||
+    selectedTool !== 'all';
 
-  // Current active activity
+  // Automatically keep selectedId synchronized with filtered results
+  useEffect(() => {
+    if (filteredActivities.length > 0) {
+      const isSelectedInFiltered = filteredActivities.some((a) => a.id === selectedId);
+      if (!isSelectedInFiltered) {
+        setSelectedId(filteredActivities[0].id);
+      }
+    }
+  }, [filteredActivities, selectedId]);
+
+  // Current active activity among filtered results
   const currentActivity = useMemo(() => {
-    return ACTIVITIES.find((a) => a.id === selectedId) || ACTIVITIES[0];
-  }, [selectedId]);
+    if (filteredActivities.length === 0) return null;
+    return filteredActivities.find((a) => a.id === selectedId) || filteredActivities[0];
+  }, [filteredActivities, selectedId]);
 
-  // Navigation handlers
+  // Current index in filtered list
+  const currentIndex = useMemo(() => {
+    if (!currentActivity || filteredActivities.length === 0) return -1;
+    return filteredActivities.findIndex((a) => a.id === currentActivity.id);
+  }, [filteredActivities, currentActivity]);
+
+  // Navigation handlers navigating STRICTLY within filtered activities
   const handleSelectActivity = (id: number) => {
     setSelectedId(id);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handlePrev = () => {
-    if (selectedId > 1) {
-      setSelectedId((prev) => prev - 1);
+    if (currentIndex > 0) {
+      setSelectedId(filteredActivities[currentIndex - 1].id);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   const handleNext = () => {
-    if (selectedId < ACTIVITIES.length) {
-      setSelectedId((prev) => prev + 1);
+    if (currentIndex >= 0 && currentIndex < filteredActivities.length - 1) {
+      setSelectedId(filteredActivities[currentIndex + 1].id);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  };
+
+  const handleResetFilters = () => {
+    setSearchQuery('');
+    setSelectedCycle('all');
+    setSelectedSubject('all');
+    setSelectedTool('all');
   };
 
   const showToast = (_text: string, title: string) => {
@@ -84,7 +110,7 @@ export default function App() {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedId, isPresentationOpen]);
+  }, [currentIndex, filteredActivities, isPresentationOpen]);
 
   return (
     <div className="min-h-screen bg-slate-100/70 text-slate-900 flex flex-col font-sans">
@@ -103,18 +129,89 @@ export default function App() {
         totalFiltered={filteredActivities.length}
       />
 
-      {/* Activity Carousel / Stepper 1..20 */}
+      {/* Activity Carousel / Stepper - ONLY shows the filtered activities */}
       <ActivityCarousel
-        activities={ACTIVITIES}
+        activities={filteredActivities}
         selectedId={selectedId}
         onSelect={handleSelectActivity}
-        filteredIds={filteredIds}
+        totalActivitiesCount={ACTIVITIES.length}
       />
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 py-4 sm:py-6">
-        {/* If user is filtering and no results */}
-        {filteredActivities.length === 0 ? (
+        {/* Active Filter Banner */}
+        {isFiltered && (
+          <div className="mb-4 p-3 bg-blue-50/90 border border-blue-200/90 rounded-2xl flex flex-wrap items-center justify-between gap-3 text-xs text-blue-900 shadow-2xs no-print">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="font-bold flex items-center gap-1.5 text-blue-800">
+                <Filter className="w-3.5 h-3.5" />
+                Filtros ativos:
+              </span>
+              {searchQuery.trim() && (
+                <span className="inline-flex items-center gap-1 bg-white border border-blue-200 px-2.5 py-1 rounded-lg font-medium text-slate-800 shadow-2xs">
+                  Pesquisa: "{searchQuery}"
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="text-slate-400 hover:text-slate-700 ml-0.5 cursor-pointer font-bold"
+                    title="Remover pesquisa"
+                  >
+                    &times;
+                  </button>
+                </span>
+              )}
+              {selectedCycle !== 'all' && (
+                <span className="inline-flex items-center gap-1 bg-white border border-blue-200 px-2.5 py-1 rounded-lg font-medium text-slate-800 shadow-2xs">
+                  Ciclo: {selectedCycle}
+                  <button
+                    onClick={() => setSelectedCycle('all')}
+                    className="text-slate-400 hover:text-slate-700 ml-0.5 cursor-pointer font-bold"
+                    title="Remover filtro de ciclo"
+                  >
+                    &times;
+                  </button>
+                </span>
+              )}
+              {selectedSubject !== 'all' && (
+                <span className="inline-flex items-center gap-1 bg-white border border-blue-200 px-2.5 py-1 rounded-lg font-medium text-slate-800 shadow-2xs">
+                  Disciplina: {selectedSubject}
+                  <button
+                    onClick={() => setSelectedSubject('all')}
+                    className="text-slate-400 hover:text-slate-700 ml-0.5 cursor-pointer font-bold"
+                    title="Remover filtro de disciplina"
+                  >
+                    &times;
+                  </button>
+                </span>
+              )}
+              {selectedTool !== 'all' && (
+                <span className="inline-flex items-center gap-1 bg-white border border-blue-200 px-2.5 py-1 rounded-lg font-medium text-slate-800 shadow-2xs">
+                  Ferramenta: {selectedTool}
+                  <button
+                    onClick={() => setSelectedTool('all')}
+                    className="text-slate-400 hover:text-slate-700 ml-0.5 cursor-pointer font-bold"
+                    title="Remover filtro de ferramenta"
+                  >
+                    &times;
+                  </button>
+                </span>
+              )}
+              <span className="font-semibold text-blue-700 ml-1">
+                ({filteredActivities.length} de {ACTIVITIES.length} {filteredActivities.length === 1 ? 'atividade' : 'atividades'})
+              </span>
+            </div>
+
+            <button
+              onClick={handleResetFilters}
+              className="inline-flex items-center gap-1 text-xs font-bold text-blue-700 hover:text-blue-900 bg-white hover:bg-blue-100/50 border border-blue-200 px-3 py-1.5 rounded-lg transition-colors shadow-2xs cursor-pointer"
+            >
+              <X className="w-3.5 h-3.5" />
+              <span>Limpar todos os filtros</span>
+            </button>
+          </div>
+        )}
+
+        {/* If user is filtering and no results found */}
+        {filteredActivities.length === 0 || !currentActivity ? (
           <div className="text-center py-20 bg-white rounded-3xl border border-slate-200 p-8 shadow-xs max-w-xl mx-auto my-8">
             <span className="text-4xl block mb-3">🔍</span>
             <h2 className="text-xl font-bold text-slate-800 font-heading">
@@ -124,13 +221,8 @@ export default function App() {
               Experimente limpar o campo de pesquisa ou selecionar "Todos os Ciclos".
             </p>
             <button
-              onClick={() => {
-                setSearchQuery('');
-                setSelectedCycle('all');
-                setSelectedSubject('all');
-                setSelectedTool('all');
-              }}
-              className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-xl text-xs sm:text-sm font-semibold hover:bg-blue-700 transition-colors"
+              onClick={handleResetFilters}
+              className="mt-4 px-5 py-2.5 bg-blue-600 text-white rounded-xl text-xs sm:text-sm font-semibold hover:bg-blue-700 transition-colors cursor-pointer shadow-xs"
             >
               Repor Filtros
             </button>
@@ -146,12 +238,17 @@ export default function App() {
                 <span className="text-xs font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200 truncate max-w-[260px] sm:max-w-md">
                   #{currentActivity.id} de 20 &bull; {currentActivity.title}
                 </span>
+                {isFiltered && (
+                  <span className="text-xs font-medium text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full border border-slate-200">
+                    Resultado {currentIndex + 1} de {filteredActivities.length}
+                  </span>
+                )}
               </div>
 
               <div className="flex items-center gap-1.5 ml-auto">
                 <button
                   onClick={handlePrev}
-                  disabled={selectedId <= 1}
+                  disabled={currentIndex <= 0}
                   aria-label="Atividade anterior"
                   className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-30 disabled:pointer-events-none transition-all shadow-2xs"
                 >
@@ -160,7 +257,7 @@ export default function App() {
                 </button>
                 <button
                   onClick={handleNext}
-                  disabled={selectedId >= ACTIVITIES.length}
+                  disabled={currentIndex < 0 || currentIndex >= filteredActivities.length - 1}
                   aria-label="Atividade seguinte"
                   className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-30 disabled:pointer-events-none transition-all shadow-2xs"
                 >
@@ -174,15 +271,18 @@ export default function App() {
             <ActivitySheet
               activity={currentActivity}
               onCopyPrompt={showToast}
-              onNavigateHome={() => handleSelectActivity(1)}
+              onNavigateHome={() => {
+                handleResetFilters();
+                setSelectedId(1);
+              }}
               onTogglePresentation={() => setIsPresentationOpen(true)}
             />
 
-            {/* Bottom Stepper Navigation */}
+            {/* Bottom Stepper Navigation within filtered list */}
             <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs no-print">
               <button
                 onClick={handlePrev}
-                disabled={selectedId <= 1}
+                disabled={currentIndex <= 0}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-xs sm:text-sm hover:bg-slate-50 disabled:opacity-30 disabled:pointer-events-none transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
@@ -194,13 +294,13 @@ export default function App() {
                   Ideias para Usar a IA em Sala de Aula
                 </p>
                 <p className="text-xs font-bold text-slate-800">
-                  {selectedId} de {ACTIVITIES.length} Atividades Disponíveis
+                  {currentIndex + 1} de {filteredActivities.length} {filteredActivities.length === 1 ? 'Atividade Selecionada' : 'Atividades Selecionadas'}
                 </p>
               </div>
 
               <button
                 onClick={handleNext}
-                disabled={selectedId >= ACTIVITIES.length}
+                disabled={currentIndex < 0 || currentIndex >= filteredActivities.length - 1}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs sm:text-sm disabled:opacity-30 disabled:pointer-events-none transition-colors shadow-2xs"
               >
                 <span>Próxima Atividade</span>
@@ -230,15 +330,17 @@ export default function App() {
         onClose={() => setIsGuideOpen(false)}
       />
 
-      <PresentationModal
-        activity={currentActivity}
-        isOpen={isPresentationOpen}
-        onClose={() => setIsPresentationOpen(false)}
-        onPrev={handlePrev}
-        onNext={handleNext}
-        hasPrev={selectedId > 1}
-        hasNext={selectedId < ACTIVITIES.length}
-      />
+      {currentActivity && (
+        <PresentationModal
+          activity={currentActivity}
+          isOpen={isPresentationOpen}
+          onClose={() => setIsPresentationOpen(false)}
+          onPrev={handlePrev}
+          onNext={handleNext}
+          hasPrev={currentIndex > 0}
+          hasNext={currentIndex >= 0 && currentIndex < filteredActivities.length - 1}
+        />
+      )}
 
       <Toast message={toastMessage} onClose={() => setToastMessage(null)} />
     </div>

@@ -51,9 +51,18 @@ test('filterActivities filters correctly by search query', () => {
   assert.equal(queryResult.length, 1);
   assert.equal(queryResult[0].id, 1);
 
-  const mathResult = filterActivities(ACTIVITIES, { searchQuery: 'equação' });
+  // Accent-insensitive test: 'equacao' should find 'equação'
+  const mathResult = filterActivities(ACTIVITIES, { searchQuery: 'equacao' });
   assert.ok(mathResult.length >= 1);
   assert.ok(mathResult.some(a => a.id === 12));
+
+  // Tool name search in query: 'canva'
+  const canvaResult = filterActivities(ACTIVITIES, { searchQuery: 'canva' });
+  assert.ok(canvaResult.length >= 2);
+
+  // Direct number search
+  const idResult = filterActivities(ACTIVITIES, { searchQuery: '14' });
+  assert.ok(idResult.some(a => a.id === 14));
 });
 
 test('filterActivities filters correctly by tool', () => {

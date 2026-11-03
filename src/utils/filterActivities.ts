@@ -1,4 +1,5 @@
 import { Activity } from '../data/activities';
+import { TOOLS_DATABASE } from '../data/tools';
 
 export interface FilterOptions {
   searchQuery?: string;
@@ -7,50 +8,105 @@ export interface FilterOptions {
   selectedTool?: string;
 }
 
+/**
+ * Normalizes text by removing accents, diacritics, and converting to lowercase.
+ * E.g., "Português" -> "portugues", "Música" -> "musica", "1.º Ciclo" -> "1.o ciclo"
+ */
+export function normalizeText(str: string): string {
+  if (!str) return '';
+  return str
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/º/g, 'o')
+    .replace(/ª/g, 'a')
+    .toLowerCase()
+    .trim();
+}
+
 export function filterActivities(
   activities: Activity[],
   options: FilterOptions
 ): Activity[] {
-  const { searchQuery = '', selectedCycle = 'all', selectedSubject = 'all', selectedTool = 'all' } = options;
-  const query = searchQuery.trim().toLowerCase();
+  const {
+    searchQuery = '',
+    selectedCycle = 'all',
+    selectedSubject = 'all',
+    selectedTool = 'all'
+  } = options;
+
+  const rawQuery = searchQuery.trim();
+  const query = normalizeText(rawQuery);
 
   return activities.filter((activity) => {
-    // Cycle filter
+    // 1. Cycle filter
     if (selectedCycle !== 'all') {
-      const matchesCycle = activity.cycleCategories.some((c) =>
-        c.toLowerCase().includes(selectedCycle.toLowerCase())
-      ) || activity.cycle.toLowerCase().includes(selectedCycle.toLowerCase());
+      const normCycle = normalizeText(selectedCycle);
+      const matchesCycle =
+        activity.cycleCategories.some((c) => normalizeText(c).includes(normCycle)) ||
+        normalizeText(activity.cycle).includes(normCycle);
       if (!matchesCycle) return false;
     }
 
-    // Subject filter
+    // 2. Subject filter
     if (selectedSubject !== 'all') {
-      const matchesSubject = activity.disciplines.toLowerCase().includes(selectedSubject.toLowerCase());
+      const normSubject = normalizeText(selectedSubject);
+      const matchesSubject = normalizeText(activity.disciplines).includes(normSubject);
       if (!matchesSubject) return false;
     }
 
-    // Tool filter
+    // 3. Tool filter
     if (selectedTool !== 'all') {
-      const matchesTool = activity.toolKeys.includes(selectedTool.toLowerCase());
+      const normTool = selectedTool.toLowerCase().trim();
+      const matchesTool = activity.toolKeys.some((t) => t.toLowerCase() === normTool);
       if (!matchesTool) return false;
     }
 
-    // Text search query
+    // 4. Text search query
     if (query) {
-      const inTitle = activity.title.toLowerCase().includes(query);
-      const inDiscipline = activity.disciplines.toLowerCase().includes(query);
-      const inDesc = activity.briefDescription.toLowerCase().includes(query);
-      const inPrompt = (
-        activity.promptExample.studentInitial.toLowerCase().includes(query) ||
-        activity.promptExample.enriched.toLowerCase().includes(query)
-      );
-      const inProduct = activity.finalProduct.toLowerCase().includes(query);
-      const inTools = activity.toolKeys.some((t) => t.toLowerCase().includes(query));
-      const inSteps = activity.steps.some(
-        (s) => s.title.toLowerCase().includes(query) || s.description.toLowerCase().includes(query)
-      );
+      // Direct ID check (e.g., "1", "14", "#14", "atividade 14")
+      const queryIdClean = query.replace(/^#/, '').replace(/^atividade\s*/, '').trim();
+      if (queryIdClean && activity.id.toString() === queryIdClean) {
+        return true;
+      }
 
-      return inTitle || inDiscipline || inDesc || inPrompt || inProduct || inTools || inSteps;
+      // Check title
+      if (normalizeText(activity.title).includes(query)) return true;
+
+      // Check disciplines & cycle
+      if (normalizeText(activity.disciplines).includes(query)) return true;
+      if (normalizeText(activity.cycle).includes(query)) return true;
+
+      // Check brief description & learning objectives
+      if (normalizeText(activity.briefDescription).includes(query)) return true;
+      if (activity.learningObjectives.some((obj) => normalizeText(obj).includes(query))) return true;
+
+      // Check prompts
+      if (
+        normalizeText(activity.promptExample.studentInitial).includes(query) ||
+        normalizeText(activity.promptExample.enriched).includes(query)
+      ) {
+        return true;
+      }
+
+      // Check final product
+      if (normalizeText(activity.finalProduct).includes(query)) return true;
+
+      // Check tools (both tool key and display name, e.g. "Bing Image Creator", "Adobe Express")
+      const matchesAnyTool = activity.toolKeys.some((k) => {
+        if (normalizeText(k).includes(query)) return true;
+        const toolInfo = TOOLS_DATABASE[k];
+        if (toolInfo && normalizeText(toolInfo.name).includes(query)) return true;
+        return false;
+      });
+      if (matchesAnyTool) return true;
+
+      // Check steps (title & description)
+      const matchesAnyStep = activity.steps.some(
+        (s) => normalizeText(s.title).includes(query) || normalizeText(s.description).includes(query)
+      );
+      if (matchesAnyStep) return true;
+
+      return false;
     }
 
     return true;
@@ -65,7 +121,7 @@ export function getUniqueSubjects(activities: Activity[]): string[] {
       if (p) subjectSet.add(p);
     }
   }
-  return Array.from(subjectSet).sort();
+  return Array.from(subjectSet).sort((a, b) => a.localeCompare(b, 'pt'));
 }
 
 export function formatPromptForCopy(activity: Activity): string {

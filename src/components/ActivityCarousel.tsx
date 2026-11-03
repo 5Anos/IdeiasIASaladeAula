@@ -6,14 +6,14 @@ interface ActivityCarouselProps {
   activities: Activity[];
   selectedId: number;
   onSelect: (id: number) => void;
-  filteredIds: Set<number>;
+  totalActivitiesCount?: number;
 }
 
 export const ActivityCarousel: React.FC<ActivityCarouselProps> = ({
   activities,
   selectedId,
   onSelect,
-  filteredIds
+  totalActivitiesCount = 20
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const activeBtnRef = useRef<HTMLButtonElement>(null);
@@ -37,22 +37,35 @@ export const ActivityCarousel: React.FC<ActivityCarouselProps> = ({
   };
 
   const handleNext = () => {
-    if (currentIndex < activities.length - 1) {
+    if (currentIndex >= 0 && currentIndex < activities.length - 1) {
       onSelect(activities[currentIndex + 1].id);
     }
   };
 
+  if (activities.length === 0) {
+    return null;
+  }
+
+  const isFiltered = activities.length < totalActivitiesCount;
+
   return (
-    <div className="w-full bg-white/90 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-30 shadow-xs">
+    <div className="w-full bg-white/95 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-30 shadow-xs">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 flex items-center justify-between gap-2">
-        <button
-          onClick={handlePrev}
-          disabled={currentIndex <= 0}
-          aria-label="Atividade Anterior"
-          className="p-1.5 rounded-xl border border-slate-200 text-slate-600 hover:text-blue-600 hover:bg-blue-50/50 disabled:opacity-30 disabled:pointer-events-none transition-colors shrink-0"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
+        <div className="flex items-center gap-1 shrink-0">
+          <button
+            onClick={handlePrev}
+            disabled={currentIndex <= 0}
+            aria-label="Atividade Anterior"
+            className="p-1.5 rounded-xl border border-slate-200 text-slate-600 hover:text-blue-600 hover:bg-blue-50/50 disabled:opacity-30 disabled:pointer-events-none transition-colors shrink-0"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          {isFiltered && (
+            <span className="text-[11px] font-bold text-blue-700 bg-blue-50 border border-blue-200 px-2 py-0.5 rounded-md hidden lg:inline-block">
+              {activities.length} {activities.length === 1 ? 'selecionada' : 'selecionadas'}
+            </span>
+          )}
+        </div>
 
         <div
           ref={containerRef}
@@ -60,7 +73,6 @@ export const ActivityCarousel: React.FC<ActivityCarouselProps> = ({
         >
           {activities.map((act) => {
             const isSelected = act.id === selectedId;
-            const isMatch = filteredIds.has(act.id);
 
             return (
               <button
@@ -70,9 +82,7 @@ export const ActivityCarousel: React.FC<ActivityCarouselProps> = ({
                 className={`group relative shrink-0 flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border ${
                   isSelected
                     ? 'bg-blue-600 text-white border-blue-600 shadow-sm shadow-blue-200 scale-102'
-                    : isMatch
-                    ? 'bg-white text-slate-700 border-slate-200 hover:border-blue-300 hover:bg-blue-50/40'
-                    : 'bg-slate-50 text-slate-400 border-slate-100 opacity-60 hover:opacity-100'
+                    : 'bg-white text-slate-700 border-slate-200 hover:border-blue-300 hover:bg-blue-50/40'
                 }`}
               >
                 <span
@@ -94,7 +104,7 @@ export const ActivityCarousel: React.FC<ActivityCarouselProps> = ({
 
         <button
           onClick={handleNext}
-          disabled={currentIndex >= activities.length - 1}
+          disabled={currentIndex < 0 || currentIndex >= activities.length - 1}
           aria-label="Próxima Atividade"
           className="p-1.5 rounded-xl border border-slate-200 text-slate-600 hover:text-blue-600 hover:bg-blue-50/50 disabled:opacity-30 disabled:pointer-events-none transition-colors shrink-0"
         >
