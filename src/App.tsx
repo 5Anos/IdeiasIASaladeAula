@@ -14,7 +14,6 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCycle, setSelectedCycle] = useState('all');
   const [selectedSubject, setSelectedSubject] = useState('all');
-  const [selectedTool, setSelectedTool] = useState('all');
   const [isGuideOpen, setIsGuideOpen] = useState(false);
   const [isPresentationOpen, setIsPresentationOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -27,16 +26,14 @@ export default function App() {
     return filterActivities(ACTIVITIES, {
       searchQuery,
       selectedCycle,
-      selectedSubject,
-      selectedTool
+      selectedSubject
     });
-  }, [searchQuery, selectedCycle, selectedSubject, selectedTool]);
+  }, [searchQuery, selectedCycle, selectedSubject]);
 
   const isFiltered =
     searchQuery.trim() !== '' ||
     selectedCycle !== 'all' ||
-    selectedSubject !== 'all' ||
-    selectedTool !== 'all';
+    selectedSubject !== 'all';
 
   // Automatically keep selectedId synchronized with filtered results
   useEffect(() => {
@@ -84,7 +81,6 @@ export default function App() {
     setSearchQuery('');
     setSelectedCycle('all');
     setSelectedSubject('all');
-    setSelectedTool('all');
   };
 
   const showToast = (_text: string, title: string) => {
@@ -122,8 +118,6 @@ export default function App() {
         onCycleChange={setSelectedCycle}
         selectedSubject={selectedSubject}
         onSubjectChange={setSelectedSubject}
-        selectedTool={selectedTool}
-        onToolChange={setSelectedTool}
         subjects={subjects}
         onOpenGuide={() => setIsGuideOpen(true)}
         totalFiltered={filteredActivities.length}
@@ -178,18 +172,6 @@ export default function App() {
                     onClick={() => setSelectedSubject('all')}
                     className="text-slate-400 hover:text-slate-700 ml-0.5 cursor-pointer font-bold"
                     title="Remover filtro de disciplina"
-                  >
-                    &times;
-                  </button>
-                </span>
-              )}
-              {selectedTool !== 'all' && (
-                <span className="inline-flex items-center gap-1 bg-white border border-blue-200 px-2.5 py-1 rounded-lg font-medium text-slate-800 shadow-2xs">
-                  Ferramenta: {selectedTool}
-                  <button
-                    onClick={() => setSelectedTool('all')}
-                    className="text-slate-400 hover:text-slate-700 ml-0.5 cursor-pointer font-bold"
-                    title="Remover filtro de ferramenta"
                   >
                     &times;
                   </button>
