@@ -125,12 +125,16 @@ export function getUniqueSubjects(activities: Activity[]): string[] {
 }
 
 export function formatPromptForCopy(activity: Activity): string {
-  return `=== ATIVIDADE: ${activity.id}. ${activity.title} ===
+  return `=== ATIVIDADE ${activity.id}: ${activity.title} ===
 Disciplina / Ano: ${activity.disciplines} (${activity.cycle})
+Duração: ${activity.duration}
 
-${activity.promptExample.initialLabel || 'Prompt inicial do aluno:'}
-"${activity.promptExample.studentInitial}"
+Descrição:
+${activity.briefDescription}
 
-${activity.promptExample.enrichedLabel || 'Prompt enriquecido com a turma:'}
-"${activity.promptExample.enriched}"`;
+Passo a Passo:
+${activity.steps.map((s) => `${s.number}. ${s.title}: ${s.description}`).join('\n')}
+
+Produto Final:
+${activity.finalProduct}`;
 }

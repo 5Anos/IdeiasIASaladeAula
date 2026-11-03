@@ -114,25 +114,14 @@ export const PresentationModal: React.FC<PresentationModalProps> = ({
           </div>
         </div>
 
-        {/* Prompts Side by Side */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="p-5 rounded-2xl bg-amber-50/60 border border-amber-200">
-            <h3 className="text-sm font-bold text-amber-900 mb-2 font-heading">
-              {activity.promptExample.initialLabel || 'Prompt inicial do aluno:'}
-            </h3>
-            <p className="text-sm font-serif italic text-slate-800 bg-white p-3 rounded-xl border border-amber-100">
-              "{activity.promptExample.studentInitial}"
-            </p>
-          </div>
-
-          <div className="p-5 rounded-2xl bg-blue-50/60 border border-blue-200">
-            <h3 className="text-sm font-bold text-blue-900 mb-2 font-heading">
-              {activity.promptExample.enrichedLabel || 'Prompt enriquecido com a turma:'}
-            </h3>
-            <p className="text-sm font-medium text-slate-900 bg-white p-3 rounded-xl border border-blue-100">
-              "{activity.promptExample.enriched}"
-            </p>
-          </div>
+        {/* Produto Final */}
+        <div className="p-5 rounded-2xl bg-amber-50/70 border border-amber-200 shadow-2xs">
+          <h3 className="text-sm font-bold text-amber-900 mb-1.5 font-heading uppercase tracking-wider">
+            Produto Final:
+          </h3>
+          <p className="text-sm sm:text-base text-slate-800 leading-relaxed font-medium">
+            {activity.finalProduct}
+          </p>
         </div>
 
         {/* Tools row */}

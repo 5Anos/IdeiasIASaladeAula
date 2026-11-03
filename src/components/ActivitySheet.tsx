@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Activity } from '../data/activities';
 import { ToolBadge } from './ToolBadge';
 import { formatPromptForCopy } from '../utils/filterActivities';
@@ -9,13 +9,11 @@ import {
   Target,
   BarChart3,
   Settings,
-  Sparkles,
   Palette,
   Wrench,
   Check,
   Copy,
   ArrowRight,
-  ArrowDown,
   Printer,
   Share2,
   Maximize2,
@@ -38,22 +36,6 @@ export const ActivitySheet: React.FC<ActivitySheetProps> = ({
   onNavigateHome,
   onTogglePresentation
 }) => {
-  const [copiedEnriched, setCopiedEnriched] = useState(false);
-  const [copiedInitial, setCopiedInitial] = useState(false);
-
-  const handleCopy = (text: string, type: 'initial' | 'enriched') => {
-    navigator.clipboard.writeText(text);
-    if (type === 'enriched') {
-      setCopiedEnriched(true);
-      setTimeout(() => setCopiedEnriched(false), 2000);
-      onCopyPrompt(text, 'Prompt enriquecido copiado!');
-    } else {
-      setCopiedInitial(true);
-      setTimeout(() => setCopiedInitial(false), 2000);
-      onCopyPrompt(text, 'Prompt inicial copiado!');
-    }
-  };
-
   const handleCopyFull = () => {
     const full = formatPromptForCopy(activity);
     navigator.clipboard.writeText(full);
@@ -401,105 +383,14 @@ export const ActivitySheet: React.FC<ActivitySheetProps> = ({
             </div>
           </div>
 
-          {/* Section: Bottom Row (Prompt Example + Final Product + Recommended Tools) */}
-          <div id={`exemplo-${activity.id}`} className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-            {/* Left Column: Exemplo prático de Prompt (approx 7 cols) */}
-            <div className="lg:col-span-7 bg-gradient-to-br from-amber-50/50 via-white to-blue-50/30 border border-amber-200/80 rounded-2xl p-5 shadow-2xs space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-2.5 text-amber-600">
-                  <div className="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center">
-                    <Sparkles className="w-4 h-4 text-amber-600" />
-                  </div>
-                  <h2 className="text-base sm:text-lg font-bold font-heading text-slate-900">
-                    Exemplo prático de Prompt
-                  </h2>
-                </div>
-                <span className="text-[11px] font-semibold text-amber-700 bg-amber-100/70 px-2.5 py-0.5 rounded-full">
-                  Para usar na aula
-                </span>
-              </div>
-
-              {/* Prompt inicial */}
-              <div className="bg-white rounded-xl p-3.5 border border-slate-200/90 shadow-2xs">
-                <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs font-bold text-slate-600">
-                    {activity.promptExample.initialLabel || 'Prompt inicial do aluno:'}
-                  </span>
-                  <button
-                    onClick={() => handleCopy(activity.promptExample.studentInitial, 'initial')}
-                    className="text-xs flex items-center gap-1 text-slate-500 hover:text-blue-600 transition-colors"
-                    title="Copiar prompt inicial"
-                  >
-                    {copiedInitial ? (
-                      <>
-                        <Check className="w-3.5 h-3.5 text-emerald-600" />
-                        <span className="text-emerald-600 font-semibold">Copiado</span>
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3.5 h-3.5" />
-                        <span>Copiar</span>
-                      </>
-                    )}
-                  </button>
-                </div>
-                <p className="text-xs sm:text-sm italic text-slate-700 font-serif bg-slate-50 p-2.5 rounded-lg border border-slate-100">
-                  "{activity.promptExample.studentInitial}"
-                </p>
-              </div>
-
-              {/* Down Arrow Indicator */}
-              <div className="flex items-center justify-center">
-                <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center shadow-2xs">
-                  <ArrowDown className="w-3.5 h-3.5" />
-                </div>
-              </div>
-
-              {/* Prompt enriquecido */}
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50/60 rounded-xl p-3.5 border border-blue-200/90 shadow-xs">
-                <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs font-bold text-blue-900">
-                    {activity.promptExample.enrichedLabel || 'Prompt enriquecido com a turma:'}
-                  </span>
-                  <button
-                    onClick={() => handleCopy(activity.promptExample.enriched, 'enriched')}
-                    className="text-xs flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-all shadow-2xs"
-                    title="Copiar prompt enriquecido"
-                  >
-                    {copiedEnriched ? (
-                      <>
-                        <Check className="w-3.5 h-3.5" />
-                        <span>Copiado!</span>
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3.5 h-3.5" />
-                        <span>Copiar Prompt</span>
-                      </>
-                    )}
-                  </button>
-                </div>
-                <p className="text-xs sm:text-sm font-medium text-slate-900 bg-white/90 p-3 rounded-lg border border-blue-100 leading-relaxed">
-                  "{activity.promptExample.enriched}"
-                </p>
-              </div>
-
-              {/* Dica pedagógica para a turma */}
-              <div className="bg-white/80 rounded-xl p-3.5 border border-slate-200/80 text-xs text-slate-600 flex items-center gap-2.5">
-                <span className="text-xl">💡</span>
-                <span className="leading-relaxed">
-                  <strong>Sugestão pedagógica para a turma:</strong> Peça aos alunos para identificarem que palavras do prompt enriquecido fizeram maior diferença no resultado (estilo artístico, contexto, pormenores).
-                </span>
-              </div>
-            </div>
-
-            {/* Right Column: Produto Final + Ferramentas Recomendadas (approx 5 cols) */}
-            <div className="lg:col-span-5 space-y-4">
-              {/* Produto Final */}
-              <div className="bg-[#fff9f0] border border-amber-200/80 rounded-2xl p-5 shadow-2xs">
-                <div className="flex items-center gap-2.5 mb-2 text-amber-700">
-                  <div className="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center">
-                    <Palette className="w-4 h-4 text-amber-700" />
+          {/* Section: Produto Final e Ferramentas Recomendadas */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+            {/* Produto Final */}
+            <div className="bg-[#fff9f0] border border-amber-200/80 rounded-2xl p-5 sm:p-6 shadow-2xs flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2.5 mb-3 text-amber-700">
+                  <div className="w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center shadow-2xs">
+                    <Palette className="w-5 h-5 text-amber-700" />
                   </div>
                   <h2 className="text-base sm:text-lg font-bold font-heading text-slate-900">
                     Produto Final
@@ -509,16 +400,18 @@ export const ActivitySheet: React.FC<ActivitySheetProps> = ({
                   {activity.finalProduct}
                 </p>
               </div>
+            </div>
 
-              {/* Ferramentas Recomendadas with direct links and logos */}
-              <div
-                id={`ferramentas-${activity.id}`}
-                className="bg-white border border-slate-200/90 rounded-2xl p-5 shadow-2xs space-y-3"
-              >
-                <div className="flex items-center justify-between">
+            {/* Ferramentas Recomendadas with direct links and logos */}
+            <div
+              id={`ferramentas-${activity.id}`}
+              className="bg-white border border-slate-200/90 rounded-2xl p-5 sm:p-6 shadow-2xs space-y-3 flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2.5 text-blue-700">
-                    <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
-                      <Wrench className="w-4 h-4 text-blue-700" />
+                    <div className="w-9 h-9 rounded-xl bg-blue-100 flex items-center justify-center shadow-2xs">
+                      <Wrench className="w-5 h-5 text-blue-700" />
                     </div>
                     <h2 className="text-base sm:text-lg font-bold font-heading text-slate-900">
                       Ferramentas Recomendadas
@@ -529,7 +422,7 @@ export const ActivitySheet: React.FC<ActivitySheetProps> = ({
                   </span>
                 </div>
 
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-slate-500 mb-2">
                   Clique numa ferramenta para aceder diretamente à página oficial:
                 </p>
 

@@ -79,9 +79,9 @@ test('getUniqueSubjects extracts disciplines', () => {
   assert.ok(subjects.includes('Ciências Naturais'));
 });
 
-test('formatPromptForCopy generates formatted text with activity info and prompts', () => {
+test('formatPromptForCopy generates formatted text with activity info', () => {
   const text = formatPromptForCopy(ACTIVITIES[0]);
-  assert.ok(text.includes('1. A IA Desenha o que Eu Imagino'));
-  assert.ok(text.includes('Um peixe com rodas.'));
-  assert.ok(text.includes('Ilustração infantil colorida'));
+  assert.ok(text.includes('ATIVIDADE 1: A IA Desenha o que Eu Imagino'));
+  assert.ok(text.includes('Português'));
+  assert.ok(text.includes('Passo a Passo:'));
 });
