@@ -7,7 +7,7 @@ import { ActivitySheet } from './components/ActivitySheet';
 import { TeacherGuideModal } from './components/TeacherGuideModal';
 import { PresentationModal } from './components/PresentationModal';
 import { Toast } from './components/Toast';
-import { ArrowLeft, ArrowRight, Filter, X } from 'lucide-react';
+import { Filter, X } from 'lucide-react';
 
 export default function App() {
   const [selectedId, setSelectedId] = useState<number>(1);
@@ -132,18 +132,18 @@ export default function App() {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 py-4 sm:py-6">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 py-4 sm:py-5">
         {/* Active Filter Banner */}
         {isFiltered && (
-          <div className="mb-4 p-3 bg-blue-50/90 border border-blue-200/90 rounded-2xl flex flex-wrap items-center justify-between gap-3 text-xs text-blue-900 shadow-2xs no-print">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="font-bold flex items-center gap-1.5 text-blue-800">
+          <div className="mb-4 px-3.5 py-2 bg-blue-50/80 border border-blue-200/70 rounded-xl flex flex-wrap items-center justify-between gap-2 text-xs text-blue-900 shadow-2xs no-print">
+            <div className="flex flex-wrap items-center gap-1.5">
+              <span className="font-bold flex items-center gap-1 text-blue-800 shrink-0">
                 <Filter className="w-3.5 h-3.5" />
                 Filtros ativos:
               </span>
               {searchQuery.trim() && (
-                <span className="inline-flex items-center gap-1 bg-white border border-blue-200 px-2.5 py-1 rounded-lg font-medium text-slate-800 shadow-2xs">
-                  Pesquisa: "{searchQuery}"
+                <span className="inline-flex items-center gap-1 bg-white border border-blue-200 px-2 py-0.5 rounded-lg font-medium text-slate-800 shadow-2xs">
+                  <span>Pesquisa: "{searchQuery}"</span>
                   <button
                     onClick={() => setSearchQuery('')}
                     className="text-slate-400 hover:text-slate-700 ml-0.5 cursor-pointer font-bold"
@@ -154,8 +154,8 @@ export default function App() {
                 </span>
               )}
               {selectedCycle !== 'all' && (
-                <span className="inline-flex items-center gap-1 bg-white border border-blue-200 px-2.5 py-1 rounded-lg font-medium text-slate-800 shadow-2xs">
-                  Ciclo: {selectedCycle}
+                <span className="inline-flex items-center gap-1 bg-white border border-blue-200 px-2 py-0.5 rounded-lg font-medium text-slate-800 shadow-2xs">
+                  <span>Ciclo: {selectedCycle}</span>
                   <button
                     onClick={() => setSelectedCycle('all')}
                     className="text-slate-400 hover:text-slate-700 ml-0.5 cursor-pointer font-bold"
@@ -166,8 +166,8 @@ export default function App() {
                 </span>
               )}
               {selectedSubject !== 'all' && (
-                <span className="inline-flex items-center gap-1 bg-white border border-blue-200 px-2.5 py-1 rounded-lg font-medium text-slate-800 shadow-2xs">
-                  Disciplina: {selectedSubject}
+                <span className="inline-flex items-center gap-1 bg-white border border-blue-200 px-2 py-0.5 rounded-lg font-medium text-slate-800 shadow-2xs">
+                  <span>Disciplina: {selectedSubject}</span>
                   <button
                     onClick={() => setSelectedSubject('all')}
                     className="text-slate-400 hover:text-slate-700 ml-0.5 cursor-pointer font-bold"
@@ -184,10 +184,10 @@ export default function App() {
 
             <button
               onClick={handleResetFilters}
-              className="inline-flex items-center gap-1 text-xs font-bold text-blue-700 hover:text-blue-900 bg-white hover:bg-blue-100/50 border border-blue-200 px-3 py-1.5 rounded-lg transition-colors shadow-2xs cursor-pointer"
+              className="inline-flex items-center gap-1 text-xs font-semibold text-blue-700 hover:text-blue-900 bg-white hover:bg-blue-100/50 border border-blue-200 px-2.5 py-1 rounded-lg transition-colors shadow-2xs cursor-pointer ml-auto"
             >
               <X className="w-3.5 h-3.5" />
-              <span>Limpar todos os filtros</span>
+              <span>Limpar filtros</span>
             </button>
           </div>
         )}
@@ -221,36 +221,6 @@ export default function App() {
               }}
               onTogglePresentation={() => setIsPresentationOpen(true)}
             />
-
-            {/* Bottom Stepper Navigation within filtered list */}
-            <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 mt-6 p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs no-print">
-              <button
-                onClick={handlePrev}
-                disabled={currentIndex <= 0}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 font-semibold text-xs sm:text-sm hover:bg-slate-50 disabled:opacity-30 disabled:pointer-events-none transition-colors"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                <span>Atividade Anterior</span>
-              </button>
-
-              <div className="text-center">
-                <p className="text-xs text-slate-500">
-                  Ideias para Usar a IA em Sala de Aula
-                </p>
-                <p className="text-xs font-bold text-slate-800">
-                  {currentIndex + 1} de {filteredActivities.length} {filteredActivities.length === 1 ? 'Atividade Selecionada' : 'Atividades Selecionadas'}
-                </p>
-              </div>
-
-              <button
-                onClick={handleNext}
-                disabled={currentIndex < 0 || currentIndex >= filteredActivities.length - 1}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs sm:text-sm disabled:opacity-30 disabled:pointer-events-none transition-colors shadow-2xs"
-              >
-                <span>Próxima Atividade</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
           </div>
         )}
       </main>

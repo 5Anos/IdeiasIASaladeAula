@@ -239,22 +239,6 @@ export const ActivitySheet: React.FC<ActivitySheetProps> = ({
                   </p>
                 </div>
               </div>
-
-              {/* Left Column Student Thinking Vignette (Faithful to lower-left corner of user image) */}
-              <div className="bg-gradient-to-br from-blue-50/80 via-white to-amber-50/60 border border-blue-100 rounded-2xl p-4 shadow-2xs text-slate-800">
-                <div className="flex items-center gap-3">
-                  <div className="text-3xl">👦📝</div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-1.5 text-xs font-bold text-blue-900 font-heading">
-                      <span>💭</span>
-                      <span>Criatividade em Sala</span>
-                    </div>
-                    <p className="text-[11px] text-slate-600 leading-snug mt-0.5">
-                      "A imaginação humana é o ponto de partida que guia a inteligência artificial."
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Right Column: Description & Objectives (approx 8 cols) */}
