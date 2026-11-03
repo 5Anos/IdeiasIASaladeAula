@@ -1,5 +1,7 @@
 import React from 'react';
-import { Search, Info, X, BookOpen } from 'lucide-react';
+import { Search, X, BookOpen } from 'lucide-react';
+import { HeaderIllustration } from './HeaderIllustration';
+import { HeaderLaptopIcon } from './HeaderLaptopIcon';
 
 interface NavbarProps {
   searchQuery: string;
@@ -34,32 +36,74 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="bg-white border-b border-slate-200/90 shadow-2xs no-print">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-5 pb-3.5">
-        {/* 1. Harmonized Header Row */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3.5">
-          <div className="space-y-1">
-            <h1 className="text-xl sm:text-2xl lg:text-[25px] font-extrabold text-slate-900 font-heading tracking-tight leading-tight">
-              IDEIAS PARA USAR A IA EM SALA DE AULA
-            </h1>
-            <p className="text-xs sm:text-[13px] text-slate-500 font-normal leading-relaxed max-w-3xl">
-              Atividades estruturadas com objetivos curriculares, passo a passo, engenharia de prompts e ferramentas recomendadas com hiperligações diretas.
-            </p>
-          </div>
+      {/* 1. Illustrated Educational Header Banner */}
+      <div className="relative overflow-hidden bg-gradient-to-r from-[#e1effc] via-[#eff6fc] to-[#e4f1fc] border-b border-blue-200/70">
+        {/* Subtle decorative background shapes */}
+        <div className="absolute -top-12 -left-12 w-48 h-48 bg-white/40 rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute top-2 right-1/4 w-36 h-24 bg-white/50 rounded-full blur-xl pointer-events-none" />
+        <div className="absolute -bottom-8 right-12 w-44 h-32 bg-amber-100/30 rounded-full blur-2xl pointer-events-none" />
 
-          {/* Action button aligned in height & style */}
-          <div className="shrink-0 self-start md:self-center">
-            <button
-              onClick={onOpenGuide}
-              className="h-9 px-3.5 rounded-xl text-xs sm:text-[13px] font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200/90 inline-flex items-center gap-2 transition-all cursor-pointer shadow-2xs hover:shadow-xs active:scale-98"
-            >
-              <Info className="w-4 h-4 text-blue-600 shrink-0" />
-              <span>Guia do Professor</span>
-            </button>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-6">
+            
+            {/* Left: Laptop Icon + Title & Subtitle */}
+            <div className="flex items-center gap-3.5 sm:gap-4 max-w-2xl text-left w-full lg:w-auto">
+              {/* Illustrated IA Laptop Icon with yellow sparkle rays */}
+              <div className="shrink-0 hidden sm:block">
+                <HeaderLaptopIcon className="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-sm" />
+              </div>
+
+              <div className="space-y-1">
+                <h1 className="text-xl sm:text-2xl md:text-3xl font-black text-[#0f2d59] font-heading tracking-tight leading-tight">
+                  Ideias para Usar a IA em Sala de{' '}
+                  <span className="relative inline-block text-[#0a2342]">
+                    Aula
+                    {/* Decorative yellow wave arc underneath "Aula" */}
+                    <svg
+                      className="absolute -bottom-1 left-0 w-full h-2 text-amber-400"
+                      viewBox="0 0 100 12"
+                      fill="none"
+                      preserveAspectRatio="none"
+                    >
+                      <path
+                        d="M2 8C25 2 60 11 98 4"
+                        stroke="#f59e0b"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </span>
+                </h1>
+                <p className="text-xs sm:text-[13px] text-slate-600 font-normal leading-relaxed max-w-xl">
+                  Atividades estruturadas com objetivos curriculares, passo a passo, engenharia de prompts e ferramentas recomendadas com hiperligações diretas.
+                </p>
+              </div>
+            </div>
+
+            {/* Right: AI Robot + Lightbulb Illustration & Guia do Professor Button */}
+            <div className="flex items-center justify-between lg:justify-end gap-3 sm:gap-6 w-full lg:w-auto shrink-0 mt-1 lg:mt-0">
+              {/* Robot + Desk Educational Illustration */}
+              <div className="w-36 sm:w-44 md:w-52 h-auto shrink-0 drop-shadow-xs">
+                <HeaderIllustration className="w-full h-auto" />
+              </div>
+
+              {/* Guia do Professor Button */}
+              <button
+                onClick={onOpenGuide}
+                className="h-10 px-4 sm:px-5 rounded-full text-xs sm:text-sm font-bold text-blue-700 bg-white hover:bg-blue-50 border-2 border-blue-600 inline-flex items-center gap-2 transition-all cursor-pointer shadow-xs hover:shadow-md active:scale-98 shrink-0"
+              >
+                <BookOpen className="w-4 h-4 text-blue-600 shrink-0" />
+                <span>Guia do Professor</span>
+              </button>
+            </div>
+
           </div>
         </div>
+      </div>
 
-        {/* 2. Harmonized Unified Filter Bar */}
-        <div className="mt-3.5 pt-3 border-t border-slate-100 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-2.5">
+      {/* 2. Harmonized Unified Filter Bar */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+        <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-2.5">
           {/* Segmented Cycle Filter */}
           <div className="bg-slate-100/90 p-1 rounded-xl flex items-center gap-1 overflow-x-auto no-scrollbar shrink-0 border border-slate-200/60">
             {cycles.map((c) => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Activity } from '../data/activities';
 import { ToolBadge } from './ToolBadge';
-import { formatPromptForCopy } from '../utils/filterActivities';
 import {
   BookOpen,
   Clock,
@@ -12,11 +11,7 @@ import {
   Palette,
   Wrench,
   Check,
-  Copy,
   ArrowRight,
-  Printer,
-  Share2,
-  Maximize2,
   FileEdit,
   MonitorPlay,
   Sliders,
@@ -25,23 +20,17 @@ import {
 
 interface ActivitySheetProps {
   activity: Activity;
-  onCopyPrompt: (text: string, title: string) => void;
+  onCopyPrompt?: (text: string, title: string) => void;
   onNavigateHome?: () => void;
   onTogglePresentation?: () => void;
 }
 
 export const ActivitySheet: React.FC<ActivitySheetProps> = ({
   activity,
-  onCopyPrompt,
+  onCopyPrompt: _onCopyPrompt,
   onNavigateHome,
-  onTogglePresentation
+  onTogglePresentation: _onTogglePresentation
 }) => {
-  const handleCopyFull = () => {
-    const full = formatPromptForCopy(activity);
-    navigator.clipboard.writeText(full);
-    onCopyPrompt(full, `Ficha da Atividade ${activity.id} copiada!`);
-  };
-
   // Helper for step icons to match template
   const getStepIcon = (stepNumber: number) => {
     switch (stepNumber) {
@@ -76,7 +65,7 @@ export const ActivitySheet: React.FC<ActivitySheetProps> = ({
   return (
     <div className="activity-sheet w-full max-w-6xl mx-auto bg-white rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-200/90 overflow-hidden my-4 sm:my-8 transition-all">
         {/* Top Sheet Header Bar */}
-        <div className="bg-[#f0f6ff]/80 border-b border-blue-100/80 px-4 sm:px-8 py-3.5 flex flex-wrap items-center justify-between gap-3">
+        <div className="bg-[#f0f6ff]/80 border-b border-blue-100/80 px-4 sm:px-8 py-3.5 flex items-center justify-between">
           <button
             onClick={onNavigateHome}
             className="flex items-center gap-2.5 text-[#1e3a8a] font-bold text-sm sm:text-base hover:opacity-80 transition-opacity"
@@ -88,36 +77,6 @@ export const ActivitySheet: React.FC<ActivitySheetProps> = ({
             </div>
             <span className="font-heading tracking-wide">Atividades com IA</span>
           </button>
-
-          {/* Action buttons */}
-          <div className="flex items-center gap-1.5">
-            <button
-              onClick={() => window.print()}
-              title="Imprimir esta Ficha Pedagógica"
-              aria-label="Imprimir ficha"
-              className="p-1.5 text-slate-600 hover:text-blue-600 hover:bg-white rounded-lg transition-colors border border-transparent hover:border-slate-200"
-            >
-              <Printer className="w-4 h-4" />
-            </button>
-            <button
-              onClick={handleCopyFull}
-              title="Copiar texto completo da atividade"
-              aria-label="Copiar texto completo"
-              className="p-1.5 text-slate-600 hover:text-blue-600 hover:bg-white rounded-lg transition-colors border border-transparent hover:border-slate-200"
-            >
-              <Share2 className="w-4 h-4" />
-            </button>
-            {onTogglePresentation && (
-              <button
-                onClick={onTogglePresentation}
-                title="Modo Apresentação / Ecrã Completo"
-                aria-label="Modo Apresentação"
-                className="p-1.5 text-slate-600 hover:text-blue-600 hover:bg-white rounded-lg transition-colors border border-transparent hover:border-slate-200"
-              >
-                <Maximize2 className="w-4 h-4" />
-              </button>
-            )}
-          </div>
         </div>
 
         {/* Hero Title Banner with Graphic Style matching attached artwork */}
