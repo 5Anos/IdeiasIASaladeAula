@@ -4,7 +4,6 @@ import { filterActivities, getUniqueSubjects } from './utils/filterActivities';
 import { Navbar } from './components/Navbar';
 import { ActivityCarousel } from './components/ActivityCarousel';
 import { ActivitySheet } from './components/ActivitySheet';
-import { ActivityGrid } from './components/ActivityGrid';
 import { TeacherGuideModal } from './components/TeacherGuideModal';
 import { PresentationModal } from './components/PresentationModal';
 import { Toast } from './components/Toast';
@@ -16,7 +15,6 @@ export default function App() {
   const [selectedCycle, setSelectedCycle] = useState('all');
   const [selectedSubject, setSelectedSubject] = useState('all');
   const [selectedTool, setSelectedTool] = useState('all');
-  const [viewMode, setViewMode] = useState<'sheet' | 'grid'>('sheet');
   const [isGuideOpen, setIsGuideOpen] = useState(false);
   const [isPresentationOpen, setIsPresentationOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
@@ -46,7 +44,6 @@ export default function App() {
   // Navigation handlers
   const handleSelectActivity = (id: number) => {
     setSelectedId(id);
-    setViewMode('sheet');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -102,8 +99,6 @@ export default function App() {
         selectedTool={selectedTool}
         onToolChange={setSelectedTool}
         subjects={subjects}
-        viewMode={viewMode}
-        onViewModeChange={setViewMode}
         onOpenGuide={() => setIsGuideOpen(true)}
         totalFiltered={filteredActivities.length}
       />
@@ -139,21 +134,6 @@ export default function App() {
             >
               Repor Filtros
             </button>
-          </div>
-        ) : viewMode === 'grid' ? (
-          <div>
-            <div className="flex items-center justify-between mb-2">
-              <h2 className="text-lg font-bold text-slate-800 font-heading">
-                Todas as 20 Atividades com IA ({filteredActivities.length} exibidas)
-              </h2>
-              <span className="text-xs text-slate-500">
-                Clique em qualquer cartão para ver a ficha gráfica completa
-              </span>
-            </div>
-            <ActivityGrid
-              activities={filteredActivities}
-              onSelectActivity={handleSelectActivity}
-            />
           </div>
         ) : (
           <div>

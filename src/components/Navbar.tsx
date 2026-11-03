@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Filter, BookOpen, Layers, LayoutGrid, FileText, Info, X } from 'lucide-react';
+import { Search, Filter, BookOpen, Info, X } from 'lucide-react';
 import { TOOLS_DATABASE } from '../data/tools';
 
 interface NavbarProps {
@@ -12,8 +12,6 @@ interface NavbarProps {
   selectedTool: string;
   onToolChange: (t: string) => void;
   subjects: string[];
-  viewMode: 'sheet' | 'grid';
-  onViewModeChange: (m: 'sheet' | 'grid') => void;
   onOpenGuide: () => void;
   totalFiltered: number;
 }
@@ -28,8 +26,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   selectedTool,
   onToolChange,
   subjects,
-  viewMode,
-  onViewModeChange,
   onOpenGuide,
   totalFiltered
 }) => {
@@ -74,32 +70,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               <Info className="w-4 h-4 text-blue-600" />
               <span>Guia do Professor</span>
             </button>
-
-            {/* View Mode Switcher */}
-            <div className="flex items-center p-1 rounded-xl bg-slate-100 border border-slate-200">
-              <button
-                onClick={() => onViewModeChange('sheet')}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                  viewMode === 'sheet'
-                    ? 'bg-white text-blue-700 shadow-2xs font-bold'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
-              >
-                <FileText className="w-3.5 h-3.5" />
-                <span>Ficha Gráfica</span>
-              </button>
-              <button
-                onClick={() => onViewModeChange('grid')}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                  viewMode === 'grid'
-                    ? 'bg-white text-blue-700 shadow-2xs font-bold'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
-              >
-                <LayoutGrid className="w-3.5 h-3.5" />
-                <span>Grelha Geral</span>
-              </button>
-            </div>
           </div>
         </div>
 
