@@ -1,0 +1,6 @@
+{
+  "name": "Ideias para Usar a IA em Sala de Aula",
+  "description": "Plataforma educativa com 20 atividades práticas, passo a passo, exemplos de prompts e ferramentas de inteligência artificial com ligações diretas para professores.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

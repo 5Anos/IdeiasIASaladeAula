@@ -1,0 +1,561 @@
+export interface ToolInfo {
+  id: string;
+  name: string;
+  domain: string;
+  url: string;
+  category: 'imagem' | 'texto' | 'audio' | 'video' | 'educacao' | 'produtividade' | 'matematica';
+  description: string;
+  badgeBg: string;
+  badgeText: string;
+  brandColor: string;
+  logoUrl: string;
+  svgIcon: string;
+}
+
+export const TOOLS_DATABASE: Record<string, ToolInfo> = {
+  canva: {
+    id: 'canva',
+    name: 'Canva',
+    domain: 'canva.com',
+    url: 'https://www.canva.com/',
+    category: 'imagem',
+    description: 'Design gráfico e criação de imagens com Mídia Mágica e IA.',
+    badgeBg: 'bg-[#00c4cc]/15 text-[#007a80] hover:bg-[#00c4cc]/25 border-[#00c4cc]/30',
+    badgeText: 'text-[#007a80]',
+    brandColor: '#00C4CC',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=canva.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><circle cx="12" cy="12" r="10" fill="#00C4CC"/><path d="M12.3 8.3c-2.4 0-4.1 1.7-4.1 4.1 0 2.2 1.5 3.8 3.8 3.8 1.4 0 2.5-.6 3.1-1.6l-1.3-.9c-.4.7-1 1.1-1.8 1.1-1.3 0-2.3-.9-2.3-2.4s1-2.4 2.3-2.4c.8 0 1.4.4 1.8 1.1l1.3-.9c-.6-1.1-1.7-1.9-2.8-1.9z" fill="#ffffff"/></svg>`
+  },
+  bing: {
+    id: 'bing',
+    name: 'Bing Image Creator',
+    domain: 'bing.com',
+    url: 'https://www.bing.com/create',
+    category: 'imagem',
+    description: 'Gerador gratuito de imagens por IA da Microsoft com tecnologia DALL-E 3.',
+    badgeBg: 'bg-[#008080]/15 text-[#006666] hover:bg-[#008080]/25 border-[#008080]/30',
+    badgeText: 'text-[#006666]',
+    brandColor: '#008080',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=bing.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><path d="M5 3v18l5-2.8V6.5l5.5 3.1-3 4.2 4 2.2 2.5-4.5L10 6 5 3z" fill="#008080"/></svg>`
+  },
+  copilot: {
+    id: 'copilot',
+    name: 'Microsoft Copilot',
+    domain: 'copilot.microsoft.com',
+    url: 'https://copilot.microsoft.com/',
+    category: 'texto',
+    description: 'Assistente de IA multimodal e gerador de imagem da Microsoft.',
+    badgeBg: 'bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border-indigo-200',
+    badgeText: 'text-indigo-700',
+    brandColor: '#0F6CBD',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=copilot.microsoft.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><defs><linearGradient id="copilotG" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0F6CBD"/><stop offset="50%" stop-color="#7B3CE8"/><stop offset="100%" stop-color="#E83C90"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="#f8fafc"/><path d="M7 9a3 3 0 013-3h4a3 3 0 013 3v2a3 3 0 01-3 3h-4a3 3 0 01-3-3V9z" fill="url(#copilotG)"/><circle cx="12" cy="10" r="1.5" fill="#ffffff"/><circle cx="16" cy="14" r="1.5" fill="#E83C90"/></svg>`
+  },
+  adobe_express: {
+    id: 'adobe_express',
+    name: 'Adobe Express',
+    domain: 'adobe.com',
+    url: 'https://www.adobe.com/express/',
+    category: 'imagem',
+    description: 'Ferramenta de design online com IA generativa Adobe Firefly integrada.',
+    badgeBg: 'bg-[#eb1000]/10 text-[#d40000] hover:bg-[#eb1000]/20 border-[#eb1000]/20',
+    badgeText: 'text-[#d40000]',
+    brandColor: '#eb1000',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=adobe.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#eb1000"/><path d="M6 18h3.3l1.5-4h2.4l1.5 4H18L13.2 6h-2.4L6 18zm4.2-6.5L12 7.8l1.8 3.7h-3.6z" fill="#ffffff"/></svg>`
+  },
+  ideogram: {
+    id: 'ideogram',
+    name: 'Ideogram',
+    domain: 'ideogram.ai',
+    url: 'https://ideogram.ai/',
+    category: 'imagem',
+    description: 'Gerador de imagens por IA excecional na renderização de texto e tipografia gráfica.',
+    badgeBg: 'bg-zinc-100 text-zinc-900 hover:bg-zinc-200 border-zinc-300',
+    badgeText: 'text-zinc-900',
+    brandColor: '#18181b',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=ideogram.ai&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#18181b"/><circle cx="12" cy="12" r="5" fill="#FA5252"/><circle cx="12" cy="12" r="2" fill="#FFFFFF"/></svg>`
+  },
+  leonardo: {
+    id: 'leonardo',
+    name: 'Leonardo AI',
+    domain: 'leonardo.ai',
+    url: 'https://leonardo.ai/',
+    category: 'imagem',
+    description: 'Plataforma avançada de geração artística e visual com modelos de alta resolução.',
+    badgeBg: 'bg-purple-50 text-purple-700 hover:bg-purple-100 border-purple-200',
+    badgeText: 'text-purple-700',
+    brandColor: '#7C3AED',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=leonardo.ai&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#7C3AED"/><path d="M12 4l2.4 4.8 5.3.8-3.8 3.7.9 5.3-4.8-2.5-4.8 2.5.9-5.3-3.8-3.7 5.3-.8L12 4z" fill="#FCD34D"/></svg>`
+  },
+  magicschool: {
+    id: 'magicschool',
+    name: 'MagicSchool AI',
+    domain: 'magicschool.ai',
+    url: 'https://www.magicschool.ai/',
+    category: 'educacao',
+    description: 'Plataforma de IA desenhada especificamente para professores e ambientes escolares seguros.',
+    badgeBg: 'bg-violet-50 text-violet-700 hover:bg-violet-100 border-violet-200',
+    badgeText: 'text-violet-700',
+    brandColor: '#5B21B6',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=magicschool.ai&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#5B21B6"/><path d="M12 5l1.8 4.2L18 11l-4.2 1.8L12 17l-1.8-4.2L6 11l4.2-1.8L12 5z" fill="#FCD34D"/><circle cx="17" cy="7" r="1.5" fill="#A78BFA"/></svg>`
+  },
+  mizou: {
+    id: 'mizou',
+    name: 'Mizou',
+    domain: 'mizou.com',
+    url: 'https://mizou.com/',
+    category: 'educacao',
+    description: 'Criação de chatbots educativos personalizados e protegidos para alunos.',
+    badgeBg: 'bg-teal-50 text-teal-700 hover:bg-teal-100 border-teal-200',
+    badgeText: 'text-teal-700',
+    brandColor: '#0D9488',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=mizou.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><circle cx="12" cy="12" r="10" fill="#0D9488"/><circle cx="8.5" cy="10" r="1.5" fill="#FFFFFF"/><circle cx="15.5" cy="10" r="1.5" fill="#FFFFFF"/><path d="M8.5 14c1 1.8 3.5 1.8 4.5 1.8s3.5 0 4.5-1.8" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/></svg>`
+  },
+  chatgpt: {
+    id: 'chatgpt',
+    name: 'ChatGPT',
+    domain: 'chatgpt.com',
+    url: 'https://chatgpt.com/',
+    category: 'texto',
+    description: 'Modelo de linguagem de conversação, escrita criativa, raciocínio e síntese da OpenAI.',
+    badgeBg: 'bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border-emerald-200',
+    badgeText: 'text-emerald-800',
+    brandColor: '#10A37F',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#10A37F"/><path d="M12 4.5a3 3 0 00-2.6 1.5 3 3 0 00-3.9 1.4 3 3 0 00-.7 4.1 3 3 0 001.3 3.9 3 3 0 003.9 1.4 3 3 0 004-.8 3 3 0 003.5-2.6 3 3 0 00-.7-4.1 3 3 0 00-1.3-3.9 3 3 0 00-3.5-.9z" stroke="#FFFFFF" stroke-width="1.5" fill="none"/></svg>`
+  },
+  gemini: {
+    id: 'gemini',
+    name: 'Google Gemini',
+    domain: 'gemini.google.com',
+    url: 'https://gemini.google.com/',
+    category: 'texto',
+    description: 'Assistente de IA inteligente e multimodal da Google para pesquisa, análise e ideias.',
+    badgeBg: 'bg-blue-50 text-blue-800 hover:bg-blue-100 border-blue-200',
+    badgeText: 'text-blue-800',
+    brandColor: '#1A73E8',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=gemini.google.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#1A73E8"/><path d="M12 4c.3 4.2 3.8 7.7 8 8-4.2.3-7.7 3.8-8 8-.3-4.2-3.8-7.7-8-8 4.2-.3 7.7-3.8 8-8z" fill="#FFFFFF"/></svg>`
+  },
+  suno: {
+    id: 'suno',
+    name: 'Suno AI',
+    domain: 'suno.com',
+    url: 'https://suno.com/',
+    category: 'audio',
+    description: 'Compositor musical por IA que transforma letras em canções completas com voz e instrumentação.',
+    badgeBg: 'bg-amber-50 text-amber-800 hover:bg-amber-100 border-amber-200',
+    badgeText: 'text-amber-800',
+    brandColor: '#000000',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=suno.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><circle cx="12" cy="12" r="10" fill="#000000"/><circle cx="12" cy="12" r="4.5" fill="#F97316"/><path d="M10 9v6m2-4v2m2-5v8" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/></svg>`
+  },
+  elevenlabs: {
+    id: 'elevenlabs',
+    name: 'ElevenLabs',
+    domain: 'elevenlabs.io',
+    url: 'https://elevenlabs.io/',
+    category: 'audio',
+    description: 'Geração de voz ultrarrealista, efeitos sonoros (SFX) e síntese de áudio expressiva.',
+    badgeBg: 'bg-neutral-100 text-neutral-800 hover:bg-neutral-200 border-neutral-300',
+    badgeText: 'text-neutral-800',
+    brandColor: '#000000',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#000000"/><path d="M8.5 7v10h2.2V7H8.5zm4.8 0v10h2.2V7h-2.2z" fill="#FFFFFF"/></svg>`
+  },
+  stable_audio: {
+    id: 'stable_audio',
+    name: 'Stable Audio',
+    domain: 'stableaudio.com',
+    url: 'https://stableaudio.com/',
+    category: 'audio',
+    description: 'Gerador de paisagens sonoras, efeitos sonoros ambientais e faixas musicais por IA.',
+    badgeBg: 'bg-cyan-50 text-cyan-800 hover:bg-cyan-100 border-cyan-200',
+    badgeText: 'text-cyan-800',
+    brandColor: '#0891B2',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=stableaudio.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#0891B2"/><circle cx="12" cy="12" r="6" stroke="#FFFFFF" stroke-width="2" fill="none"/></svg>`
+  },
+  soundful: {
+    id: 'soundful',
+    name: 'Soundful AI',
+    domain: 'soundful.com',
+    url: 'https://soundful.com/',
+    category: 'audio',
+    description: 'Criação de música de fundo e atmosferas sonoras personalizadas sem direitos de autor.',
+    badgeBg: 'bg-rose-50 text-rose-800 hover:bg-rose-100 border-rose-200',
+    badgeText: 'text-rose-800',
+    brandColor: '#E11D48',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=soundful.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#E11D48"/><path d="M7 12a5 5 0 0110 0" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>`
+  },
+  geogebra: {
+    id: 'geogebra',
+    name: 'GeoGebra',
+    domain: 'geogebra.org',
+    url: 'https://www.geogebra.org/',
+    category: 'matematica',
+    description: 'Software de geometria dinâmica, álgebra, gráficos 3D e cálculo para escolas.',
+    badgeBg: 'bg-blue-50 text-blue-700 hover:bg-blue-100 border-blue-200',
+    badgeText: 'text-blue-700',
+    brandColor: '#1D4ED8',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=geogebra.org&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#1D4ED8"/><ellipse cx="12" cy="12" rx="7" ry="4" transform="rotate(-25 12 12)" stroke="#93C5FD" stroke-width="1.8" fill="none"/><circle cx="12" cy="12" r="2.2" fill="#FFFFFF"/></svg>`
+  },
+  tinkercad: {
+    id: 'tinkercad',
+    name: 'Tinkercad',
+    domain: 'tinkercad.com',
+    url: 'https://www.tinkercad.com/',
+    category: 'matematica',
+    description: 'Ferramenta online intuitiva da Autodesk para modelação 3D geométrica e código.',
+    badgeBg: 'bg-sky-50 text-sky-700 hover:bg-sky-100 border-sky-200',
+    badgeText: 'text-sky-700',
+    brandColor: '#0284C7',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=tinkercad.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#0284C7"/><path d="M7 8h10M12 8v10" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/></svg>`
+  },
+  claude: {
+    id: 'claude',
+    name: 'Claude',
+    domain: 'claude.ai',
+    url: 'https://claude.ai/',
+    category: 'texto',
+    description: 'Assistente avançado da Anthropic com forte raciocínio, escrita matizada e capacidade crítica.',
+    badgeBg: 'bg-amber-50 text-amber-900 hover:bg-amber-100 border-amber-300',
+    badgeText: 'text-amber-900',
+    brandColor: '#D97706',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=claude.ai&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#D97706"/><circle cx="12" cy="12" r="4" fill="#FEF3C7"/></svg>`
+  },
+  chatterpix: {
+    id: 'chatterpix',
+    name: 'ChatterPix Kids',
+    domain: 'duckduckmoose.com',
+    url: 'https://www.duckduckmoose.com/educational-iphone-itouch-apps-for-kids/chatterpix/',
+    category: 'video',
+    description: 'Aplicação educativa para crianças que põe qualquer desenho ou foto a falar com voz gravada.',
+    badgeBg: 'bg-orange-50 text-orange-700 hover:bg-orange-100 border-orange-200',
+    badgeText: 'text-orange-700',
+    brandColor: '#F97316',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=duckduckmoose.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#F97316"/><path d="M7 11h10M8 15h8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/></svg>`
+  },
+  vocaroo: {
+    id: 'vocaroo',
+    name: 'Vocaroo',
+    domain: 'vocaroo.com',
+    url: 'https://vocaroo.com/',
+    category: 'audio',
+    description: 'Gravador de voz simples, gratuito e sem necessidade de registo para gravação de áudio em sala.',
+    badgeBg: 'bg-lime-50 text-lime-800 hover:bg-lime-100 border-lime-200',
+    badgeText: 'text-lime-800',
+    brandColor: '#65A30D',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=vocaroo.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#65A30D"/><path d="M12 6a3 3 0 00-3 3v4a3 3 0 006 0V9a3 3 0 00-3-3zm5 3a5 5 0 01-10 0" stroke="#FFFFFF" stroke-width="2" fill="none"/></svg>`
+  },
+  book_creator: {
+    id: 'book_creator',
+    name: 'Book Creator',
+    domain: 'bookcreator.com',
+    url: 'https://bookcreator.com/',
+    category: 'educacao',
+    description: 'Plataforma para criação de livros digitais ilustrados e e-books multimédia com os alunos.',
+    badgeBg: 'bg-indigo-50 text-indigo-700 hover:bg-indigo-100 border-indigo-200',
+    badgeText: 'text-indigo-700',
+    brandColor: '#4F46E5',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=bookcreator.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#4F46E5"/><path d="M7 6h10v12H7z" fill="#E0E7FF"/><path d="M10 6v12" stroke="#4F46E5" stroke-width="2"/></svg>`
+  },
+  schoolai: {
+    id: 'schoolai',
+    name: 'SchoolAI',
+    domain: 'schoolai.com',
+    url: 'https://schoolai.com/',
+    category: 'educacao',
+    description: 'Espaço de aprendizagem com IA supervisionada pelo professor para exploração curricular guiada.',
+    badgeBg: 'bg-purple-50 text-purple-700 hover:bg-purple-100 border-purple-200',
+    badgeText: 'text-purple-700',
+    brandColor: '#6D28D9',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=schoolai.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#6D28D9"/><circle cx="12" cy="12" r="4" fill="#FFFFFF"/></svg>`
+  },
+  khanmigo: {
+    id: 'khanmigo',
+    name: 'Khanmigo (Khan Academy)',
+    domain: 'khanacademy.org',
+    url: 'https://www.khanacademy.org/khanmigo',
+    category: 'matematica',
+    description: 'Tutor de IA pedagógico da Khan Academy que guia o raciocínio sem dar respostas diretas.',
+    badgeBg: 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border-emerald-200',
+    badgeText: 'text-emerald-700',
+    brandColor: '#047857',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=khanacademy.org&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#047857"/><path d="M8 12l3 3 5-6" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>`
+  },
+  duck_ai: {
+    id: 'duck_ai',
+    name: 'Duck.ai',
+    domain: 'duckduckgo.com',
+    url: 'https://duckduckgo.com/?q=DuckDuckGo+AI+Chat&ia=chat',
+    category: 'texto',
+    description: 'Chat com IA totalmente anónimo e focado em privacidade, ideal para alunos sem registo.',
+    badgeBg: 'bg-orange-50 text-orange-800 hover:bg-orange-100 border-orange-200',
+    badgeText: 'text-orange-800',
+    brandColor: '#DE5833',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=duckduckgo.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><circle cx="12" cy="12" r="10" fill="#DE5833"/><path d="M12 7c-2 0-3 1.5-3 3 0 2 2 3 3 3s3-1 3-3c0-1.5-1-3-3-3z" fill="#FFFFFF"/></svg>`
+  },
+  perplexity: {
+    id: 'perplexity',
+    name: 'Perplexity',
+    domain: 'perplexity.ai',
+    url: 'https://www.perplexity.ai/',
+    category: 'texto',
+    description: 'Motor de resposta e pesquisa com IA com citação direta de fontes reais e verificáveis.',
+    badgeBg: 'bg-cyan-50 text-cyan-900 hover:bg-cyan-100 border-cyan-300',
+    badgeText: 'text-cyan-900',
+    brandColor: '#155E75',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#155E75"/><path d="M12 5v14M5 12h14" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg>`
+  },
+  notebooklm: {
+    id: 'notebooklm',
+    name: 'NotebookLM',
+    domain: 'notebooklm.google.com',
+    url: 'https://notebooklm.google.com/',
+    category: 'educacao',
+    description: 'Caderno de investigação com IA da Google alimentado exclusivamente pelos documentos dos alunos.',
+    badgeBg: 'bg-blue-50 text-blue-900 hover:bg-blue-100 border-blue-300',
+    badgeText: 'text-blue-900',
+    brandColor: '#1E40AF',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=notebooklm.google.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#1E40AF"/><path d="M7 6h10v12H7z" fill="#93C5FD"/><path d="M9 10h6M9 14h4" stroke="#1E40AF" stroke-width="1.5"/></svg>`
+  },
+  genially: {
+    id: 'genially',
+    name: 'Genially',
+    domain: 'genially.com',
+    url: 'https://genially.com/',
+    category: 'educacao',
+    description: 'Plataforma para criar apresentações interativas, jogos, escape rooms e infografias dinâmicas.',
+    badgeBg: 'bg-sky-50 text-sky-800 hover:bg-sky-100 border-sky-200',
+    badgeText: 'text-sky-800',
+    brandColor: '#0284C7',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=genially.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#0284C7"/><circle cx="12" cy="12" r="4" fill="#38BDF8"/></svg>`
+  },
+  wordwall: {
+    id: 'wordwall',
+    name: 'Wordwall',
+    domain: 'wordwall.net',
+    url: 'https://wordwall.net/',
+    category: 'educacao',
+    description: 'Criação rápida de questionários, jogos e atividades interativas para sala de aula.',
+    badgeBg: 'bg-blue-50 text-blue-800 hover:bg-blue-100 border-blue-200',
+    badgeText: 'text-blue-800',
+    brandColor: '#2563EB',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=wordwall.net&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#2563EB"/><path d="M6 8l3 8 3-8 3 8 3-8" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/></svg>`
+  },
+  educaplay: {
+    id: 'educaplay',
+    name: 'Educaplay',
+    domain: 'educaplay.com',
+    url: 'https://www.educaplay.com/',
+    category: 'educacao',
+    description: 'Plataforma educativa para criar e partilhar jogos pedagógicos digitais.',
+    badgeBg: 'bg-amber-50 text-amber-700 hover:bg-amber-100 border-amber-200',
+    badgeText: 'text-amber-700',
+    brandColor: '#D97706',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=educaplay.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#D97706"/><circle cx="12" cy="12" r="5" fill="#FDE68A"/></svg>`
+  },
+  padlet: {
+    id: 'padlet',
+    name: 'Padlet',
+    domain: 'padlet.com',
+    url: 'https://padlet.com/',
+    category: 'produtividade',
+    description: 'Mural digital colaborativo para partilha de trabalhos, podcasts, ideias e debates da turma.',
+    badgeBg: 'bg-pink-50 text-pink-700 hover:bg-pink-100 border-pink-200',
+    badgeText: 'text-pink-700',
+    brandColor: '#DB2777',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=padlet.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#DB2777"/><circle cx="9" cy="9" r="2" fill="#FFFFFF"/><circle cx="15" cy="15" r="2" fill="#FFFFFF"/></svg>`
+  },
+  google_sheets: {
+    id: 'google_sheets',
+    name: 'Google Sheets',
+    domain: 'docs.google.com',
+    url: 'https://docs.google.com/spreadsheets/',
+    category: 'produtividade',
+    description: 'Folha de cálculo colaborativa para organizar dados e criar tabelas e gráficos.',
+    badgeBg: 'bg-emerald-50 text-emerald-800 hover:bg-emerald-100 border-emerald-200',
+    badgeText: 'text-emerald-800',
+    brandColor: '#0F9D58',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=sheets.google.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#0F9D58"/><path d="M8 8h8v8H8z" fill="#A7F3D0"/><path d="M8 12h8M12 8v8" stroke="#0F9D58" stroke-width="1.5"/></svg>`
+  },
+  google_docs: {
+    id: 'google_docs',
+    name: 'Google Docs',
+    domain: 'docs.google.com',
+    url: 'https://docs.google.com/document/',
+    category: 'produtividade',
+    description: 'Processador de texto colaborativo na nuvem para redação de guiões, artigos e relatórios.',
+    badgeBg: 'bg-blue-50 text-blue-800 hover:bg-blue-100 border-blue-200',
+    badgeText: 'text-blue-800',
+    brandColor: '#4285F4',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=docs.google.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#4285F4"/><path d="M7 6h10v12H7z" fill="#BFDBFE"/><path d="M9 10h6M9 14h4" stroke="#4285F4" stroke-width="1.5"/></svg>`
+  },
+  datawrapper: {
+    id: 'datawrapper',
+    name: 'Datawrapper',
+    domain: 'datawrapper.de',
+    url: 'https://www.datawrapper.de/',
+    category: 'produtividade',
+    description: 'Ferramenta especializada em transformar dados científicos e estatísticos em gráficos interativos.',
+    badgeBg: 'bg-slate-100 text-slate-800 hover:bg-slate-200 border-slate-300',
+    badgeText: 'text-slate-800',
+    brandColor: '#334155',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=datawrapper.de&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#334155"/><path d="M7 16l3-6 4 3 4-8" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" fill="none"/></svg>`
+  },
+  vidnoz: {
+    id: 'vidnoz',
+    name: 'Vidnoz AI',
+    domain: 'vidnoz.com',
+    url: 'https://www.vidnoz.com/',
+    category: 'video',
+    description: 'Geração de vídeos educativos rápidos com avatares falantes e sincronização labial por IA.',
+    badgeBg: 'bg-violet-50 text-violet-800 hover:bg-violet-100 border-violet-200',
+    badgeText: 'text-violet-800',
+    brandColor: '#7C3AED',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=vidnoz.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#7C3AED"/><polygon points="10,8 16,12 10,16" fill="#FFFFFF"/></svg>`
+  },
+  hedra: {
+    id: 'hedra',
+    name: 'Hedra',
+    domain: 'hedra.com',
+    url: 'https://www.hedra.com/',
+    category: 'video',
+    description: 'Criação e animação de personagens com sincronização labial expressiva e emotiva.',
+    badgeBg: 'bg-purple-50 text-purple-900 hover:bg-purple-100 border-purple-300',
+    badgeText: 'text-purple-900',
+    brandColor: '#581C87',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=hedra.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#581C87"/><circle cx="12" cy="12" r="5" stroke="#E9D5FF" stroke-width="2" fill="none"/></svg>`
+  },
+  capcut: {
+    id: 'capcut',
+    name: 'CapCut IA',
+    domain: 'capcut.com',
+    url: 'https://www.capcut.com/',
+    category: 'video',
+    description: 'Editor de vídeo completo com legendagem automática, efeitos de áudio e ferramentas de IA.',
+    badgeBg: 'bg-neutral-100 text-neutral-900 hover:bg-neutral-200 border-neutral-300',
+    badgeText: 'text-neutral-900',
+    brandColor: '#171717',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=capcut.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#171717"/><path d="M7 8l5 4-5 4V8zm5 0l5 4-5 4V8z" fill="#FFFFFF"/></svg>`
+  },
+  photopea: {
+    id: 'photopea',
+    name: 'Photopea',
+    domain: 'photopea.com',
+    url: 'https://www.photopea.com/',
+    category: 'imagem',
+    description: 'Editor de imagem avançado online gratuito no navegador, semelhante ao Photoshop.',
+    badgeBg: 'bg-teal-50 text-teal-800 hover:bg-teal-100 border-teal-200',
+    badgeText: 'text-teal-800',
+    brandColor: '#0F766E',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=photopea.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#0F766E"/><text x="6" y="17" fill="#FFFFFF" font-family="sans-serif" font-weight="bold" font-size="12">P</text></svg>`
+  },
+  pixlr: {
+    id: 'pixlr',
+    name: 'Pixlr',
+    domain: 'pixlr.com',
+    url: 'https://pixlr.com/',
+    category: 'imagem',
+    description: 'Editor fotográfico online com remoção de fundo e filtros inteligentes de IA.',
+    badgeBg: 'bg-cyan-50 text-cyan-800 hover:bg-cyan-100 border-cyan-200',
+    badgeText: 'text-cyan-800',
+    brandColor: '#06B6D4',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=pixlr.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#06B6D4"/><circle cx="12" cy="12" r="4" fill="#FFFFFF"/></svg>`
+  },
+  fotor: {
+    id: 'fotor',
+    name: 'Fotor IA',
+    domain: 'fotor.com',
+    url: 'https://www.fotor.com/',
+    category: 'imagem',
+    description: 'Plataforma para retoque e geração de imagens por inteligência artificial.',
+    badgeBg: 'bg-amber-50 text-amber-800 hover:bg-amber-100 border-amber-200',
+    badgeText: 'text-amber-800',
+    brandColor: '#F59E0B',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=fotor.com&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#F59E0B"/><polygon points="12,5 15,10 20,11 16,15 17,20 12,17 7,20 8,15 4,11 9,10" fill="#FFFFFF"/></svg>`
+  },
+  languagetool: {
+    id: 'languagetool',
+    name: 'LanguageTool',
+    domain: 'languagetool.org',
+    url: 'https://languagetool.org/',
+    category: 'texto',
+    description: 'Corretor gramatical e ortográfico multilingue com suporte rigoroso para Português de Portugal.',
+    badgeBg: 'bg-sky-50 text-sky-800 hover:bg-sky-100 border-sky-200',
+    badgeText: 'text-sky-800',
+    brandColor: '#0284C7',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=languagetool.org&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#0284C7"/><path d="M8 8h8M12 8v8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/></svg>`
+  },
+  veed: {
+    id: 'veed',
+    name: 'VEED AI',
+    domain: 'veed.io',
+    url: 'https://www.veed.io/',
+    category: 'video',
+    description: 'Edição de vídeo, criação de avatares com IA e legendagem automática para sala de aula.',
+    badgeBg: 'bg-indigo-50 text-indigo-800 hover:bg-indigo-100 border-indigo-200',
+    badgeText: 'text-indigo-800',
+    brandColor: '#4338CA',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=veed.io&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#4338CA"/><circle cx="12" cy="12" r="5" fill="#A5B4FC"/></svg>`
+  },
+  audacity: {
+    id: 'audacity',
+    name: 'Audacity',
+    domain: 'audacityteam.org',
+    url: 'https://www.audacityteam.org/',
+    category: 'audio',
+    description: 'Editor e gravador de áudio digital gratuito e de código aberto para montagem de podcasts.',
+    badgeBg: 'bg-blue-50 text-blue-900 hover:bg-blue-100 border-blue-300',
+    badgeText: 'text-blue-900',
+    brandColor: '#1E3A8A',
+    logoUrl: 'https://www.google.com/s2/favicons?domain=audacityteam.org&sz=128',
+    svgIcon: `<svg viewBox="0 0 24 24" class="w-5 h-5"><rect width="24" height="24" rx="6" fill="#1E3A8A"/><path d="M6 12a6 6 0 0112 0" stroke="#FBBF24" stroke-width="2" fill="none"/></svg>`
+  }
+};
+
+export function getTool(nameOrKey: string): ToolInfo | undefined {
+  const normalized = nameOrKey.toLowerCase().trim();
+  if (TOOLS_DATABASE[normalized]) return TOOLS_DATABASE[normalized];
+  
+  for (const [key, tool] of Object.entries(TOOLS_DATABASE)) {
+    if (normalized.includes(key) || normalized.includes(tool.name.toLowerCase())) {
+      return tool;
+    }
+  }
+  return undefined;
+}
