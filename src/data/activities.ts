@@ -271,7 +271,7 @@ export const ACTIVITIES: Activity[] = [
     ],
     "themeEmoji": "🎵",
     "accentColor": "indigo",
-    "teacherPreparation": "Testar antecipadamente a ferramenta de geração musical no computador docente com ligação a colunas de som; afixar uma cartolina grande para o mapa coletivo.",
+    "teacherPreparation": "Testar antecipadamente a ferramenta de geração de áudio ou de paisagens sonoras no computador docente com ligação a colunas de som; afixar uma cartolina grande para o mapa coletivo.",
     "evaluationCriteria": [
       "Riqueza e adequação do vocabulário sensorial mobilizado na caracterização do ambiente;",
       "Capacidade de escuta atenta e identificação dos parâmetros sonoros (intensidade, timbre);",
@@ -443,7 +443,7 @@ export const ACTIVITIES: Activity[] = [
       "Extensão: Os alunos que terminem antecipadamente podem experimentar duas formas diferentes de interpretar uma das falas, alterando a entoação para transmitir emoções distintas."
     ],
     "essentialVsExtension": {
-      "essential": "Leitura crítica, revisão manuscrita do texto em papel e dramatização oral direta na sala de aula.",
+      "essential": "Leitura e compreensão da fábula; identificação das personagens e do conflito; comparação de duas propostas de final geradas com apoio da IA; escrita autónoma de um final alternativo; revisão do texto e leitura expressiva.",
       "extension": "Apresentação dramatizada do final alternativo com recurso a um narrador e à interpretação das personagens por diferentes alunos."
     },
     "offlineAlternative": "Elaboração autónoma dos finais cooperativos no caderno diário, seguida de representação teatral em pequenos grupos sem ecrãs.",
@@ -698,7 +698,7 @@ export const ACTIVITIES: Activity[] = [
     ],
     "duration": "2 aulas (90 minutos)",
     "modality": "Trabalho em pequenos grupos combinando modelos físicos de sólidos geométricos, espelhos planos, GeoGebra e chatbot mediado.",
-    "briefDescription": "Os alunos investigam as propriedades dos poliedros (faces, vértices, arestas e a Relação de Euler) e os eixos de simetria de reflexão em figuras planas. Recorrem à IA para redigir enigmas matemáticos sobre sólidos e utilizam materiais manipuláveis e software geométrico para validar as propriedades, comprovando onde a IA alucina em raciocínio visual.",
+    "briefDescription": "Os alunos investigam as propriedades dos poliedros (faces, vértices, arestas e a Relação de Euler) e os eixos de simetria de reflexão em figuras planas. Recorrem à IA para redigir enigmas matemáticos sobre sólidos e utilizam materiais manipuláveis e software geométrico para validar as propriedades, identificando eventuais erros ou diferenças entre a representação gerada e as propriedades geométricas dos sólidos.",
     "learningObjectives": [
       "Identificar e contar faces, vértices e arestas em sólidos geométricos, reconhecendo as características dos poliedros estudados.",
       "Verificar a Relação de Euler (F + V = A + 2) em poliedros convexos selecionados.",
@@ -1098,7 +1098,7 @@ export const ACTIVITIES: Activity[] = [
     ],
     "essentialVsExtension": {
       "essential": "Análise de uma tabela de precipitação anual, construção de um gráfico, interpretação dos dados e apresentação de duas propostas exequíveis de utilização eficiente da água na escola.",
-      "extension": "Elaboração de um relatório em formato infográfico interativo no Canva ou Genially com cálculo de estimativas de poupança financeira para a autarquia."
+      "extension": "Os alunos podem aprofundar a interpretação dos dados, comparando diferentes intervalos temporais da série de precipitação fornecida pelo professor. Devem identificar semelhanças e diferenças entre os períodos e explicar os limites das conclusões que podem retirar dos dados disponíveis. Não devem estimar poupanças financeiras para a autarquia nem quantificar consumos ou benefícios sem dados específicos que permitam realizar esses cálculos."
     },
     "offlineAlternative": "Análise de boletins climatológicos históricos impressos e construção integral de gráficos com régua e papel milimétrico.",
     "aiPedagogicalRole": "A IA funciona como apoio à organização e interpretação preliminar da tabela fornecida pelo professor. Não deve ser utilizada como fonte dos valores meteorológicos nem para inventar dados. A interpretação final, os cálculos e as conclusões devem ser verificados pelos alunos através da tabela original."
@@ -1285,7 +1285,7 @@ export const ACTIVITIES: Activity[] = [
     ],
     "duration": "2 aulas (100 minutos)",
     "modality": "Trabalho individual de escrita autónoma, apoiado por plataformas de IA sem registo pessoal nas fases de pré-escrita e revisão diagnóstica.",
-    "briefDescription": "Os alunos exercitam a produção de um artigo de opinião estruturado sobre um tema contemporâneo controverso. A redação é executada integralmente pelo estudante, que recorre ao chatbot exclusivamente como «advogado do diabo» para testar contra-argumentos e detetar fragilidades retóricas ou erros de pontuação, decidindo autonomamente as alterações a introduzir no seu texto.",
+    "briefDescription": "Os alunos exercitam a produção de um artigo de opinião estruturado sobre um tema contemporâneo controverso. A redação é executada integralmente pelo estudante. A IA fornece comentários sobre a clareza da tese, a coerência dos argumentos, a existência de repetições e possíveis contra-argumentos, cabendo ao aluno decidir quais as sugestões que considera pertinentes.",
     "learningObjectives": [
       "Dominar a estrutura retórica do artigo de opinião (introdução com tese, corpo argumentativo com evidências e refutação, e conclusão reiterativa);",
       "Mobilizar conectores discursivos variados e manter a coesão e coerência textual em Português de Portugal;",
@@ -1634,7 +1634,7 @@ export const ACTIVITIES: Activity[] = [
     "modality": "Trabalho em pares em computadores ou tablets, articulado com dramatização orientada.",
     "briefDescription": "Os alunos exploram profissões e percursos de formação através de uma entrevista simulada com recurso à Inteligência Artificial. Em pares, selecionam uma profissão, consultam fontes de informação sobre as qualificações e as funções associadas e preparam perguntas relevantes. A IA assume uma personagem fictícia para responder às perguntas, permitindo aos alunos treinar a entrevista e organizar informação. As respostas são posteriormente confrontadas com fontes credíveis sobre a realidade profissional em Portugal. A atividade distingue explicitamente a simulação gerada por IA de um testemunho real de um profissional.",
     "learningObjectives": [
-      "Explorar percursos formativos, perfis de competências e dilemas deontológicos de profissões contemporâneas e emergentes;",
+      "Identificar as funções, as competências e os percursos de formação associados à profissão selecionada, distinguindo informação confirmada de respostas fictícias produzidas pela IA.",
       "Formular perguntas abertas de entrevista que exijam reflexão aprofundada, evitando questões superficiais de resposta fechada;",
       "Avaliar criticamente a verosimilhança das respostas geradas pela IA, distinguindo a simulação ficcional da realidade do sistema educativo e profissional português."
     ],
@@ -1699,7 +1699,7 @@ export const ACTIVITIES: Activity[] = [
     ],
     "essentialVsExtension": {
       "essential": "Escolha e pesquisa de uma profissão, preparação de cinco perguntas, realização de uma entrevista simulada, verificação das respostas e apresentação das conclusões.",
-      "extension": "Contacto real com um profissional da área (presencial ou por videoconferência) para comparar as respostas simuladas com a experiência profissional viva."
+      "extension": "Contacto real com um profissional da área (presencial ou por videoconferência) para comparar as respostas simuladas com a experiência profissional real."
     },
     "offlineAlternative": "Realização da entrevista presencial a um profissional real da comunidade escolar ou local (encarregado de educação, técnico ou professor).",
     "aiPedagogicalRole": "A IA funciona como uma personagem fictícia para a simulação de uma entrevista. Permite aos alunos treinar a formulação de perguntas e organizar a informação recolhida, mas não representa um profissional real nem constitui uma fonte de testemunhos ou de informação profissional verificada. As informações relevantes devem ser confirmadas através de fontes adequadas."
