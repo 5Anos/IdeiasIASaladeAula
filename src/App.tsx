@@ -211,44 +211,6 @@ export default function App() {
           </div>
         ) : (
           <div>
-            {/* Pagination helper bar */}
-            <div className="flex flex-wrap items-center justify-between gap-2 mb-3 px-1 no-print">
-              <div className="flex items-center gap-2 min-w-0">
-                <span className="text-xs font-semibold text-slate-500 hidden sm:inline">
-                  A visualizar:
-                </span>
-                <span className="text-xs font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200 truncate max-w-[260px] sm:max-w-md">
-                  #{currentActivity.id} de 20 &bull; {currentActivity.title}
-                </span>
-                {isFiltered && (
-                  <span className="text-xs font-medium text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full border border-slate-200">
-                    Resultado {currentIndex + 1} de {filteredActivities.length}
-                  </span>
-                )}
-              </div>
-
-              <div className="flex items-center gap-1.5 ml-auto">
-                <button
-                  onClick={handlePrev}
-                  disabled={currentIndex <= 0}
-                  aria-label="Atividade anterior"
-                  className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-30 disabled:pointer-events-none transition-all shadow-2xs"
-                >
-                  <ArrowLeft className="w-3.5 h-3.5" />
-                  <span className="hidden sm:inline">Anterior</span>
-                </button>
-                <button
-                  onClick={handleNext}
-                  disabled={currentIndex < 0 || currentIndex >= filteredActivities.length - 1}
-                  aria-label="Atividade seguinte"
-                  className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-30 disabled:pointer-events-none transition-all shadow-2xs"
-                >
-                  <span className="hidden sm:inline">Seguinte</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-            </div>
-
             {/* The faithful visual graphic sheet */}
             <ActivitySheet
               activity={currentActivity}
