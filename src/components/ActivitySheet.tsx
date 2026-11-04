@@ -470,18 +470,13 @@ export const ActivitySheet: React.FC<ActivitySheetProps> = ({
             className="bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-2xs space-y-2 flex flex-col justify-between"
           >
             <div>
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex items-center gap-2 text-blue-700">
-                  <div className="w-8 h-8 rounded-xl bg-blue-100 flex items-center justify-center shadow-2xs">
-                    <Wrench className="w-4 h-4 text-blue-700" />
-                  </div>
-                  <h2 className="text-sm sm:text-base font-bold font-heading text-slate-900">
-                    Ferramentas Recomendadas
-                  </h2>
+              <div className="flex items-center gap-2 text-blue-700 mb-2">
+                <div className="w-8 h-8 rounded-xl bg-blue-100 flex items-center justify-center shadow-2xs">
+                  <Wrench className="w-4 h-4 text-blue-700" />
                 </div>
-                <span className="text-[11px] text-slate-400">
-                  Ligações oficiais
-                </span>
+                <h2 className="text-sm sm:text-base font-bold font-heading text-slate-900">
+                  Ferramentas Recomendadas
+                </h2>
               </div>
 
               <p className="text-[11px] text-slate-500 mb-2">
