@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { filterActivities, getUniqueSubjects, formatPromptForCopy } from './filterActivities';
 import { ACTIVITIES } from '../data/activities';
+import { TOOLS_DATABASE } from '../data/tools';
 
 test('ACTIVITIES has exactly 20 activities', () => {
   assert.equal(ACTIVITIES.length, 20);
@@ -106,6 +107,31 @@ test('every activity contains enriched pedagogical metadata, step durations and 
     assert.ok(act.aiPedagogicalRole && act.aiPedagogicalRole.length > 10, `Activity ${act.id} has aiPedagogicalRole`);
     for (const step of act.steps) {
       assert.ok(step.duration && step.duration.includes('min'), `Activity ${act.id} step ${step.number} has duration`);
+    }
+  }
+});
+
+test('specified activities have valid exploreUrl and all toolKeys resolve in TOOLS_DATABASE', () => {
+  const activitiesWithExplore = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+  for (const id of activitiesWithExplore) {
+    const act = ACTIVITIES.find(a => a.id === id);
+    assert.ok(act?.exploreUrl && act.exploreUrl.startsWith('http'), `Activity ${id} has valid exploreUrl`);
+  }
+
+  // Activity 1 checks
+  const act1 = ACTIVITIES.find(a => a.id === 1);
+  assert.ok(act1?.modality.includes('no quadro'), 'Activity 1 modality contains "no quadro"');
+  assert.ok(act1?.toolKeys.includes('craiyon'), 'Activity 1 has craiyon');
+  assert.ok(act1?.toolKeys.includes('leonardo'), 'Activity 1 has leonardo');
+  assert.ok(act1?.toolKeys.includes('chatgpt'), 'Activity 1 has chatgpt');
+  assert.ok(act1?.toolKeys.includes('gemini'), 'Activity 1 has gemini');
+  assert.ok(act1?.toolKeys.includes('fotor'), 'Activity 1 has fotor');
+
+  // Verify all tool keys across all activities exist in TOOLS_DATABASE
+  for (const act of ACTIVITIES) {
+    for (const key of act.toolKeys) {
+      const tool = TOOLS_DATABASE[key];
+      assert.ok(tool, `Tool ${key} for activity ${act.id} exists in TOOLS_DATABASE`);
     }
   }
 });

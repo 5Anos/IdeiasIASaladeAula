@@ -1,7 +1,7 @@
 import React from 'react';
 import { Activity } from '../data/activities';
 import { ToolBadge } from './ToolBadge';
-import { X, ArrowLeft, ArrowRight, Printer, Sparkles, BookOpen, Clock, Target, Check } from 'lucide-react';
+import { X, ArrowLeft, ArrowRight, Printer, Sparkles, BookOpen, Clock, Target, Check, ExternalLink } from 'lucide-react';
 
 interface PresentationModalProps {
   activity: Activity;
@@ -82,9 +82,22 @@ export const PresentationModal: React.FC<PresentationModalProps> = ({
               {activity.disciplines} &bull; {activity.duration}
             </span>
           </div>
-          <h2 id="presentation-title" className="text-2xl sm:text-4xl font-extrabold text-[#112a60] font-heading">
-            {activity.id}. {activity.title}
-          </h2>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <h2 id="presentation-title" className="text-2xl sm:text-4xl font-extrabold text-[#112a60] font-heading">
+              {activity.id}. {activity.title}
+            </h2>
+            {activity.exploreUrl && (
+              <a
+                href={activity.exploreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 transition-colors shrink-0 self-start sm:self-center"
+              >
+                <span>Explorar +</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            )}
+          </div>
         </div>
 
         {/* Steps row in large presentation cards */}

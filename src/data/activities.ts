@@ -43,6 +43,7 @@ export interface Activity {
   };
   offlineAlternative?: string;
   aiPedagogicalRole?: string;
+  exploreUrl?: string;
 }
 
 export const ACTIVITIES: Activity[] = [
@@ -55,7 +56,7 @@ export const ACTIVITIES: Activity[] = [
       "1.º Ciclo"
     ],
     "duration": "2 aulas (90 minutos)",
-    "modality": "Mediada pelo professor (projetada no ecrã central), salvaguardando a privacidade e a ausência de criação de contas por menores.",
+    "modality": "Mediada pelo professor (projetada no quadro), salvaguardando a privacidade e a ausência de criação de contas por menores.",
     "briefDescription": "A turma imagina uma personagem ou um objeto e descreve-o oralmente, utilizando palavras relacionadas com a cor, a forma e o tamanho. Com a mediação do professor, observa uma imagem criada por uma ferramenta de Inteligência Artificial a partir dessa descrição. Os alunos comparam a imagem com a ideia inicial e realizam o seu próprio desenho. A atividade permite explorar a relação entre as palavras e a representação visual, reconhecendo que a imagem gerada pode não corresponder exatamente ao que foi imaginado.",
     "learningObjectives": [
       "Descrever oralmente uma personagem ou um objeto, utilizando palavras relacionadas com a cor, a forma e o tamanho.",
@@ -106,7 +107,11 @@ export const ACTIVITIES: Activity[] = [
       "bing",
       "adobe_express",
       "ideogram",
-      "leonardo"
+      "leonardo",
+      "craiyon",
+      "chatgpt",
+      "gemini",
+      "fotor"
     ],
     "themeEmoji": "🎨",
     "accentColor": "blue",
@@ -529,7 +534,8 @@ export const ACTIVITIES: Activity[] = [
       "extension": "Compilação de todas as histórias num livro digital interativo na plataforma Book Creator."
     },
     "offlineAlternative": "Ilustração manual das histórias através de técnicas mistas (recorte, colagem de texturas de papel e pintura com lápis de cor).",
-    "aiPedagogicalRole": "Estimulador da imaginação plástica que materializa visualmente os detalhes descritos pelos alunos no texto."
+    "aiPedagogicalRole": "Estimulador da imaginação plástica que materializa visualmente os detalhes descritos pelos alunos no texto.",
+    "exploreUrl": "https://novaescola.org.br/planos-de-aula/fundamental/3ano/arte/transformando-historias-em-arte-com-inteligencia-artificial/6679"
   },
   {
     "id": 7,
@@ -611,7 +617,8 @@ export const ACTIVITIES: Activity[] = [
       "extension": "Construção de uma linha do tempo geológica interativa digital no Genially."
     },
     "offlineAlternative": "Auditoria científica de ilustrações históricas e reconstituições antigas de manuais escolares à procura de conceções paleontológicas ultrapassadas.",
-    "aiPedagogicalRole": "Gerador de representações preliminares suscetíveis a erros, servindo de objeto de análise para treinar o ceticismo metodológico dos alunos."
+    "aiPedagogicalRole": "Gerador de representações preliminares suscetíveis a erros, servindo de objeto de análise para treinar o ceticismo metodológico dos alunos.",
+    "exploreUrl": "https://cctic.ipcb.pt/lista-de-cenarios-de-aprendizagem/entry/3323/"
   },
   {
     "id": 8,
@@ -664,10 +671,11 @@ export const ACTIVITIES: Activity[] = [
     },
     "finalProduct": "Registo comparativo no caderno diário com a resolução pessoal e as duas estratégias validadas com o apoio da IA, acompanhadas de nota justificativa da escolha pessoal.",
     "toolKeys": [
+      "wolframalpha",
+      "photomath",
+      "perplexity",
       "chatgpt",
-      "gemini",
-      "magicschool",
-      "mizou"
+      "gemini"
     ],
     "themeEmoji": "🔢",
     "accentColor": "blue",
@@ -686,7 +694,8 @@ export const ACTIVITIES: Activity[] = [
       "extension": "Criação de um cartaz para a sala com o «Top 3 de Truques de Cálculo Mental da Turma»."
     },
     "offlineAlternative": "Trabalho em pares em que cada aluno ensina a sua estratégia mental ao colega sem recurso a qualquer tecnologia digital.",
-    "aiPedagogicalRole": "Interlocutor alternativo que apresenta abordagens de cálculo distintas, combatendo a ideia redutora de que existe uma única forma de calcular."
+    "aiPedagogicalRole": "Interlocutor alternativo que apresenta abordagens de cálculo distintas, combatendo a ideia redutora de que existe uma única forma de calcular.",
+    "exploreUrl": "https://novaescola.org.br/planos-de-aula/fundamental/multianos/matematica/estrategias-matematicas-e-ia-pensando-alem-dos-numeros/6677"
   },
   {
     "id": 9,
@@ -754,7 +763,7 @@ export const ACTIVITIES: Activity[] = [
       "geogebra",
       "tinkercad",
       "chatgpt",
-      "magicschool"
+      "desmos"
     ],
     "themeEmoji": "🔷",
     "accentColor": "indigo",
@@ -774,7 +783,8 @@ export const ACTIVITIES: Activity[] = [
       "extension": "Construção de construções dinâmicas de rotação de sólidos 3D no GeoGebra ou Tinkercad."
     },
     "offlineAlternative": "Atividade desenvolvida exclusivamente com sólidos de madeira/acrílico, espelhos de mão e construções em papel com dobragens para descobrir simetrias.",
-    "aiPedagogicalRole": "A IA apoia a formulação de enigmas geométricos, mas as características dos sólidos, as contagens e as relações matemáticas têm de ser verificadas pelos alunos através de modelos físicos e do raciocínio matemático. As respostas da ferramenta não constituem prova da correção das propriedades geométricas."
+    "aiPedagogicalRole": "A IA apoia a formulação de enigmas geométricos, mas as características dos sólidos, as contagens e as relações matemáticas têm de ser verificadas pelos alunos através de modelos físicos e do raciocínio matemático. As respostas da ferramenta não constituem prova da correção das propriedades geométricas.",
+    "exploreUrl": "https://novaescola.org.br/planos-de-aula/fundamental/multianos/matematica/explorando-solidos-geometricos-e-simetria/6678"
   },
   {
     "id": 10,
@@ -835,7 +845,8 @@ export const ACTIVITIES: Activity[] = [
       "duck_ai",
       "perplexity",
       "copilot",
-      "chatgpt"
+      "chatgpt",
+      "commonsense"
     ],
     "themeEmoji": "🛡️",
     "accentColor": "teal",
@@ -854,7 +865,8 @@ export const ACTIVITIES: Activity[] = [
       "extension": "Criação de um folheto desdobrável em suporte digital para apresentação a outras turmas do ciclo."
     },
     "offlineAlternative": "Análise de estudos de caso reais e dilemas éticos impressos em papel, dispensando qualquer ligação à rede durante a aula.",
-    "aiPedagogicalRole": "Objeto de inquirição e escrutínio crítico, evidenciando que a máquina não é autoridade neutral sobre as suas próprias condições de serviço."
+    "aiPedagogicalRole": "Objeto de inquirição e escrutínio crítico, evidenciando que a máquina não é autoridade neutral sobre as suas próprias condições de serviço.",
+    "exploreUrl": "https://novaescola.org.br/planos-de-aula/fundamental/5ano/lingua-portuguesa/explorando-a-utilizacao-responsavel-das-ferramentas-de-inteligencia-artificial/6683"
   },
   {
     "id": 11,
@@ -938,7 +950,8 @@ export const ACTIVITIES: Activity[] = [
       "extension": "Criação de um quiz digital interativo (Kahoot! ou Quizizz) com as melhores perguntas de cada equipa para dinamizar entre turmas do mesmo ano de escolaridade."
     },
     "offlineAlternative": "Construção de um jogo de tabuleiro em cartolina onde o avanço das peças depende de responder a cartas com perguntas elaboradas pelos grupos.",
-    "aiPedagogicalRole": "Assistente de redação que propõe formulações de problemas e distratores para serem filtrados e corrigidos pelo conhecimento científico dos alunos."
+    "aiPedagogicalRole": "Assistente de redação que propõe formulações de problemas e distratores para serem filtrados e corrigidos pelo conhecimento científico dos alunos.",
+    "exploreUrl": "https://novaescola.org.br/planos-de-aula/fundamental/5ano/ciencias/a-agua-esta-em-tudo-ciclo-da-agua/6686"
   },
   {
     "id": 12,
@@ -1000,7 +1013,8 @@ export const ACTIVITIES: Activity[] = [
       "duck_ai",
       "chatgpt",
       "gemini",
-      "geogebra"
+      "geogebra",
+      "khan_academy"
     ],
     "themeEmoji": "🎮",
     "accentColor": "violet",
@@ -1019,7 +1033,8 @@ export const ACTIVITIES: Activity[] = [
       "extension": "Criação de um mural partilhado no Padlet com o banco de problemas algébricos da turma e chaves de resolução."
     },
     "offlineAlternative": "Elaboração manual de situações-problema pelos alunos a partir da equação atribuída, sem recorrer a meios informáticos.",
-    "aiPedagogicalRole": "Gerador de enredos narrativos do quotidiano para testar a destreza dos alunos na modelação algébrica."
+    "aiPedagogicalRole": "Gerador de enredos narrativos do quotidiano para testar a destreza dos alunos na modelação algébrica.",
+    "exploreUrl": "https://novaescola.org.br/planos-de-aula/fundamental/7ano/matematica/equacoes-em-acao-solucoes-em-primeiro-grau/6685"
   },
   {
     "id": 13,
@@ -1101,7 +1116,8 @@ export const ACTIVITIES: Activity[] = [
       "extension": "Os alunos podem aprofundar a interpretação dos dados, comparando diferentes intervalos temporais da série de precipitação fornecida pelo professor. Devem identificar semelhanças e diferenças entre os períodos e explicar os limites das conclusões que podem retirar dos dados disponíveis. Não devem estimar poupanças financeiras para a autarquia nem quantificar consumos ou benefícios sem dados específicos que permitam realizar esses cálculos."
     },
     "offlineAlternative": "Análise de boletins climatológicos históricos impressos e construção integral de gráficos com régua e papel milimétrico.",
-    "aiPedagogicalRole": "A IA funciona como apoio à organização e interpretação preliminar da tabela fornecida pelo professor. Não deve ser utilizada como fonte dos valores meteorológicos nem para inventar dados. A interpretação final, os cálculos e as conclusões devem ser verificados pelos alunos através da tabela original."
+    "aiPedagogicalRole": "A IA funciona como apoio à organização e interpretação preliminar da tabela fornecida pelo professor. Não deve ser utilizada como fonte dos valores meteorológicos nem para inventar dados. A interpretação final, os cálculos e as conclusões devem ser verificados pelos alunos através da tabela original.",
+    "exploreUrl": "https://novaescola.org.br/planos-de-aula/fundamental/8ano/ciencias/mudancas-climaticas-e-o-ciclo-da-agua/6681"
   },
   {
     "id": 14,
@@ -1170,7 +1186,8 @@ export const ACTIVITIES: Activity[] = [
       "canva",
       "adobe_express",
       "vocaroo",
-      "capcut"
+      "capcut",
+      "vidnoz"
     ],
     "themeEmoji": "🕯️",
     "accentColor": "amber",
@@ -1189,7 +1206,8 @@ export const ACTIVITIES: Activity[] = [
       "extension": "Gravação do diálogo em podcast de rádio histórica com banda sonora de música barroca (ex.: Bach, Vivaldi) livre de direitos."
     },
     "offlineAlternative": "Dramatização de época ao vivo na sala com figurinos e adereços simbólicos concebidos pelos alunos a partir de pesquisa em biblioteca.",
-    "aiPedagogicalRole": "Parceiro de ensaio que simula argumentos e réplicas, exigindo validação rigorosa dos alunos através de fontes históricas primárias."
+    "aiPedagogicalRole": "Parceiro de ensaio que simula argumentos e réplicas, exigindo validação rigorosa dos alunos através de fontes históricas primárias.",
+    "exploreUrl": "https://novaescola.org.br/planos-de-aula/fundamental/8ano/historia/conversas-iluminadas/6682"
   },
   {
     "id": 15,
@@ -1273,7 +1291,8 @@ export const ACTIVITIES: Activity[] = [
       "extension": "Impressão em grande formato para dinamização de uma campanha de sensibilização na biblioteca ou átrio da escola."
     },
     "offlineAlternative": "Realização do cartaz através de técnica mista de colagem manual de recortes de imprensa, estêncil e pintura a guache sobre cartolina.",
-    "aiPedagogicalRole": "Produtor de texturas e elementos visuais brutos que requerem triagem, tratamento e montagem crítica pelo aluno."
+    "aiPedagogicalRole": "Produtor de texturas e elementos visuais brutos que requerem triagem, tratamento e montagem crítica pelo aluno.",
+    "exploreUrl": "https://novaescola.org.br/planos-de-aula/fundamental/9ano/arte/arte-criatividade-e-tecnologia-desenhando-ideias-para-salvar-o-mundo/6680"
   },
   {
     "id": 16,
@@ -1337,7 +1356,10 @@ export const ACTIVITIES: Activity[] = [
       "chatgpt",
       "claude",
       "google_docs",
-      "languagetool"
+      "languagetool",
+      "grammarly",
+      "hemingway",
+      "quillbot"
     ],
     "themeEmoji": "📰",
     "accentColor": "indigo",
@@ -1356,7 +1378,8 @@ export const ACTIVITIES: Activity[] = [
       "extension": "Publicação do artigo no jornal escolar ou na página da biblioteca da escola mediante autorização do aluno e da escola."
     },
     "offlineAlternative": "Processo de revisão cruzada entre pares («leitura em espelho») com preenchimento mútuo de uma grelha de avaliação formativa.",
-    "aiPedagogicalRole": "Crítico textual e adversário de treino que coloca objeções lógicas sem interferir na redação e voz própria do aluno."
+    "aiPedagogicalRole": "Crítico textual e adversário de treino que coloca objeções lógicas sem interferir na redação e voz própria do aluno.",
+    "exploreUrl": "https://novaescola.org.br/planos-de-aula/fundamental/9ano/lingua-portuguesa/texto-de-jornal-na-era-digital-artigo-de-opiniao/6684"
   },
   {
     "id": 17,
@@ -1445,7 +1468,8 @@ export const ACTIVITIES: Activity[] = [
       "extension": "Criação de um vídeo com a letra da música sincronizada (lyric video) no Canva ou CapCut."
     },
     "offlineAlternative": "Adaptação da letra a uma melodia tradicional portuguesa conhecida e canto conjunto em coro na sala de aula sem recurso a tecnologias digitais.",
-    "aiPedagogicalRole": "Arranjador sonoro que confere dinâmica rítmica e apelo mnésico a conteúdos técnicos e abstratos da gramática escolar."
+    "aiPedagogicalRole": "Arranjador sonoro que confere dinâmica rítmica e apelo mnésico a conteúdos técnicos e abstratos da gramática escolar.",
+    "exploreUrl": "https://www.youtube.com/watch?v=H510CBs_AjA"
   },
   {
     "id": 18,
@@ -1509,7 +1533,11 @@ export const ACTIVITIES: Activity[] = [
       "mizou",
       "canva",
       "vocaroo",
-      "padlet"
+      "padlet",
+      "anthropic",
+      "pippit",
+      "veed",
+      "elevenlabs"
     ],
     "themeEmoji": "🎙️",
     "accentColor": "purple",
@@ -1529,7 +1557,8 @@ export const ACTIVITIES: Activity[] = [
       "extension": "Gravação áudio do debate e compilação de um episódio especial para a rádio escolar."
     },
     "offlineAlternative": "Realização integral da pesquisa em publicações periódicas e livros da biblioteca escolar, sem mediação de sistemas de inteligência artificial.",
-    "aiPedagogicalRole": "Simulador de contra-argumentação rápida para fortalecer o pensamento crítico antes da exposição oral entre pares."
+    "aiPedagogicalRole": "Simulador de contra-argumentação rápida para fortalecer o pensamento crítico antes da exposição oral entre pares.",
+    "exploreUrl": "https://www.edutopia.org/article/5-engaging-ai-classroom-activities-try-your-students?utm_source=chatgpt.com"
   },
   {
     "id": 19,
@@ -1619,7 +1648,8 @@ export const ACTIVITIES: Activity[] = [
       "extension": "Difusão da emissão na rádio escolar da escola ou integração num podcast temático divulgado à comunidade educativa no website do agrupamento."
     },
     "offlineAlternative": "Realização do programa de rádio ao vivo na sala de aula através de leitura partilhada e sonoplastia manual perante a turma.",
-    "aiPedagogicalRole": "Assistente de cruzamento e resumo de documentos densos, exigindo revisão crítica humana rigorosa sobre a autenticidade factual e a norma linguística."
+    "aiPedagogicalRole": "Assistente de cruzamento e resumo de documentos densos, exigindo revisão crítica humana rigorosa sobre a autenticidade factual e a norma linguística.",
+    "exploreUrl": "https://www.edutopia.org/article/5-engaging-ai-classroom-activities-try-your-students?utm_source=chatgpt.com"
   },
   {
     "id": 20,
@@ -1683,7 +1713,9 @@ export const ACTIVITIES: Activity[] = [
       "perplexity",
       "bing",
       "canva",
-      "vocaroo"
+      "vocaroo",
+      "vidnoz",
+      "veed"
     ],
     "themeEmoji": "💼",
     "accentColor": "blue",
@@ -1702,6 +1734,7 @@ export const ACTIVITIES: Activity[] = [
       "extension": "Contacto real com um profissional da área (presencial ou por videoconferência) para comparar as respostas simuladas com a experiência profissional real."
     },
     "offlineAlternative": "Realização da entrevista presencial a um profissional real da comunidade escolar ou local (encarregado de educação, técnico ou professor).",
-    "aiPedagogicalRole": "A IA funciona como uma personagem fictícia para a simulação de uma entrevista. Permite aos alunos treinar a formulação de perguntas e organizar a informação recolhida, mas não representa um profissional real nem constitui uma fonte de testemunhos ou de informação profissional verificada. As informações relevantes devem ser confirmadas através de fontes adequadas."
+    "aiPedagogicalRole": "A IA funciona como uma personagem fictícia para a simulação de uma entrevista. Permite aos alunos treinar a formulação de perguntas e organizar a informação recolhida, mas não representa um profissional real nem constitui uma fonte de testemunhos ou de informação profissional verificada. As informações relevantes devem ser confirmadas através de fontes adequadas.",
+    "exploreUrl": "https://www.edutopia.org/article/5-engaging-ai-classroom-activities-try-your-students?utm_source=chatgpt.com"
   }
 ];

@@ -22,7 +22,8 @@ import {
   Users,
   Layers,
   WifiOff,
-  Copy
+  Copy,
+  ExternalLink
 } from 'lucide-react';
 
 interface ActivitySheetProps {
@@ -137,16 +138,31 @@ export const ActivitySheet: React.FC<ActivitySheetProps> = ({
             </div>
           </div>
 
-          {/* Subtle decorative yellow wave accent */}
-          <div className="hidden sm:block shrink-0 opacity-80 self-center">
-            <svg width="120" height="10" viewBox="0 0 120 10" fill="none">
-              <path
-                d="M2 7C25 2 55 9 118 4"
-                stroke="#F59E0B"
-                strokeWidth="3.5"
-                strokeLinecap="round"
-              />
-            </svg>
+          {/* Right side: Explorar + Button (if exploreUrl exists) & subtle decorative wave */}
+          <div className="flex items-center gap-3 shrink-0 self-start sm:self-center mt-1 sm:mt-0">
+            {activity.exploreUrl && (
+              <a
+                href={activity.exploreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 active:scale-98 shadow-sm hover:shadow-md transition-all cursor-pointer"
+                title="Explorar recurso original em novo separador"
+              >
+                <span>Explorar +</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            )}
+
+            <div className="hidden sm:block shrink-0 opacity-80 self-center">
+              <svg width="100" height="10" viewBox="0 0 120 10" fill="none">
+                <path
+                  d="M2 7C25 2 55 9 118 4"
+                  stroke="#F59E0B"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>
