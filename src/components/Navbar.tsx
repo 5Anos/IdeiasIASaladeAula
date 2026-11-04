@@ -74,9 +74,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                     </svg>
                   </span>
                 </h1>
-                <p className="text-xs sm:text-[13px] text-slate-600 font-normal leading-relaxed max-w-xl">
-                  Atividades estruturadas com objetivos curriculares, passo a passo pedagógico e ferramentas recomendadas com hiperligações diretas.
-                </p>
+                <div className="text-xs sm:text-[13px] text-slate-600 font-normal leading-relaxed max-w-xl space-y-1">
+                  <p className="font-semibold text-slate-800">
+                    A sua próxima grande ideia para a sala de aula começa aqui!
+                  </p>
+                  <p>
+                    Explore novas possibilidades, descubra atividades inspiradoras e experimente ferramentas de Inteligência Artificial que podem transformar a forma de ensinar, envolver os alunos e dar vida às aprendizagens.
+                  </p>
+                </div>
               </div>
             </div>
 
