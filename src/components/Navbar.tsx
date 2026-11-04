@@ -1,7 +1,6 @@
 import React from 'react';
 import { Search, X, BookOpen, Info } from 'lucide-react';
 import { HeaderIllustration } from './HeaderIllustration';
-import { HeaderLaptopIcon } from './HeaderLaptopIcon';
 
 interface NavbarProps {
   searchQuery: string;
@@ -36,69 +35,60 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="bg-white border-b border-slate-200/90 shadow-2xs no-print">
-      {/* 1. Illustrated Educational Header Banner */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-[#e1effc] via-[#eff6fc] to-[#e4f1fc] border-b border-blue-200/70">
-        {/* Subtle decorative background shapes */}
-        <div className="absolute -top-12 -left-12 w-48 h-48 bg-white/40 rounded-full blur-2xl pointer-events-none" />
-        <div className="absolute top-2 right-1/4 w-36 h-24 bg-white/50 rounded-full blur-xl pointer-events-none" />
-        <div className="absolute -bottom-8 right-12 w-44 h-32 bg-amber-100/30 rounded-full blur-2xl pointer-events-none" />
-
+      {/* 1. Illustrated Educational Header Banner matching topo_871597d6.png */}
+      <div className="relative overflow-hidden bg-[#edf5fc] border-b border-blue-100/90">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-6">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             
-            {/* Left: Laptop Icon + Title & Subtitle */}
-            <div className="flex items-center gap-3.5 sm:gap-4 max-w-2xl text-left w-full lg:w-auto">
-              {/* Illustrated IA Laptop Icon with yellow sparkle rays */}
-              <div className="shrink-0 hidden sm:block">
-                <HeaderLaptopIcon className="w-14 h-14 sm:w-16 sm:h-16 drop-shadow-sm" />
+            {/* Left & Center: Robot Illustration + Title & Subtitles */}
+            <div className="flex flex-col sm:flex-row items-center sm:items-center gap-5 sm:gap-7 text-left w-full lg:w-auto">
+              {/* Robot + Desk Educational Illustration on the Left */}
+              <div className="w-44 sm:w-56 md:w-64 lg:w-[265px] shrink-0 drop-shadow-xs">
+                <HeaderIllustration className="w-full h-auto" />
               </div>
 
-              <div className="space-y-1">
-                <h1 className="text-xl sm:text-2xl md:text-3xl font-black text-[#0f2d59] font-heading tracking-tight leading-tight">
+              {/* Title & Subtitles */}
+              <div className="space-y-1.5 max-w-2xl text-center sm:text-left">
+                <h1 className="text-2xl sm:text-3xl lg:text-[34px] font-black text-[#0b274e] font-heading tracking-tight leading-tight">
                   Ideias para Usar a IA em Sala de{' '}
-                  <span className="relative inline-block text-[#0a2342]">
+                  <span className="relative inline-block text-[#081d3b]">
                     Aula
-                    {/* Decorative yellow wave arc underneath "Aula" */}
+                    {/* Decorative orange curved stroke underneath "Aula" */}
                     <svg
-                      className="absolute -bottom-1 left-0 w-full h-2 text-amber-400"
+                      className="absolute -bottom-1.5 left-0 w-full h-2.5 overflow-visible"
                       viewBox="0 0 100 12"
                       fill="none"
                       preserveAspectRatio="none"
                     >
                       <path
-                        d="M2 8C25 2 60 11 98 4"
-                        stroke="#f59e0b"
-                        strokeWidth="4"
+                        d="M2 8C28 2 68 11 98 4"
+                        stroke="#e67e22"
+                        strokeWidth="4.5"
                         strokeLinecap="round"
                       />
                     </svg>
                   </span>
                 </h1>
-                <div className="text-xs sm:text-[13px] text-slate-600 font-normal leading-relaxed max-w-xl space-y-1">
-                  <p className="font-semibold text-slate-800">
+                
+                <div className="text-xs sm:text-[13px] md:text-sm text-slate-600 font-normal leading-relaxed space-y-1">
+                  <p className="font-bold text-slate-800 text-sm sm:text-[15px] pt-1">
                     A sua próxima grande ideia para a sala de aula começa aqui!
                   </p>
-                  <p>
+                  <p className="text-slate-600 leading-normal max-w-xl">
                     Explore novas possibilidades, descubra atividades inspiradoras e experimente ferramentas de Inteligência Artificial que podem transformar a forma de ensinar, envolver os alunos e dar vida às aprendizagens.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Right: AI Robot + Lightbulb Illustration & Guia do Professor Button */}
-            <div className="flex items-center justify-between lg:justify-end gap-3 sm:gap-6 w-full lg:w-auto shrink-0 mt-1 lg:mt-0">
-              {/* Robot + Desk Educational Illustration */}
-              <div className="w-36 sm:w-44 md:w-52 h-auto shrink-0 drop-shadow-xs">
-                <HeaderIllustration className="w-full h-auto" />
-              </div>
-
-              {/* Informação Button */}
+            {/* Right: INFORMAÇÃO Pill Button */}
+            <div className="shrink-0 flex items-center justify-center lg:justify-end w-full lg:w-auto">
               <button
                 onClick={onOpenGuide}
                 aria-label="Abrir informação"
-                className="h-10 px-4 sm:px-5 rounded-full text-xs sm:text-sm font-bold text-blue-700 bg-white hover:bg-blue-50 border-2 border-blue-600 inline-flex items-center gap-2 transition-all cursor-pointer shadow-xs hover:shadow-md active:scale-98 shrink-0"
+                className="h-11 sm:h-12 px-7 rounded-full text-xs sm:text-sm font-bold text-[#1d63ed] bg-white hover:bg-blue-50/80 border-2 border-[#1d63ed] inline-flex items-center gap-2.5 transition-all cursor-pointer shadow-xs hover:shadow-md active:scale-98 shrink-0 tracking-wider"
               >
-                <Info className="w-4 h-4 text-blue-600 shrink-0" />
+                <Info className="w-5 h-5 text-[#1d63ed] shrink-0" />
                 <span>INFORMAÇÃO</span>
               </button>
             </div>
