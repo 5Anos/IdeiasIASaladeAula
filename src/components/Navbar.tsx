@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, X, BookOpen } from 'lucide-react';
+import { Search, X, BookOpen, Info } from 'lucide-react';
 import { HeaderIllustration } from './HeaderIllustration';
 import { HeaderLaptopIcon } from './HeaderLaptopIcon';
 
@@ -92,13 +92,14 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <HeaderIllustration className="w-full h-auto" />
               </div>
 
-              {/* Guia do Professor Button */}
+              {/* Informação Button */}
               <button
                 onClick={onOpenGuide}
+                aria-label="Abrir informação"
                 className="h-10 px-4 sm:px-5 rounded-full text-xs sm:text-sm font-bold text-blue-700 bg-white hover:bg-blue-50 border-2 border-blue-600 inline-flex items-center gap-2 transition-all cursor-pointer shadow-xs hover:shadow-md active:scale-98 shrink-0"
               >
-                <BookOpen className="w-4 h-4 text-blue-600 shrink-0" />
-                <span>Guia do Professor</span>
+                <Info className="w-4 h-4 text-blue-600 shrink-0" />
+                <span>INFORMAÇÃO</span>
               </button>
             </div>
 

@@ -3,8 +3,6 @@ import {
   X,
   ShieldAlert,
   Scale,
-  Sparkles,
-  Clock,
   Users,
   Compass,
   FileCheck2,
@@ -39,7 +37,7 @@ export const TeacherGuideModal: React.FC<TeacherGuideModalProps> = ({
             </div>
             <div>
               <h2 id="teacher-guide-title" className="text-xl sm:text-2xl font-bold font-heading text-slate-900 leading-tight">
-                Guia Pedagógico para o Professor
+                INFORMAÇÃO
               </h2>
               <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
                 Princípios curriculares, enquadramento ético-legal e orientações didáticas para a sala de aula
@@ -49,8 +47,8 @@ export const TeacherGuideModal: React.FC<TeacherGuideModalProps> = ({
 
           <button
             onClick={onClose}
-            aria-label="Fechar guia do professor"
-            className="p-2 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors shrink-0"
+            aria-label="Fechar informação"
+            className="p-2 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors shrink-0 cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -108,36 +106,13 @@ export const TeacherGuideModal: React.FC<TeacherGuideModalProps> = ({
             </div>
           </div>
 
-          {/* Card 3: Flexibilidade Didática e Gestão Pedagógica */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-[#fffaf2] border border-amber-200/80 shadow-2xs">
-            <div className="flex items-center gap-2.5 text-amber-950 font-bold font-heading text-sm sm:text-base mb-2">
-              <div className="w-8 h-8 rounded-lg bg-amber-500 text-white flex items-center justify-center shrink-0">
-                <Clock className="w-4 h-4" />
-              </div>
-              <h3>3. Gestão Flexível do Tempo e Metodologia Adaptável</h3>
-            </div>
-            <p className="text-slate-700">
-              A proposta estruturada em 4 etapas apresentada nas fichas é uma <strong>sugestão organizativa e não um dogma inflexível</strong>. O professor tem plena autonomia para adaptar a cadência ao ritmo da sua turma:
-            </p>
-            <ul className="mt-2.5 space-y-1.5 text-xs text-slate-600">
-              <li className="flex items-start gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" />
-                <span><strong>Versão Essencial vs. Extensão:</strong> Cada ficha discrimina o percurso mínimo indispensável (que garante os objetivos essenciais) e extensões opcionais multimédia para turmas com mais tempo ou recursos.</span>
-              </li>
-              <li className="flex items-start gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" />
-                <span><strong>Avaliação Formativa e Critérios Observáveis:</strong> Privilegie o feedback contínuo sobre o processo (formulação de hipóteses, deteção de erros da IA, justificação de opções) em vez de avaliar apenas o produto final.</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Card 4: Inclusão, Diferenciação e Alternativas Sem Dispositivos */}
+          {/* Card 3: Inclusão, Diferenciação e Alternativas Sem Dispositivos */}
           <div className="p-4 sm:p-5 rounded-2xl bg-[#faf5ff] border border-purple-200/80 shadow-2xs">
             <div className="flex items-center gap-2.5 text-purple-950 font-bold font-heading text-sm sm:text-base mb-2">
               <div className="w-8 h-8 rounded-lg bg-purple-600 text-white flex items-center justify-center shrink-0">
                 <Users className="w-4 h-4" />
               </div>
-              <h3>4. Inclusão, Diferenciação Pedagógica e Modo Desconectado</h3>
+              <h3>3. Inclusão, Diferenciação Pedagógica e Modo Desconectado</h3>
             </div>
             <p className="text-slate-700">
               A tecnologia deve nivelar oportunidades sem gerar dependência ou exclusão:
@@ -158,13 +133,13 @@ export const TeacherGuideModal: React.FC<TeacherGuideModalProps> = ({
             </div>
           </div>
 
-          {/* Card 5: Integridade Académica, Autoria e Direitos de Autor */}
+          {/* Card 4: Integridade Académica, Autoria e Direitos de Autor */}
           <div className="p-4 sm:p-5 rounded-2xl bg-[#f4f7fb] border border-slate-200 shadow-2xs">
             <div className="flex items-center gap-2.5 text-slate-900 font-bold font-heading text-sm sm:text-base mb-2">
               <div className="w-8 h-8 rounded-lg bg-slate-700 text-white flex items-center justify-center shrink-0">
                 <Scale className="w-4 h-4" />
               </div>
-              <h3>5. Integridade Académica, Transparência de Autoria e Direitos de Imagem</h3>
+              <h3>4. Integridade Académica, Transparência de Autoria e Direitos de Imagem</h3>
             </div>
             <p className="text-slate-700">
               Promova desde cedo uma cultura explícita de honestidade intelectual e citação:
